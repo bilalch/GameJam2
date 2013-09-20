@@ -59,6 +59,9 @@ files
 	
 	Iw2DSprite.cpp
 	Iw2DSprite.h
+
+	level_generator.h
+	level_generator.cpp
 	
 	[Awm]
 	(source/awm)
