@@ -4,6 +4,7 @@ MyGame::MyGame()
 {
 	m_menu = new Menu();
 	m_gameState = GAME_MENU;
+	s3eAccelerometerStart();
 
 	m_arcade = NULL;
 }
@@ -17,6 +18,9 @@ MyGame::~MyGame()
 
 void MyGame::Update()
 {
+	OBSERVER->setAccelerometerX( s3eAccelerometerGetX() );
+	OBSERVER->setAccelerometerY( s3eAccelerometerGetY() );
+	OBSERVER->setAccelerometerZ( s3eAccelerometerGetZ() );
 	if ( getSound() )
 		IwGetSoundManager() -> Update();
 

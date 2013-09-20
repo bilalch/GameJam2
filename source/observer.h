@@ -58,12 +58,24 @@ private:
 	Observer(void);
 	GlobalDevice currentDevice;
 
+	int accelerometer_x;
+	int accelerometer_y;
+	int accelerometer_z;
+
 public:
 	static Observer* getInstance();
 	~Observer(void);
 	GlobalDevice getGlobalDevice(){ return currentDevice; }
 	float getDeviceWidth() { return deviceWidth; }
 	float getDeviceHeight() { return deviceHeight; }
+
+	int getAccelerometerX() { return accelerometer_x; }
+	int getAccelerometerY() { return accelerometer_y; }
+	int getAccelerometerZ() { return accelerometer_z; }
+
+	void setAccelerometerX(int _x) { accelerometer_x = _x; }
+	void setAccelerometerY(int _y) { accelerometer_y = _y; }
+	void setAccelerometerZ(int _z) { accelerometer_z = _z; }
 
 
 	float deviceWidth;

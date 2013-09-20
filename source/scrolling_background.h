@@ -40,6 +40,10 @@ private:
 	int m_lanes;
 	float m_left_bound;
 	float m_right_bound;
+
+	float m_speed;
+
+	int m_worldAngle;
 };
 
 #endif
