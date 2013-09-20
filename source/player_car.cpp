@@ -63,7 +63,7 @@ void PlayerCar::unloadCar()
 
 void PlayerCar::draw()
 {
-	spriteSheet->Render(CIwSVec2(x,y),1.0f,0.0f,0.0f);
+	spriteSheet->Render(CIwFVec2(x,y),1.0f,0.0f,0.0f);
 }
 
 void PlayerCar::update()

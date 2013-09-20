@@ -1,4 +1,3 @@
-define IW_USE_LEGACY_MODULES
 options
 {
 	s3e-data-dir="data"
@@ -15,18 +14,15 @@ subprojects
     sqlite
 	Iw2D
 	SoundEngine
-	IwGameAds
-	s3eIOSAppStoreBilling
-	s3eAndroidMarketBilling
 	MessageBox
-	SoundEngine
+	spine
 }
   
 includepath
 {
 	./source/util
 	./source/interfaces
-	./source/jsoncpp/include
+#	./source/jsoncpp/include
 	./source/awm
 }
 
@@ -76,72 +72,22 @@ files
 	
 	[Interfaces]
 	(source/interfaces)
-	model.h
-	model.cpp
+#	model.h
+#	model.cpp
 	view.h
 	game.h
 	game.cpp
-	json_parser.h
-	http.h
-	http.cpp
 	structures.h
 	
-	[Helper]
-	(source/helpers)
-	http_helper.h
-	http_helper.cpp
-	model_helper.h
-	model_helper.cpp
 	
 	[Util]
 	(source/util)
-	connectionManager.h
-	connectionManager.cpp
 	dynamicArray.h
-	abstract_factory.h
-	json_factory.h
-	json_factory.cpp
-	model_factory.h
-	model_factory.cpp
-	
-	[Test]
-	(source/tests)
-	test_json.h
-	test_json.cpp
-	test_http.h
-	test_http.cpp
-	
-	[Model]
-	(source/models)
-	in_app.h
-	in_app.cpp
-	powers.h
-	powers.cpp
-	stats.h
-	stats.cpp
-	user.h
-	user.cpp
-	
-	[jsoncpp/include/json]
-	(source/jsoncpp/include/json)
-	autolink.h
-	config.h
-	features.h
-	forwards.h
-	json.h
-	reader.h
-	value.h
-	writer.h
 
-	[jsoncpp/src/lib_json]
-	(source/jsoncpp/src/lib_json)
-	json_batchallocator.h
-	json_internalarray.inl
-	json_internalmap.inl
-	json_reader.cpp
-	json_value.cpp
-	json_valueiterator.inl
-	json_writer.cpp
+	
+	
+	
+
 }
 
 #assets

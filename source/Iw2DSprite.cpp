@@ -102,12 +102,12 @@ bool Iw2DSprite::LoadFromResource(CIwResGroup* pGroup, std::string pName, bool p
 	return m_Built;
 }
 
-void Iw2DSprite::Render(CIwSVec2 pPosition, float multiplier, float mul_x, float mul_y)
+void Iw2DSprite::Render(CIwFVec2 pPosition, float multiplier, float mul_x, float mul_y)
 {
 	if(m_Angle > 0 || m_Angle < 0)
 	{
-		CIwMat2D RotationMatrix;
-		RotationMatrix.SetRot(m_Angle, CIwVec2(pPosition.x + m_Center.x , pPosition.y + m_Center.y) );
+		CIwFMat2D RotationMatrix;
+		RotationMatrix.SetRot(m_Angle, CIwFVec2(pPosition.x + m_Center.x , pPosition.y + m_Center.y) );
 		Iw2DSetTransformMatrix(RotationMatrix);
 	}
 
@@ -119,7 +119,7 @@ void Iw2DSprite::Render(CIwSVec2 pPosition, float multiplier, float mul_x, float
 		Iw2DSetImageTransform(IW_2D_IMAGE_TRANSFORM_FLIP_Y);
 
 
-	CIwSVec2 size;
+	CIwFVec2 size;
 	if (!mul_x && !mul_y)
 	{
 		size.x = multiplier*m_FrameSize.x;
@@ -139,7 +139,7 @@ void Iw2DSprite::Render(CIwSVec2 pPosition, float multiplier, float mul_x, float
 
 	
 	if(m_Angle > 0 || m_Angle < 0)
-		Iw2DSetTransformMatrix(CIwMat2D::g_Identity);
+		Iw2DSetTransformMatrix(CIwFMat2D::g_Identity);
 	if( m_Flip.x > 0 || m_Flip.y > 0)
 		Iw2DSetImageTransform(IW_2D_IMAGE_TRANSFORM_NONE);
 }

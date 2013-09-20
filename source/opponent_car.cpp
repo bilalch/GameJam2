@@ -20,7 +20,7 @@ OpponentCar::~OpponentCar()
 
 void OpponentCar::Draw()
 {
-	Iw2DDrawImage(m_image,CIwSVec2(m_x1,m_y1));
+	Iw2DDrawImage(m_image,CIwFVec2(m_x1,m_y1));
 }
 
 bool OpponentCar::Update(PlayerCar* m_playerCar)

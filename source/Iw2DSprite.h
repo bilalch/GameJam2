@@ -71,12 +71,12 @@ private:
 	/*!
 	 *	(x,y) position of the currently to be drawn frame
 	 */
-	CIwSVec2	m_DrawRect;
+	CIwFVec2	m_DrawRect;
 
 	/*!
 	 *	the actual size of a frame. .x for width, .y for height
 	 */
-	CIwSVec2	m_FrameSize;
+	CIwFVec2	m_FrameSize;
 
 	/*!
 	 *	the amount of rows (.x) and columns (.y) the animation has
@@ -392,7 +392,7 @@ public:
 	 *
 	 *	Returns frame size as 2D integer vector.
 	 */
-	CIwSVec2		GetFrameSize()		const { return m_FrameSize; }
+	CIwFVec2		GetFrameSize()		const { return m_FrameSize; }
 
 	/*!
 	 *	\brief	Get the frame offset vector.
@@ -483,5 +483,5 @@ public:
 	 *	Draws a region of the image starting at m_DrawRect and finishing at m_DrawRect+m_FrameSize,
 	 *	at the coordinates passed by pPosition.
 	 */
-	void		Render(CIwSVec2 pPosition = CIwSVec2::g_Zero, float multiplier = 1.0f, float mul_x = 1.0f, float mul_y = 1.0f);
+	void		Render(CIwFVec2 pPosition = CIwFVec2::g_Zero, float multiplier = 1.0f, float mul_x = 1.0f, float mul_y = 1.0f);
 };

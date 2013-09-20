@@ -40,7 +40,7 @@ int main ()
 
 //		AdTest_Update();
 		Iw2DSetColour(0xffffffff);
-		Iw2DSetTransformMatrix(CIwMat2D::g_Identity);
+		Iw2DSetTransformMatrix(CIwFMat2D::g_Identity);
 
 		Iw2DSurfaceShow();
 

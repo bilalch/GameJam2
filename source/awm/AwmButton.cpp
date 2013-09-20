@@ -585,39 +585,39 @@ void AwmButton::DrawBounded(CIw2DImage* m_image)
 			} else if ( m_x1 >= bound_x1 && m_x2 <= bound_x2 && m_y1 >= bound_y1 && m_y2 <= bound_y2 ) {
 
 				// everything is within bounds
-				Iw2DDrawImage(m_image,CIwSVec2(m_x1,m_y1));
+				Iw2DDrawImage(m_image,CIwFVec2(m_x1,m_y1));
 
 			} else if ( m_x1 >= bound_x1 && m_x2 > bound_x2 ) {
 
 				// going out from the right
-				Iw2DDrawImageRegion(m_image,CIwSVec2(m_x1,m_y1),CIwSVec2(bound_x2-m_x1,m_height),CIwSVec2(0,0),CIwSVec2(((bound_x2-m_x1)*m_image->GetWidth())/m_width,m_image->GetHeight()));
+				Iw2DDrawImageRegion(m_image,CIwFVec2(m_x1,m_y1),CIwFVec2(bound_x2-m_x1,m_height),CIwFVec2(0,0),CIwFVec2(((bound_x2-m_x1)*m_image->GetWidth())/m_width,m_image->GetHeight()));
 
 			} else if ( m_x1 < bound_x1 && m_x2 >= bound_x1 ) {
 
 				// going out from the left
-				Iw2DDrawImageRegion(m_image,CIwSVec2(bound_x1,m_y1),CIwSVec2(m_x2-bound_x1,m_height),CIwSVec2(((bound_x1-m_x1)*m_image->GetWidth())/m_width,0),CIwSVec2(((m_x2-bound_x1)*m_image->GetWidth())/m_width,m_image->GetHeight()));
+				Iw2DDrawImageRegion(m_image,CIwFVec2(bound_x1,m_y1),CIwFVec2(m_x2-bound_x1,m_height),CIwFVec2(((bound_x1-m_x1)*m_image->GetWidth())/m_width,0),CIwFVec2(((m_x2-bound_x1)*m_image->GetWidth())/m_width,m_image->GetHeight()));
 
 			} else if( m_y1 >= bound_y1 && m_y2 > bound_y2 )	{
 
 				// going out from the bottom
-				Iw2DDrawImageRegion(m_image,CIwSVec2(m_x1,m_y1),CIwSVec2(m_width,bound_y2-m_y1),CIwSVec2(0,0),CIwSVec2((m_image->GetWidth()),((bound_y2-m_y1)*m_image->GetHeight())/m_height));
+				Iw2DDrawImageRegion(m_image,CIwFVec2(m_x1,m_y1),CIwFVec2(m_width,bound_y2-m_y1),CIwFVec2(0,0),CIwFVec2((m_image->GetWidth()),((bound_y2-m_y1)*m_image->GetHeight())/m_height));
 
 			} else if ( m_y1 < bound_y1 && m_y2 >= bound_y1 ) {
 
 				// going out from the top
-				Iw2DDrawImageRegion(m_image,CIwSVec2(m_x1,bound_y1),CIwSVec2(m_width,m_y2-bound_y1),CIwSVec2(0,((bound_y1-m_y1)*m_image->GetHeight())/m_height),CIwSVec2(m_image->GetWidth(),((m_y2-bound_y1)*m_image->GetHeight())/m_height));
+				Iw2DDrawImageRegion(m_image,CIwFVec2(m_x1,bound_y1),CIwFVec2(m_width,m_y2-bound_y1),CIwFVec2(0,((bound_y1-m_y1)*m_image->GetHeight())/m_height),CIwFVec2(m_image->GetWidth(),((m_y2-bound_y1)*m_image->GetHeight())/m_height));
 
 			} 
 
 		} else {
 
 			// image is not bounded
-			Iw2DDrawImage(m_image,CIwSVec2(m_x1,m_y1));
+			Iw2DDrawImage(m_image,CIwFVec2(m_x1,m_y1));
 
 		}
 	} else {
 
-		Iw2DDrawImage(m_image,CIwSVec2(slide_x1,slide_y1));
+		Iw2DDrawImage(m_image,CIwFVec2(slide_x1,slide_y1));
 	}
 }
 
@@ -635,13 +635,13 @@ void AwmButton::DrawText()
 			if ( m_x1 >= bound_x1 && m_x2 <= bound_x2 && m_y1 >= bound_y1 && m_y2 <= bound_y2 ) {
 			
 				// within bounds draw text
-				Iw2DDrawString(m_text,CIwSVec2(m_x1,m_y1),CIwSVec2(m_width,m_height),IW_2D_FONT_ALIGN_CENTRE,IW_2D_FONT_ALIGN_CENTRE);
+				Iw2DDrawString(m_text,CIwFVec2(m_x1,m_y1),CIwFVec2(m_width,m_height),IW_2D_FONT_ALIGN_CENTRE,IW_2D_FONT_ALIGN_CENTRE);
 
 			}
 		} else {
 
 			// not bounded
-			Iw2DDrawString(m_text,CIwSVec2(m_x1,m_y1),CIwSVec2(m_width,m_height),IW_2D_FONT_ALIGN_CENTRE,IW_2D_FONT_ALIGN_CENTRE);
+			Iw2DDrawString(m_text,CIwFVec2(m_x1,m_y1),CIwFVec2(m_width,m_height),IW_2D_FONT_ALIGN_CENTRE,IW_2D_FONT_ALIGN_CENTRE);
 
 		}
 	}
@@ -681,7 +681,7 @@ void AwmButton::Draw()
 		stringstream ss;
 		ss<<click_id;
 
-		Iw2DDrawString(ss.str().c_str(),CIwSVec2(m_x1, m_y1),CIwSVec2(m_width,m_height),IW_2D_FONT_ALIGN_CENTRE,IW_2D_FONT_ALIGN_CENTRE);
+		Iw2DDrawString(ss.str().c_str(),CIwFVec2(m_x1, m_y1),CIwFVec2(m_width,m_height),IW_2D_FONT_ALIGN_CENTRE,IW_2D_FONT_ALIGN_CENTRE);
 	}
 }
 
@@ -713,7 +713,7 @@ void AwmButton::DrawDisabled()
 			// draw a grey rect over the coordinates
 			DrawText();
 			setColor(m_color_disabled_alpha);
-			Iw2DFillRect(CIwSVec2(m_x1, m_y1),CIwSVec2(m_width,m_height));
+			Iw2DFillRect(CIwFVec2(m_x1, m_y1),CIwFVec2(m_width,m_height));
 			resetColor();
 
 		}
@@ -742,7 +742,7 @@ void AwmButton::DrawPressed()
 			// normal image does not exist as well
 			// draw a grey rect over the coordinates
 			setColor(m_color_pressed_alpha);
-			Iw2DFillRect(CIwSVec2(m_x1, m_y1),CIwSVec2(m_width,m_height));
+			Iw2DFillRect(CIwFVec2(m_x1, m_y1),CIwFVec2(m_width,m_height));
 			resetColor();
 
 		}

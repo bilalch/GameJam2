@@ -130,16 +130,16 @@ void Menu::drawSwipes()
 		
 		if ( AWM_INPUT -> getSwipeRight() ) {
 			
-			Iw2DDrawString("SWIPE RIGHT",CIwSVec2(0,0),CIwSVec2(OBSERVER->getDeviceWidth(),OBSERVER->getDeviceHeight()),IW_2D_FONT_ALIGN_CENTRE,IW_2D_FONT_ALIGN_CENTRE);
+			Iw2DDrawString("SWIPE RIGHT",CIwFVec2(0,0),CIwFVec2(OBSERVER->getDeviceWidth(),OBSERVER->getDeviceHeight()),IW_2D_FONT_ALIGN_CENTRE,IW_2D_FONT_ALIGN_CENTRE);
 		} else if ( AWM_INPUT -> getSwipeLeft() ) {
 			
-			Iw2DDrawString("SWIPE LEFT",CIwSVec2(0,0),CIwSVec2(OBSERVER->getDeviceWidth(),OBSERVER->getDeviceHeight()),IW_2D_FONT_ALIGN_CENTRE,IW_2D_FONT_ALIGN_CENTRE);
+			Iw2DDrawString("SWIPE LEFT",CIwFVec2(0,0),CIwFVec2(OBSERVER->getDeviceWidth(),OBSERVER->getDeviceHeight()),IW_2D_FONT_ALIGN_CENTRE,IW_2D_FONT_ALIGN_CENTRE);
 		} else if ( AWM_INPUT -> getSwipeUp() ) {
 		
-			Iw2DDrawString("SWIPE UP",CIwSVec2(0,0),CIwSVec2(OBSERVER->getDeviceWidth(),OBSERVER->getDeviceHeight()),IW_2D_FONT_ALIGN_CENTRE,IW_2D_FONT_ALIGN_CENTRE);
+			Iw2DDrawString("SWIPE UP",CIwFVec2(0,0),CIwFVec2(OBSERVER->getDeviceWidth(),OBSERVER->getDeviceHeight()),IW_2D_FONT_ALIGN_CENTRE,IW_2D_FONT_ALIGN_CENTRE);
 		} else if ( AWM_INPUT -> getSwipeDown() ) {
 		
-			Iw2DDrawString("SWIPE DOWN",CIwSVec2(0,0),CIwSVec2(OBSERVER->getDeviceWidth(),OBSERVER->getDeviceHeight()),IW_2D_FONT_ALIGN_CENTRE,IW_2D_FONT_ALIGN_CENTRE);
+			Iw2DDrawString("SWIPE DOWN",CIwFVec2(0,0),CIwFVec2(OBSERVER->getDeviceWidth(),OBSERVER->getDeviceHeight()),IW_2D_FONT_ALIGN_CENTRE,IW_2D_FONT_ALIGN_CENTRE);
 		}
 	}
 }
@@ -178,7 +178,7 @@ void Menu::draw()
 
 void Menu::drawBackgroundStretched()
 {
-	Iw2DDrawImage(m_background,CIwSVec2(0,0),CIwSVec2(OBSERVER->getDeviceWidth(),OBSERVER->getDeviceHeight()));
+	Iw2DDrawImage(m_background,CIwFVec2(0,0),CIwFVec2(OBSERVER->getDeviceWidth(),OBSERVER->getDeviceHeight()));
 }
 
 void Menu::drawImageCentered(CIw2DImage* image)
@@ -186,7 +186,7 @@ void Menu::drawImageCentered(CIw2DImage* image)
 	float drawX = (OBSERVER->getDeviceWidth() - image->GetWidth())/2;
 	float drawY = (OBSERVER->getDeviceHeight() - image->GetHeight())/2;
 
-	Iw2DDrawImage(image,CIwSVec2(drawX,drawY));
+	Iw2DDrawImage(image,CIwFVec2(drawX,drawY));
 }
 
 void Menu::drawScreenBelowLogo(CIw2DImage* image)
@@ -194,7 +194,7 @@ void Menu::drawScreenBelowLogo(CIw2DImage* image)
 	float drawX = (OBSERVER->getDeviceWidth() - image->GetWidth())/2;
 	float drawY = buttons_top_limit_multiplier*OBSERVER->getDeviceHeight() + ((1 - buttons_top_limit_multiplier)*OBSERVER->getDeviceHeight() - image->GetHeight())/2;
 
-	Iw2DDrawImage(image,CIwSVec2(drawX,drawY));
+	Iw2DDrawImage(image,CIwFVec2(drawX,drawY));
 }
 
 int Menu::click(float x, float y)

@@ -103,11 +103,11 @@ void ScrollingBackground::Draw()
 	for (int i = current_tile; i < leftMostTile + 50; i++) {
 		
 		if ( m_levelGenerator->getTypeAtIndex(i) == 1 ) {
-			Iw2DDrawImage(m_tile1,CIwSVec2(m_x1,600));
+			Iw2DDrawImage(m_tile1,CIwFVec2(m_x1,600));
 		} else if ( m_levelGenerator->getTypeAtIndex(i) == 2 ) {
-			Iw2DDrawImage(m_tile2,CIwSVec2(m_x1,600));
+			Iw2DDrawImage(m_tile2,CIwFVec2(m_x1,600));
 		} else if ( m_levelGenerator->getTypeAtIndex(i) == 3 ) {
-			Iw2DDrawImage(m_tile3,CIwSVec2(m_x1,600));
+			Iw2DDrawImage(m_tile3,CIwFVec2(m_x1,600));
 		}
 
 		m_x1+=tileWidth;
