@@ -12,6 +12,7 @@
 
 #include "Iw2D.h"
 #include "structures.h"
+#include "level_generator.h"
 
 #define THREE_LANE_RATIO 0.5
 #define TWO_LANE_RATIO 1
@@ -37,6 +38,10 @@ private:
 	CIw2DImage* m_image;
 	float multiplier;
 
+	CIw2DImage* m_tile1;
+	CIw2DImage* m_tile2;
+	CIw2DImage* m_tile3;
+
 	int m_lanes;
 	float m_left_bound;
 	float m_right_bound;
@@ -44,6 +49,9 @@ private:
 	float m_speed;
 
 	int m_worldAngle;
+	int leftMostTile;
+
+	LevelGenerator* m_levelGenerator;
 };
 
 #endif
