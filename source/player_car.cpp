@@ -63,40 +63,61 @@ void PlayerCar::unloadCar()
 
 void PlayerCar::draw()
 {
-	/*switch(damage)
-	{
-	case 0:
-		Iw2DDrawImage(image1,CIwSVec2(m_x1,m_y1),CIwSVec2(image1->GetWidth()*multiplier,image1->GetHeight()*multiplier));
-		break;
-
-	case 1:
-		Iw2DDrawImage(image2,CIwSVec2(m_x1,m_y1),CIwSVec2(image2->GetWidth()*multiplier,image2->GetHeight()*multiplier));
-		break;
-
-	case 2:
-		Iw2DDrawImage(image3,CIwSVec2(m_x1,m_y1),CIwSVec2(image3->GetWidth()*multiplier,image3->GetHeight()*multiplier));
-		break;
-
-	case 3:
-		Iw2DDrawImage(image4,CIwSVec2(m_x1,m_y1),CIwSVec2(image4->GetWidth()*multiplier,image4->GetHeight()*multiplier));
-		break;
-
-	case 4:
-		Iw2DDrawImage(image5,CIwSVec2(m_x1,m_y1),CIwSVec2(image5->GetWidth()*multiplier,image5->GetHeight()*multiplier));
-		break;
-
-	default:
-		Iw2DDrawImage(image1,CIwSVec2(m_x1,m_y1),CIwSVec2(image1->GetWidth()*multiplier,image1->GetHeight()*multiplier));
-		break;
-	};*/
-
-	spriteSheet->Render(CIwSVec2(OBSERVER->getDeviceWidth()/2,OBSERVER->getDeviceHeight()/2),1.0f,0.0f,0.0f);
-
+	spriteSheet->Render(CIwSVec2(x,y),1.0f,0.0f,0.0f);
 }
 
 void PlayerCar::update()
 {
 	spriteSheet->Step();
+	jump();
+	if (isJumping)
+	{
+		if (y > jumpMaxY && jumpingUp)
+		{
+			/*if (y > jumpMaxY + 3*((initY - jumpMaxY)/4))
+			{
+				drawImg = jumpImg2;
+			}
+			else if (y > jumpMaxY + 2*((initY - jumpMaxY)/4))
+			{
+				drawImg = jumpImg2;
+			}
+			else if (y > jumpMaxY + ((initY - jumpMaxY)/4))
+			{
+				drawImg = jumpImg3;
+			}*/
+			y -= (initY - jumpMaxY)/(jumpCount*3);
+			if (jumpCount < 9)
+				jumpCount++;
+		}
+		else if (y < initY)
+		{
+			/*if (y < jumpMaxY + ((initY - jumpMaxY)/4))
+			{
+				drawImg = jumpImg3;
+			}
+			else if (y < jumpMaxY + 2*((initY - jumpMaxY)/4))
+			{
+				drawImg = jumpImg3;
+			}
+			else if (y > jumpMaxY + 3*((initY - jumpMaxY)/4))
+			{
+				drawImg = jumpImg3;
+			}*/
+			y += (initY - jumpMaxY)/(jumpCount*3);
+			if (jumpCount > 3)
+			jumpCount--;
+			jumpingUp = false;
+		}
+		else
+		{
+			y = initY;
+			isJumping = false;
+			jumpingUp = false;
+			jumpCount = 3;
+		}
+	}
+
 }
 
 void PlayerCar::initializeCar()
@@ -107,6 +128,15 @@ void PlayerCar::initializeCar()
 	m_height = image1->GetHeight()*multiplier;
 	m_x2 = m_x1 + m_width;
 	m_y2 = m_y1 + m_height;*/
+
+	isJumping = false;
+	jumpingUp = false;
+
+	x = OBSERVER->getDeviceWidth()*0.25;
+	y = OBSERVER->getDeviceHeight()*0.66;
+	initY = y;
+	jumpMaxY = initY - (200.0/640)*OBSERVER->getDeviceHeight();
+	jumpCount = 3;
 }
 
 void PlayerCar::verifySpeedBounds()
@@ -117,5 +147,14 @@ void PlayerCar::verifySpeedBounds()
 	} else if ( car_speed > 40 ) {
 		
 		car_speed = 40;
+	}
+}
+
+void PlayerCar::jump()
+{
+	if (!isJumping)
+	{
+		isJumping = true;
+		jumpingUp = true;
 	}
 }
