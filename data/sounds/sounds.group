@@ -1,0 +1,161 @@
+CIwResGroup
+{
+	name "Sounds"
+
+	"./ArrowClick.wav"
+	"./ClickBattle.wav"
+	"./Close.wav"
+	"./DeployButton.wav"
+	"./LevelUp.wav"
+	"./MissileIcon.wav"
+	"./RoundLose.wav"
+	"./RoundWin.wav"
+	"./Scrolling.wav"
+	"./SelectContinent.wav"
+	"./SelectUnit.wav"
+	"./StandardClick.wav"
+	"./UnitCollected.wav"
+	"./UnitCompleted.wav"
+	"./Explosion.wav"
+	"./Fire.wav"
+
+	CIwSoundSpec
+	{
+		name		"ArrowClick"		# The name we want to use to refer to this sound effect in out code
+		data		"ArrowClick"		# The WAv file name (without .wav
+		vol 		0.7				# Default volume to be played at
+		loop		false			# Do we want this sound effect to play forever?
+	}
+	CIwSoundSpec
+	{
+		name		"ClickBattle"		# The name we want to use to refer to this sound effect in out code
+		data		"ClickBattle"		# The WAv file name (without .wav
+		vol 		0.7				# Default volume to be played at
+		loop		false			# Do we want this sound effect to play forever?
+	}
+	CIwSoundSpec
+	{
+		name		"Close"			# The name we want to use to refer to this sound effect in out code
+		data		"Close"			# The WAv file name (without .wav
+		vol 		0.7				# Default volume to be played at
+		loop		false			# Do we want this sound effect to play forever?
+	}
+	CIwSoundSpec
+	{
+		name		"DeployButton"		# The name we want to use to refer to this sound effect in out code
+		data		"DeployButton"		# The WAv file name (without .wav
+		vol 		1.0				# Default volume to be played at
+		loop		false			# Do we want this sound effect to play forever?
+	}
+	CIwSoundSpec
+	{
+		name		"LevelUp"		# The name we want to use to refer to this sound effect in out code
+		data		"LevelUp"		# The WAv file name (without .wav
+		vol 		0.7				# Default volume to be played at
+		loop		false			# Do we want this sound effect to play forever?
+	}
+	CIwSoundSpec
+	{
+		name		"MissileIcon"		# The name we want to use to refer to this sound effect in out code
+		data		"MissileIcon"		# The WAv file name (without .wav
+		vol 		0.7				# Default volume to be played at
+		loop		false			# Do we want this sound effect to play forever?
+	}
+	CIwSoundSpec
+	{
+		name		"RoundLose"		# The name we want to use to refer to this sound effect in out code
+		data		"RoundLose"		# The WAv file name (without .wav
+		vol 		0.7				# Default volume to be played at
+		loop		false			# Do we want this sound effect to play forever?
+	}
+	CIwSoundSpec
+	{
+		name		"RoundWin"		# The name we want to use to refer to this sound effect in out code
+		data		"RoundWin"		# The WAv file name (without .wav
+		vol 		0.7				# Default volume to be played at
+		loop		false			# Do we want this sound effect to play forever?
+	}
+	CIwSoundSpec
+	{
+		name		"Scrolling"		# The name we want to use to refer to this sound effect in out code
+		data		"Scrolling"		# The WAv file name (without .wav
+		vol 		0.7				# Default volume to be played at
+		loop		false			# Do we want this sound effect to play forever?
+	}
+	CIwSoundSpec
+	{
+		name		"SelectContinent"	# The name we want to use to refer to this sound effect in out code
+		data		"SelectContinent"	# The WAv file name (without .wav
+		vol 		0.7				# Default volume to be played at
+		loop		false			# Do we want this sound effect to play forever?
+	}
+	CIwSoundSpec
+	{
+		name		"SelectUnit"		# The name we want to use to refer to this sound effect in out code
+		data		"SelectUnit"		# The WAv file name (without .wav
+		vol 		0.7				# Default volume to be played at
+		loop		false			# Do we want this sound effect to play forever?
+	}
+	CIwSoundSpec
+	{
+		name		"StandardClick"		# The name we want to use to refer to this sound effect in out code
+		data		"StandardClick"		# The WAv file name (without .wav
+		vol 		0.7				# Default volume to be played at
+		loop		false			# Do we want this sound effect to play forever?
+	}
+	CIwSoundSpec
+	{
+		name		"UnitCollected"		# The name we want to use to refer to this sound effect in out code
+		data		"Unitcollected"		# The WAv file name (without .wav
+		vol 		0.7				# Default volume to be played at
+		loop		false			# Do we want this sound effect to play forever?
+	}
+	CIwSoundSpec
+	{
+		name		"UnitCompleted"		# The name we want to use to refer to this sound effect in out code
+		data		"UnitCompleted"		# The WAv file name (without .wav
+		vol 		0.7				# Default volume to be played at
+		loop		false			# Do we want this sound effect to play forever?
+	}
+
+	CIwSoundSpec
+	{
+		name		"Explosion"		# The name we want to use to refer to this sound effect in out code
+		data		"Explosion"		# The WAv file name (without .wav
+		vol 		0.7				# Default volume to be played at
+		loop		false			# Do we want this sound effect to play forever?
+	}
+
+	CIwSoundSpec
+	{
+		name		"Fire"		# The name we want to use to refer to this sound effect in out code
+		data		"Fire"		# The WAv file name (without .wav
+		vol 		1.0				# Default volume to be played at
+		loop		false			# Do we want this sound effect to play forever?
+	}
+	
+
+	//Sound Group
+	CIwSoundGroup
+	{
+		name		"sound_effects"		# Name of our sound group
+		maxPolyphony 16				# Maximum sounds that can be played simultaneously
+		killOldest	true			# Tell system not to stop the oldest sound effects frmo playing if we run out of channels
+		addSpec		"ArrowClick"		# Add the explosion sound spec to our sound group
+		addSpec		"ClickBattle"		# Add the explosion sound spec to our sound group
+		addSpec		"Close"			# Add the explosion sound spec to our sound group
+		addSpec		"DeployButton"		# Add the explosion sound spec to our sound group
+		addSpec		"LevelUp"		# Add the explosion sound spec to our sound group
+		addSpec		"MissileIcon"		# Add the explosion sound spec to our sound group
+		addSpec		"RoundLose"		# Add the explosion sound spec to our sound group
+		addSpec		"RoundWin"		# Add the explosion sound spec to our sound group
+		addSpec		"Scrolling"		# Add the explosion sound spec to our sound group
+		addSpec		"SelectContinent"	# Add the explosion sound spec to our sound group
+		addSpec		"SelectUnit"		# Add the explosion sound spec to our sound group
+		addSpec		"StandardClick"		# Add the explosion sound spec to our sound group
+		addSpec		"Unitcollected"		# Add the explosion sound spec to our sound group
+		addSpec		"UnitCompleted"		# Add the explosion sound spec to our sound group
+		addSpec		"Explosion"		# Add the explosion sound spec to our sound group
+		addSpec		"Fire"		# Add the explosion sound spec to our sound group
+	}
+}

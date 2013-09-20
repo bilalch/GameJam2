@@ -1,0 +1,11 @@
+CIwResGroup
+{
+	name "_menu"
+	
+	"Menu/640x960/menu.png"					{ mipMapping false }
+	"Menu/640x960/button_highscore.png"		{ mipMapping false }
+	"Menu/640x960/button_howto.png"			{ mipMapping false }
+	"Menu/640x960/button_race.png"			{ mipMapping false }
+	"Menu/640x960/button_story.png"			{ mipMapping false }
+	"Menu/640x960/button_aboutus.png"		{ mipMapping false }
+}

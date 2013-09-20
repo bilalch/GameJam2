@@ -1,0 +1,9 @@
+CIwResGroup
+{
+	name "_opponentCars"
+	
+	"320x480/OpponentCars/black.png"			{ mipMapping false }
+	"320x480/OpponentCars/blue.png"				{ mipMapping false }
+	"320x480/OpponentCars/green.png"			{ mipMapping false }
+	
+}

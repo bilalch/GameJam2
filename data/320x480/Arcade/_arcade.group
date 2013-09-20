@@ -1,0 +1,1 @@
+CIwResGroup{	name "_arcade"		"320x480/Arcade/highway.png"				{ mipMapping false }		"320x480/Arcade/speed_normal.png"			{ mipMapping false }	"320x480/Arcade/speed_pressed.png"			{ mipMapping false }		"320x480/Arcade/left.png"					{ mipMapping false }	"320x480/Arcade/right.png"					{ mipMapping false }			"320x480/OpponentCars/_opponentCars.group"}

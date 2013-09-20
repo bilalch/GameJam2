@@ -1,0 +1,163 @@
+define IW_USE_LEGACY_MODULES
+options
+{
+	s3e-data-dir="data"
+	module_path="$MARMALADE_ROOT/examples;"
+}
+
+package 
+{ 
+	sqlite
+}
+
+subprojects
+{
+    sqlite
+	Iw2D
+	SoundEngine
+	IwGameAds
+	s3eIOSAppStoreBilling
+	s3eAndroidMarketBilling
+	MessageBox
+	SoundEngine
+}
+  
+includepath
+{
+	./source/util
+	./source/interfaces
+	./source/jsoncpp/include
+	./source/awm
+}
+
+files
+{
+    [Source]
+    (source)
+	main.cpp
+	
+	my_game.h
+	my_game.cpp
+	
+	observer.h
+	observer.cpp
+	
+	menu.h
+	menu.cpp
+	
+	arcade.h
+	arcade.cpp
+	
+	scrolling_background.h
+	scrolling_background.cpp
+	
+	player_car.h
+	player_car.cpp
+	
+	opponent_car.h
+	opponent_car.cpp
+	
+	Iw2DSprite.cpp
+	Iw2DSprite.h
+	
+	[Awm]
+	(source/awm)
+	AwmSoundManager.h
+	AwmSoundManager.cpp
+	
+	AwmButton.h
+	AwmButton.cpp
+	
+	AwmInput.h
+	AwmInput.cpp
+	
+	[Interfaces]
+	(source/interfaces)
+	model.h
+	model.cpp
+	view.h
+	game.h
+	game.cpp
+	json_parser.h
+	http.h
+	http.cpp
+	structures.h
+	
+	[Helper]
+	(source/helpers)
+	http_helper.h
+	http_helper.cpp
+	model_helper.h
+	model_helper.cpp
+	
+	[Util]
+	(source/util)
+	connectionManager.h
+	connectionManager.cpp
+	dynamicArray.h
+	abstract_factory.h
+	json_factory.h
+	json_factory.cpp
+	model_factory.h
+	model_factory.cpp
+	
+	[Test]
+	(source/tests)
+	test_json.h
+	test_json.cpp
+	test_http.h
+	test_http.cpp
+	
+	[Model]
+	(source/models)
+	in_app.h
+	in_app.cpp
+	powers.h
+	powers.cpp
+	stats.h
+	stats.cpp
+	user.h
+	user.cpp
+	
+	[jsoncpp/include/json]
+	(source/jsoncpp/include/json)
+	autolink.h
+	config.h
+	features.h
+	forwards.h
+	json.h
+	reader.h
+	value.h
+	writer.h
+
+	[jsoncpp/src/lib_json]
+	(source/jsoncpp/src/lib_json)
+	json_batchallocator.h
+	json_internalarray.inl
+	json_internalmap.inl
+	json_reader.cpp
+	json_value.cpp
+	json_valueiterator.inl
+	json_writer.cpp
+}
+
+#assets
+#{
+#(data)
+#	sounds/sounds.group.bin
+#	iw2dstrings.group.bin
+	#(data-ram)
+	#game.sqlite
+#}
+
+
+#### AUTO GENERATED deployment settings from DeployTool.exe. Do not edit below this line ####
+deployments
+{
+	["Default"]
+	version-major=1
+	version-minor=0
+	version-revision=0
+	iphone-link-opts='-weak_framework CoreText -weak_framework UIKit -weak_framework Security -weak_framework AddressBook -weak_framework AddressBookUI -weak_framework MapKit -lsqlite3.0'
+
+}
