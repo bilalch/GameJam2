@@ -28,6 +28,8 @@ ScrollingBackground::ScrollingBackground(CIw2DImage* image, int lanes)
 	m_worldAngle = 0;
 
 	leftMostTile = 0;
+	leftMostTile_x1 = 0;
+	tileWidth = 40;
 	m_levelGenerator = new LevelGenerator(1);
 	m_levelGenerator->Generate();
 
@@ -52,7 +54,7 @@ void ScrollingBackground::initializeLaneBounds()
 
 void ScrollingBackground::Update(float speed)
 {
-	leftMostTile++;
+	ScrollTile();
 	if ( OBSERVER->getAccelerometerX() > 30 ) {
 		if ( m_speed < 15 )
 			m_speed++;
@@ -83,22 +85,31 @@ void ScrollingBackground::Update(float speed)
 	}
 }
 
+void ScrollingBackground::ScrollTile()
+{
+	leftMostTile_x1-= tileWidth/4;
+	if ( leftMostTile_x1 < -tileWidth ) {
+		leftMostTile++;
+		leftMostTile_x1 = -tileWidth/4;
+	}
+}
+
 void ScrollingBackground::Draw()
 {
 	//Iw2DDrawImage(m_image,CIwSVec2(image1.m_x1,image1.m_y1),CIwSVec2(image1.m_width,image1.m_height));
 	//Iw2DDrawImage(m_image,CIwSVec2(image2.m_x1,image2.m_y1),CIwSVec2(image2.m_width,image2.m_height));
 	int current_tile = leftMostTile;
-	int m_x1 = 0;
+	int m_x1 = leftMostTile_x1;
 	for (int i = current_tile; i < leftMostTile + 50; i++) {
 		
 		if ( m_levelGenerator->getTypeAtIndex(i) == 1 ) {
-			Iw2DDrawImage(m_tile1,CIwSVec2(m_x1,620));
+			Iw2DDrawImage(m_tile1,CIwSVec2(m_x1,600));
 		} else if ( m_levelGenerator->getTypeAtIndex(i) == 2 ) {
-			Iw2DDrawImage(m_tile2,CIwSVec2(m_x1,620));
+			Iw2DDrawImage(m_tile2,CIwSVec2(m_x1,600));
 		} else if ( m_levelGenerator->getTypeAtIndex(i) == 3 ) {
-			Iw2DDrawImage(m_tile3,CIwSVec2(m_x1,620));
+			Iw2DDrawImage(m_tile3,CIwSVec2(m_x1,600));
 		}
 
-		m_x1+=20;
+		m_x1+=tileWidth;
 	}
 }

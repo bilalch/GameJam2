@@ -51,7 +51,12 @@ private:
 	int m_worldAngle;
 	int leftMostTile;
 
+	int leftMostTile_x1;
+	int tileWidth;
+
 	LevelGenerator* m_levelGenerator;
+
+	void ScrollTile();
 };
 
 #endif
