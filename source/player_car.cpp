@@ -29,6 +29,44 @@ PlayerCar::PlayerCar(int number)
 	};
 
 	initializeCar();
+	initializeSpine();
+	loadSpine();
+}
+
+void PlayerCar::initializeSpine()
+{
+	atlas = NULL;
+	skeletonData = NULL;
+	skeleton = NULL;
+	animation = NULL;
+	animationTime = 0;
+	lastFrameTime = 0;
+}
+
+void PlayerCar::loadSpine()
+{
+  try {
+    ifstream atlasFile("spineboy.atlas");
+    atlas = new Atlas(atlasFile);
+
+    SkeletonJson skeletonJson(atlas);
+
+    ifstream skeletonFile("spineboy-skeleton.json");
+    skeletonData = skeletonJson.readSkeletonData(skeletonFile);
+
+    ifstream animationFile("spineboy-walk.json");
+    animation = skeletonJson.readAnimation(animationFile, skeletonData);
+
+    skeleton = new Skeleton(skeletonData);
+    skeleton->flipX = false;
+    skeleton->flipY = false;
+    skeleton->setToBindPose();
+    skeleton->getRootBone()->x = 200;
+    skeleton->getRootBone()->y = 420;
+    skeleton->updateWorldTransform();
+  } catch (exception &ex) {
+    cout << ex.what() << endl << flush;
+  }
 }
 
 PlayerCar::~PlayerCar()
@@ -63,11 +101,24 @@ void PlayerCar::unloadCar()
 
 void PlayerCar::draw()
 {
-	spriteSheet->Render(CIwFVec2(x,y),1.0f,0.0f,0.0f);
+	//spriteSheet->Render(CIwFVec2(x,y),1.0f,0.0f,0.0f);
+	skeleton->draw();
+}
+
+void PlayerCar::updateSpine()
+{
+  float dt = (float)(s3eTimerGetMs() - lastFrameTime);
+  lastFrameTime = s3eTimerGetMs();
+
+  animationTime += dt / 1000.f;        // ms to s
+
+  animation->apply(skeleton, animationTime, true);
+  skeleton->updateWorldTransform();
 }
 
 void PlayerCar::update()
 {
+	updateSpine();
 	spriteSheet->Step();
 	jump();
 	if (isJumping)

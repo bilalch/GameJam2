@@ -10,6 +10,12 @@
 #include "Iw2D.h"
 #include "IwResManager.h"
 #include "Iw2DSprite.h"
+#include <iostream>
+#include <fstream>
+#include <spine-marm/spine.h>
+
+using namespace std;
+using namespace spine;
 
 class PlayerCar
 {
@@ -64,6 +70,17 @@ private:
 	bool isJumping, jumpingUp;
 	float x, y, initY, jumpMaxY;
 	int jumpCount;
+
+	void initializeSpine();
+	void loadSpine();
+	void updateSpine();
+
+	Atlas *atlas;
+	SkeletonData *skeletonData;
+	Skeleton *skeleton;
+	Animation *animation;
+	float animationTime;
+	uint64 lastFrameTime;
 };
 
 #endif
