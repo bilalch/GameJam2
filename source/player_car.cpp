@@ -79,7 +79,7 @@ void PlayerCar::loadRedCar()
 {
 	//imagesGroup = IwGetResManager() -> LoadGroup ("640x960/Arcade/_arcade.group");
 
-	spriteSheet = new Iw2DSprite(IwGetResManager()->GetCurrentGroup(), "blowfish", true);
+	//spriteSheet = new Iw2DSprite(IwGetResManager()->GetCurrentGroup(), "blowfish", true);
 }
 
 void PlayerCar::loadYellowCar()
@@ -102,9 +102,6 @@ void PlayerCar::unloadCar()
 
 void PlayerCar::draw()
 {
-	//spriteSheet->Render(CIwFVec2(x,y),1.0f,0.0f,0.0f);
-	//skeleton->draw();
-
 	//spriteSheet->Render(CIwFVec2(x,y),1.0f,0.0f,0.0f);
 	IwGxFlush();
 	skeleton->draw();
@@ -129,11 +126,10 @@ void PlayerCar::updateSpine()
   skeleton->updateWorldTransform();
 }
 
-void PlayerCar::update()
+void PlayerCar::update(float speed)
 {
 	updateSpine();
-	spriteSheet->Step();
-	
+	//spriteSheet->Step();
 	if (jumping)
 	{
 		if (y + jumpVelocity < groundY)
@@ -148,7 +144,7 @@ void PlayerCar::update()
 	}
 	else
 	{
-		jumpVelocity = -30;
+		jumpVelocity = -2*speed;//-30;
 		jumping = true;
 	}
 

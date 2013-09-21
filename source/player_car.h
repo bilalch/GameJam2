@@ -23,7 +23,7 @@ public:
 	PlayerCar(int number);
 	~PlayerCar();
 
-	void update();
+	void update(float speed);
 	void draw();
 
 	void initializeCar();

@@ -78,7 +78,7 @@ void ScrollingBackground::initializeLaneBounds()
 	}
 }
 
-void ScrollingBackground::Update(float speed)
+void ScrollingBackground::Update()
 {
 	//ScrollTile();
 	if ( OBSERVER->getAccelerometerX() > 30 ) {
@@ -90,13 +90,12 @@ void ScrollingBackground::Update(float speed)
 			m_speed--;
 		m_worldAngle = -45;
 	}
-	speed = m_speed;
 
-	path1.m_x1 = path1.m_x1 - speed*multiplier;
-	path1.m_x2 = path1.m_x2 - speed*multiplier;
+	path1.m_x1 = path1.m_x1 - m_speed*multiplier;
+	path1.m_x2 = path1.m_x2 - m_speed*multiplier;
 
-	path2.m_x1 = path2.m_x1 - speed*multiplier;
-	path2.m_x2 = path2.m_x2 - speed*multiplier;
+	path2.m_x1 = path2.m_x1 - m_speed*multiplier;
+	path2.m_x2 = path2.m_x2 - m_speed*multiplier;
 
 	//if ( image1.m_x1 < -(OBSERVER -> getDeviceWidth()) ) {
 	if ( path1.m_x2 < 0 ) {
@@ -110,11 +109,11 @@ void ScrollingBackground::Update(float speed)
 		path2.m_x2 = path2.m_x1 + path2.m_width;
 	}
 
-	image1.m_x1 = image1.m_x1 - speed*multiplier;
-	image1.m_x2 = image1.m_x2 - speed*multiplier;
+	image1.m_x1 = image1.m_x1 - m_speed*multiplier;
+	image1.m_x2 = image1.m_x2 - m_speed*multiplier;
 
-	image2.m_x1 = image2.m_x1 - speed*multiplier;
-	image2.m_x2 = image2.m_x2 - speed*multiplier;
+	image2.m_x1 = image2.m_x1 - m_speed*multiplier;
+	image2.m_x2 = image2.m_x2 - m_speed*multiplier;
 
 	//if ( image1.m_x1 < -(OBSERVER -> getDeviceWidth()) ) {
 	if ( image1.m_x2 < 0 ) {
@@ -185,4 +184,9 @@ void ScrollingBackground::Draw()
 
 		m_x1+=tileWidth*scale;
 	}*/
+}
+
+float ScrollingBackground::getSpeed()
+{
+	return m_speed;
 }
