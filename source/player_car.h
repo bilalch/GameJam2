@@ -67,9 +67,17 @@ private:
 	int damage;
 	float multiplier;
 
+	//Jumping Variabes
 	bool isJumping, jumpingUp;
 	float x, y, initY, jumpMaxY;
 	int jumpCount;
+
+	float gravity;
+	bool jumping;
+	float jumpVelocity;
+	float groundY;
+	//Jumping variables end
+
 
 	void initializeSpine();
 	void loadSpine();

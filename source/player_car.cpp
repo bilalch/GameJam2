@@ -101,8 +101,8 @@ void PlayerCar::unloadCar()
 
 void PlayerCar::draw()
 {
-	//spriteSheet->Render(CIwFVec2(x,y),1.0f,0.0f,0.0f);
-	skeleton->draw();
+	spriteSheet->Render(CIwFVec2(x,y),1.0f,0.0f,0.0f);
+	//skeleton->draw();
 }
 
 void PlayerCar::updateSpine()
@@ -120,7 +120,7 @@ void PlayerCar::update()
 {
 	updateSpine();
 	spriteSheet->Step();
-	jump();
+	//jump();
 	if (isJumping)
 	{
 		if (y > jumpMaxY && jumpingUp)
@@ -169,6 +169,24 @@ void PlayerCar::update()
 		}
 	}
 
+	if (jumping)
+	{
+		if (y + jumpVelocity < groundY)
+		{
+			y = y + jumpVelocity;
+			jumpVelocity = jumpVelocity + gravity;
+		}
+		else
+		{
+			jumping = false;
+		}
+	}
+	else
+	{
+		jumpVelocity = -30;
+		jumping = true;
+	}
+
 }
 
 void PlayerCar::initializeCar()
@@ -188,6 +206,11 @@ void PlayerCar::initializeCar()
 	initY = y;
 	jumpMaxY = initY - (200.0/640)*OBSERVER->getDeviceHeight();
 	jumpCount = 3;
+
+	gravity = 2;
+	jumping = false;
+	jumpVelocity = -30;
+	groundY = initY;
 }
 
 void PlayerCar::verifySpeedBounds()
