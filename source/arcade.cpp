@@ -19,7 +19,7 @@ void Arcade::loadImages()
 {
 	imagesGroup = IwGetResManager() -> LoadGroup ("640x960/Arcade/_arcade.group");
 	
-	m_scrolling_image = Iw2DCreateImageResource("highway");
+	m_scrolling_image = Iw2DCreateImageResource("bg");
 
 	m_speed_normal_image = Iw2DCreateImageResource("speed_normal");
 	m_speed_pressed_image = Iw2DCreateImageResource("speed_pressed");
@@ -137,7 +137,7 @@ bool Arcade::update(sliderStruct& m_slider)
 
 int Arcade::click(float x, float y)
 {
-
+	m_scrolling_background->click(x,y);
 	return 0;
 }
 

@@ -62,7 +62,7 @@ void Menu::initializeButtons()
 
 void Menu::loadMenuImages()
 {
-	imagesGroup = IwGetResManager()->LoadGroup("320x480/Menu/_menu.group");
+	imagesGroup = IwGetResManager()->LoadGroup("640x960/Menu/_menu.group");
 
 	m_storyButtonImage = Iw2DCreateImageResource("button_story");
 	m_raceButtonImage = Iw2DCreateImageResource("button_race");

@@ -98,7 +98,9 @@ void MyGame::Clicker(s3ePointerTouchEvent* event)
 			parseGameMenuClick(m_menu->click(event->m_x,event->m_y));
 //			m_menu -> click (event -> m_x, event -> m_y);
 			break;
-
+		case GAME_ARCADE:
+			m_arcade->click(event->m_x,event->m_y);
+			break;
 
 		default:
 			break;
@@ -118,6 +120,10 @@ void MyGame::Clicker(float x, float y)
 	{
 	case GAME_MENU:
 		parseGameMenuClick(m_menu->click(x,y));
+		break;
+
+	case GAME_ARCADE:
+		m_arcade->click(x,y);
 		break;
 
 	default:
