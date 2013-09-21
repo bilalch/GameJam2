@@ -110,6 +110,9 @@ void PlayerCar::draw()
 	IwGxFlush();
 	skeleton->draw();
 
+<<<<<<< HEAD
+>>>>>>> c440998b774ae36db3317371f4d993c1381d7292
+=======
 >>>>>>> c440998b774ae36db3317371f4d993c1381d7292
 }
 
