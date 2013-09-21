@@ -1,0 +1,13 @@
+{
+"bones":{
+	"left-foot":{"rotate":[{"time":0,"angle":0},{"time":0.0833,"angle":-332.38},{"time":0.1666,"angle":0},{"time":0.25,"angle":-27.23},{"time":0.3333,"angle":0},{"time":0.4166,"angle":-332.38},{"time":0.5,"angle":0},{"time":0.5833,"angle":-27.23},{"time":0.6666,"angle":0}]},"right-foot":{"rotate":[{"time":0,"angle":0},{"time":0.0833,"angle":329.82},{"time":0.1666,"angle":0},{"time":0.25,"angle":31.71},{"time":0.3333,"angle":0},{"time":0.4166,"angle":329.82},{"time":0.5,"angle":0},{"time":0.5833,"angle":31.71},{"time":0.6666,"angle":0}]},"torso":{"rotate":[{"time":0,"angle":0},{"time":0.3333,"angle":-3.59},{"time":0.6666,"angle":0}]},"hair":{"rotate":[{"time":0,"angle":0},{"time":0.1666,"angle":11.99},{"time":0.3333,"angle":0},{"time":0.5,"angle":-16.14},{"time":0.6666,"angle":0}]},"wings":{"rotate":[{"time":0,"angle":0},{"time":0.1666,"angle":-20.68},{"time":0.3333,"angle":0},{"time":0.5,"angle":-20.68},{"time":0.6666,"angle":0.34}]}},
+	
+	"slots":{"beak":{"attachment":[{"time":0.3333,"name":"beak-open"},{"time":0.6666,"name":"beak-closed"}]},
+	"eyes":{
+		"attachment":[
+		{"time":0.3333,"name":"eyes-closed"},
+		{"time":0.4,"name":"eyes-open"}
+		]
+	}
+}
+}

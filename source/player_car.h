@@ -84,6 +84,13 @@ private:
 	Animation *animation;
 	float animationTime;
 	uint64 lastFrameTime;
+
+	Atlas *atlas1;
+	SkeletonData *skeletonData1;
+	Skeleton *skeleton1;
+	Animation *animation1;
+	float animationTime1;
+	uint64 lastFrameTime1;
 };
 
 #endif

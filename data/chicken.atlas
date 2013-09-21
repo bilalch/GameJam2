@@ -1,0 +1,68 @@
+
+chicken.png
+format: RGBA8888
+filter: Nearest,Nearest
+repeat: none
+beak-closed
+  rotate: true
+  xy: 2, 2
+  size: 60, 100
+  orig: 60, 100
+  offset: 0, 0
+  index: -1
+beak-open
+  rotate: false
+  xy: 240, 152
+  size: 63, 102
+  orig: 63, 102
+  offset: 0, 0
+  index: -1
+body
+  rotate: false
+  xy: 2, 64
+  size: 168, 190
+  orig: 168, 190
+  offset: 0, 0
+  index: -1
+eyes-closed
+  rotate: false
+  xy: 305, 184
+  size: 23, 33
+  orig: 24, 33
+  offset: 0, 0
+  index: -1
+eyes-open
+  rotate: true
+  xy: 104, 2
+  size: 24, 33
+  orig: 24, 33
+  offset: 0, 0
+  index: -1
+foot
+  rotate: true
+  xy: 172, 69
+  size: 76, 45
+  orig: 76, 45
+  offset: 0, 0
+  index: -1
+hairs
+  rotate: false
+  xy: 104, 28
+  size: 52, 34
+  orig: 52, 34
+  offset: 0, 0
+  index: -1
+tail
+  rotate: false
+  xy: 305, 219
+  size: 28, 35
+  orig: 28, 35
+  offset: 0, 0
+  index: -1
+wing
+  rotate: false
+  xy: 172, 147
+  size: 66, 107
+  orig: 66, 107
+  offset: 0, 0
+  index: -1
