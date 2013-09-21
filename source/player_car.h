@@ -47,8 +47,6 @@ public:
 	void goRight(float _value = 1) { m_x1 = m_x1 + _value; m_x2 = m_x2 + _value; }
 	void goLeft(float _value = 1) { m_x1 = m_x1 - _value; m_x2 = m_x2 - _value; }
 
-	void jump();
-
 private:
 	
 	float car_speed;
@@ -68,10 +66,7 @@ private:
 	float multiplier;
 
 	//Jumping Variabes
-	bool isJumping, jumpingUp;
-	float x, y, initY, jumpMaxY;
-	int jumpCount;
-
+	float x, y, initY;
 	float gravity;
 	bool jumping;
 	float jumpVelocity;

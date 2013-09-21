@@ -62,8 +62,8 @@ void PlayerCar::loadSpine()
     skeleton->flipX = false;
     skeleton->flipY = false;
     skeleton->setToBindPose();
-    skeleton->getRootBone()->x = 200;
-    skeleton->getRootBone()->y = 500;
+	skeleton->getRootBone()->x = x;
+    skeleton->getRootBone()->y = y;
     skeleton->updateWorldTransform();
   } catch (exception &ex) {
     cout << ex.what() << endl << flush;
@@ -102,7 +102,7 @@ void PlayerCar::unloadCar()
 
 void PlayerCar::draw()
 {
-	spriteSheet->Render(CIwFVec2(x,y),1.0f,0.0f,0.0f);
+	//spriteSheet->Render(CIwFVec2(x,y),1.0f,0.0f,0.0f);
 	//skeleton->draw();
 
 	//spriteSheet->Render(CIwFVec2(x,y),1.0f,0.0f,0.0f);
@@ -114,10 +114,18 @@ void PlayerCar::updateSpine()
 {
   float dt = (float)(s3eTimerGetMs() - lastFrameTime);
   lastFrameTime = s3eTimerGetMs();
+  
+  if (jumping){
+	animationTime += 0;        // ms to s
+  } else {
+	animationTime += dt / 500.f;        // ms to s
+  }
 
-  animationTime += dt / 500.f;        // ms to s
-
+  skeleton->getRootBone()->x = x;
+  skeleton->getRootBone()->y = y;
+  
   animation->apply(skeleton, animationTime, true);
+  
   skeleton->updateWorldTransform();
 }
 
@@ -125,55 +133,7 @@ void PlayerCar::update()
 {
 	updateSpine();
 	spriteSheet->Step();
-	//jump();
-	if (isJumping)
-	{
-		if (y > jumpMaxY && jumpingUp)
-		{
-			/*if (y > jumpMaxY + 3*((initY - jumpMaxY)/4))
-			{
-				drawImg = jumpImg2;
-			}
-			else if (y > jumpMaxY + 2*((initY - jumpMaxY)/4))
-			{
-				drawImg = jumpImg2;
-			}
-			else if (y > jumpMaxY + ((initY - jumpMaxY)/4))
-			{
-				drawImg = jumpImg3;
-			}*/
-			y -= (initY - jumpMaxY)/(jumpCount*3);
-			if (jumpCount < 9)
-				jumpCount++;
-		}
-		else if (y < initY)
-		{
-			/*if (y < jumpMaxY + ((initY - jumpMaxY)/4))
-			{
-				drawImg = jumpImg3;
-			}
-			else if (y < jumpMaxY + 2*((initY - jumpMaxY)/4))
-			{
-				drawImg = jumpImg3;
-			}
-			else if (y > jumpMaxY + 3*((initY - jumpMaxY)/4))
-			{
-				drawImg = jumpImg3;
-			}*/
-			y += (initY - jumpMaxY)/(jumpCount*3);
-			if (jumpCount > 3)
-			jumpCount--;
-			jumpingUp = false;
-		}
-		else
-		{
-			y = initY;
-			isJumping = false;
-			jumpingUp = false;
-			jumpCount = 3;
-		}
-	}
-
+	
 	if (jumping)
 	{
 		if (y + jumpVelocity < groundY)
@@ -196,22 +156,10 @@ void PlayerCar::update()
 
 void PlayerCar::initializeCar()
 {
-	/*m_x1 = (OBSERVER->getDeviceWidth() - image1->GetWidth()*multiplier)/2;
-	m_y1 = OBSERVER->getDeviceHeight() - image1->GetHeight()*multiplier;
-	m_width = image1->GetWidth()*multiplier;
-	m_height = image1->GetHeight()*multiplier;
-	m_x2 = m_x1 + m_width;
-	m_y2 = m_y1 + m_height;*/
-
-	isJumping = false;
-	jumpingUp = false;
-
-	x = OBSERVER->getDeviceWidth()*0.25;
-	y = OBSERVER->getDeviceHeight()*0.66;
+	x = 200;
+	y = 500;
 	initY = y;
-	jumpMaxY = initY - (200.0/640)*OBSERVER->getDeviceHeight();
-	jumpCount = 3;
-
+	
 	gravity = 2;
 	jumping = false;
 	jumpVelocity = -30;
@@ -226,14 +174,5 @@ void PlayerCar::verifySpeedBounds()
 	} else if ( car_speed > 40 ) {
 		
 		car_speed = 40;
-	}
-}
-
-void PlayerCar::jump()
-{
-	if (!isJumping)
-	{
-		isJumping = true;
-		jumpingUp = true;
 	}
 }
