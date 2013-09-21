@@ -45,6 +45,13 @@ foot
   orig: 76, 45
   offset: 0, 0
   index: -1
+foot-right
+  rotate: true
+  xy: 172, 69
+  size: 76, 45
+  orig: 76, 45
+  offset: 0, 0
+  index: -1
 hairs
   rotate: false
   xy: 104, 28

@@ -94,7 +94,7 @@ void PlayerCar::loadSpine()
     skeleton1->flipY = false;
     skeleton1->setToBindPose();
 	skeleton1->getRootBone()->x = 100;
-    skeleton1->getRootBone()->y = 200;
+    skeleton1->getRootBone()->y = 300;
     skeleton1->updateWorldTransform();
   } catch (exception &ex) {
     cout << ex.what() << endl << flush;
