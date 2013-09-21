@@ -102,24 +102,12 @@ void PlayerCar::unloadCar()
 
 void PlayerCar::draw()
 {
-<<<<<<< HEAD
 	spriteSheet->Render(CIwFVec2(x,y),1.0f,0.0f,0.0f);
 	//skeleton->draw();
-=======
+
 	//spriteSheet->Render(CIwFVec2(x,y),1.0f,0.0f,0.0f);
 	IwGxFlush();
 	skeleton->draw();
-
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
->>>>>>> c440998b774ae36db3317371f4d993c1381d7292
-=======
->>>>>>> c440998b774ae36db3317371f4d993c1381d7292
-=======
->>>>>>> c440998b774ae36db3317371f4d993c1381d7292
-=======
->>>>>>> c440998b774ae36db3317371f4d993c1381d7292
 }
 
 void PlayerCar::updateSpine()

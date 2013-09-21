@@ -49,6 +49,8 @@ x64/
 build/
 [Bb]in/
 [Oo]bj/
+build_game_vc11/
+data-ram/
 
 # MSTest test Results
 [Tt]est[Rr]esult*/
