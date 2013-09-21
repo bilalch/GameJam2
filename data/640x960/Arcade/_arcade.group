@@ -1,12 +1,7 @@
-CIwResGroup{	name "_arcade"		
-"640x960/Arcade/blowfish.png"				{ mipMapping false }		
-"640x960/Arcade/speed_normal.png"			{ mipMapping false }	
-"640x960/Arcade/speed_pressed.png"			{ mipMapping false }		
-"640x960/Arcade/left.png"					{ mipMapping false }	
-"640x960/Arcade/right.png"					{ mipMapping false }
+CIwResGroup{	name "_arcade"
 
 "640x960/Arcade/tile1.png"					{ mipMapping false }
 "640x960/Arcade/tile2.png"					{ mipMapping false }
-"640x960/Arcade/tile3.png"					{ mipMapping false }"640x960/Arcade/menu.png"					{ mipMapping false }"640x960/Arcade/bg.png"						{ mipMapping false }"640x960/Arcade/path.png"					{ mipMapping false }
+"640x960/Arcade/tile3.png"					{ mipMapping false }"640x960/Arcade/menu.png"					{ mipMapping false }"640x960/Arcade/bg.png"						{ mipMapping false }"640x960/Arcade/path.png"					{ mipMapping false }"640x960/Arcade/cart.png"					{ mipMapping false }
 
 }

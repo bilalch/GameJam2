@@ -22,8 +22,10 @@ class ScrollingBackground
 public:
 	ScrollingBackground(CIw2DImage* image, int lanes);
 	~ScrollingBackground();
-	void Update(float speed);
+	void Update();
 	void Draw();
+
+	float getSpeed();
 
 	float getMultiplier() { return multiplier; }
 	float getRightBound() { return m_right_bound; }
