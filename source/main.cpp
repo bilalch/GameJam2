@@ -33,12 +33,6 @@ int main ()
 
 		m_game->Draw();
 
-//		if (m_game->getGameState() == GAME_PLAY)
-//			AdTest_Show(false);
-//		else
-//			AdTest_Show(true);
-
-//		AdTest_Update();
 		Iw2DSetColour(0xffffffff);
 		Iw2DSetTransformMatrix(CIwFMat2D::g_Identity);
 

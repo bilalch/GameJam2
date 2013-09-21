@@ -50,6 +50,7 @@ void PlayerCar::loadSpine()
     atlas = new Atlas(atlasFile);
 
     SkeletonJson skeletonJson(atlas);
+	skeletonJson.scale = 0.5;
 
     ifstream skeletonFile("spineboy-skeleton.json");
     skeletonData = skeletonJson.readSkeletonData(skeletonFile);
@@ -62,7 +63,7 @@ void PlayerCar::loadSpine()
     skeleton->flipY = false;
     skeleton->setToBindPose();
     skeleton->getRootBone()->x = 200;
-    skeleton->getRootBone()->y = 420;
+    skeleton->getRootBone()->y = 600;
     skeleton->updateWorldTransform();
   } catch (exception &ex) {
     cout << ex.what() << endl << flush;
