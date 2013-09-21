@@ -51,6 +51,8 @@ private:
 	CIw2DImage* m_car2_image;
 	CIw2DImage* m_car3_image;
 
+	CIw2DImage* m_cart_image;
+
 	AwmButton* m_speed_button;
 	AwmButton* m_right_button;
 	AwmButton* m_left_button;

@@ -60,7 +60,7 @@ private:
 
 	CIwResGroup* imagesGroup;
 
-	Iw2DSprite* spriteSheet;
+	///Iw2DSprite* spriteSheet;
 
 	int damage;
 	float multiplier;

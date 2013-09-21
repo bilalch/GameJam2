@@ -95,9 +95,9 @@ void PlayerCar::loadGreyCar()
 
 void PlayerCar::unloadCar()
 {
-	if ( spriteSheet )
+	/*if ( spriteSheet )
 		delete spriteSheet;
-	spriteSheet = NULL;
+	spriteSheet = NULL;*/
 }
 
 void PlayerCar::draw()

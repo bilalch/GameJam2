@@ -30,6 +30,8 @@ void Arcade::loadImages()
 	m_car1_image = Iw2DCreateImageResource("black");
 	m_car2_image = Iw2DCreateImageResource("blue");
 	m_car3_image = Iw2DCreateImageResource("green");
+
+	m_cart_image = Iw2DCreateImageResource("cart");
 }
 
 void Arcade::unloadImages()
@@ -54,19 +56,23 @@ void Arcade::unloadImages()
 		delete m_right_image;
 	m_right_image = NULL;
 
+	if ( m_cart_image )
+		delete m_cart_image;
+	m_cart_image = NULL;
+
 	IwGetResManager() -> DestroyGroup(imagesGroup);
 }
 
 void Arcade::initializeButtons()
 {
-	m_speed_button = new AwmButton(m_speed_normal_image,m_speed_pressed_image,OBSERVER->getDeviceWidth()*0.05,OBSERVER->getDeviceHeight() - m_speed_normal_image->GetHeight() - OBSERVER->getDeviceWidth()*0.05);
+	/*m_speed_button = new AwmButton(m_speed_normal_image,m_speed_pressed_image,OBSERVER->getDeviceWidth()*0.05,OBSERVER->getDeviceHeight() - m_speed_normal_image->GetHeight() - OBSERVER->getDeviceWidth()*0.05);
 	m_right_button  = new AwmButton(OBSERVER->getDeviceWidth() - m_right_image->GetWidth() - OBSERVER->getDeviceWidth()*0.05,OBSERVER->getDeviceHeight() - m_right_image->GetHeight() - OBSERVER->getDeviceWidth()*0.05,m_right_image);
-	m_left_button  = new AwmButton(m_right_button->getX1() - m_left_image->GetWidth() - OBSERVER->getDeviceWidth()*0.05,OBSERVER->getDeviceHeight() - m_left_image->GetHeight() - OBSERVER->getDeviceWidth()*0.05,m_left_image);
+	m_left_button  = new AwmButton(m_right_button->getX1() - m_left_image->GetWidth() - OBSERVER->getDeviceWidth()*0.05,OBSERVER->getDeviceHeight() - m_left_image->GetHeight() - OBSERVER->getDeviceWidth()*0.05,m_left_image);*/
 }
 
 void Arcade::destroyButtons()
 {
-	if (m_speed_button)
+	/*if (m_speed_button)
 		delete m_speed_button;
 	m_speed_button = NULL;
 
@@ -76,7 +82,7 @@ void Arcade::destroyButtons()
 
 	if (m_right_button)
 		delete m_right_button;
-	m_right_button = NULL;
+	m_right_button = NULL;*/
 }
 
 void Arcade::draw()
@@ -99,29 +105,29 @@ bool Arcade::update(sliderStruct& m_slider)
 {
 	//spawnOpponents();
 
-	m_speed_button -> Update();
+	/*m_speed_button -> Update();
 	m_right_button -> Update();
-	m_left_button -> Update();
+	m_left_button -> Update();*/
 	
 	m_scrolling_background -> Update();
 
 	m_playerCar -> update(m_scrolling_background->getSpeed());
 	
-	if ( m_speed_button -> isPressed() ) {
+	/*if ( m_speed_button -> isPressed() ) {
 		
 		m_playerCar -> accelerate() ;
 	} else {
 
 		m_playerCar -> decelerate() ;
-	}
+	}*/
 
-	if ( m_right_button -> isPressed() && m_playerCar -> getX2() < m_scrolling_background -> getRightBound() ) {
+	/*if ( m_right_button -> isPressed() && m_playerCar -> getX2() < m_scrolling_background -> getRightBound() ) {
 		
 		m_playerCar -> goRight();
 	} else if ( m_left_button -> isPressed() && m_playerCar -> getX1() > m_scrolling_background -> getLeftBound() ) {
 		
 		m_playerCar -> goLeft();
-	}
+	}*/
 
 	for ( int i = 0; i < m_opponents.GetSize(); i++ ) {
 		
@@ -218,3 +224,8 @@ void Arcade::opponentsCollisionHandling()
 		}
 	}
 }
+
+//void Arcade::spawnCart()
+//{
+//
+//}
