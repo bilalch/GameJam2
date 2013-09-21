@@ -30,6 +30,20 @@ ScrollingBackground::ScrollingBackground(CIw2DImage* image, int lanes)
 	path2.m_x2 = path2.m_x1 + path2.m_width;
 	path2.m_y2 = path2.m_y1 + path2.m_height;
 
+	image1.m_width = m_image->GetWidth();
+	image1.m_height = m_image->GetHeight();
+	image1.m_x1 = 0;
+	image1.m_y1 = OBSERVER->getDeviceHeight() - image1.m_height - path1.m_height;
+	image1.m_x2 = image1.m_x1 + image1.m_width;
+	image1.m_y2 = image1.m_y1 + image1.m_height;
+
+	image2.m_width = m_image->GetWidth();
+	image2.m_height = m_image->GetHeight();
+	image2.m_x1 = image1.m_x2;
+	image2.m_y1 = OBSERVER->getDeviceHeight() - image2.m_height - path1.m_height;
+	image2.m_x2 = image2.m_x1 + image2.m_width;
+	image2.m_y2 = image2.m_y1 + image2.m_height;
+
 	initializeLaneBounds();
 
 	m_speed = 10;
@@ -95,6 +109,24 @@ void ScrollingBackground::Update(float speed)
 		path2.m_x1 = path1.m_x1 + path2.m_width;
 		path2.m_x2 = path2.m_x1 + path2.m_width;
 	}
+
+	image1.m_x1 = image1.m_x1 - speed*multiplier;
+	image1.m_x2 = image1.m_x2 - speed*multiplier;
+
+	image2.m_x1 = image2.m_x1 - speed*multiplier;
+	image2.m_x2 = image2.m_x2 - speed*multiplier;
+
+	//if ( image1.m_x1 < -(OBSERVER -> getDeviceWidth()) ) {
+	if ( image1.m_x2 < 0 ) {
+
+		image1.m_x1 = image2.m_x1 + image1.m_width;
+		image1.m_x2 = image1.m_x1 + image1.m_width;
+	//} else if ( image2.m_x1 < -(OBSERVER -> getDeviceWidth()) ) {
+		} else if ( image2.m_x2 < 0 ) {
+		
+		image2.m_x1 = image1.m_x1 + image2.m_width;
+		image2.m_x2 = image2.m_x1 + image2.m_width;
+	}
 }
 
 void ScrollingBackground::ScrollTile()
@@ -122,6 +154,8 @@ void ScrollingBackground::Draw()
 	Iw2DDrawImage(m_bg,CIwFVec2(0,0),CIwFVec2(OBSERVER->getDeviceWidth(),OBSERVER->getDeviceHeight()));
 	Iw2DDrawImage(m_path,CIwFVec2(path1.m_x1,path1.m_y1),CIwFVec2(path1.m_width,path1.m_height));
 	Iw2DDrawImage(m_path,CIwFVec2(path2.m_x1,path2.m_y1),CIwFVec2(path2.m_width,path2.m_height));
+	Iw2DDrawImage(m_image,CIwFVec2(image1.m_x1,image1.m_y1),CIwFVec2(image1.m_width,image1.m_height));
+	Iw2DDrawImage(m_image,CIwFVec2(image2.m_x1,image2.m_y1),CIwFVec2(image2.m_width,image2.m_height));
 /*	int m_x1 = centerTile_x1;
 
 	for ( int i = centerTile; i > centerTile - 20; i--  ) {
