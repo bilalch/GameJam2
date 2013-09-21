@@ -29,7 +29,7 @@ void Skeleton::draw () const {
   CIwSVec2 *verts = IW_GX_ALLOC(CIwSVec2, num_vertices);
   CIwColour *colors = IW_GX_ALLOC(CIwColour, num_vertices);
 
-  IwTrace(XX, ("%d %d %d", vertexArray.size(), vertexUVArray.size(), vertexColorArray.size()));
+  //IwTrace(XX, ("%d %d %d", vertexArray.size(), vertexUVArray.size(), vertexColorArray.size()));
 
   for (int i = 0; i < num_vertices; ++i)
   {

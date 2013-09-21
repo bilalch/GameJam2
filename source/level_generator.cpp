@@ -15,10 +15,14 @@ void LevelGenerator::Generate()
 {
 	levelArray = new int[tilesToGenerate];
 
-	for (int i = 0; i < tilesToGenerate; i++) {
+	for (int i = 0 ; i < 50; i++) {
+		levelArray[i] = 1;
+	}
+
+	for (int j = 50; j < tilesToGenerate; j++) {
 		
 		int _number = rand()%3 + 1;
-		levelArray[i] = _number;
+		levelArray[j] = _number;
 	}
 }
 

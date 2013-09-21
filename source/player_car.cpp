@@ -63,7 +63,7 @@ void PlayerCar::loadSpine()
     skeleton->flipY = false;
     skeleton->setToBindPose();
     skeleton->getRootBone()->x = 200;
-    skeleton->getRootBone()->y = 600;
+    skeleton->getRootBone()->y = 500;
     skeleton->updateWorldTransform();
   } catch (exception &ex) {
     cout << ex.what() << endl << flush;
@@ -103,7 +103,9 @@ void PlayerCar::unloadCar()
 void PlayerCar::draw()
 {
 	//spriteSheet->Render(CIwFVec2(x,y),1.0f,0.0f,0.0f);
+	IwGxFlush();
 	skeleton->draw();
+
 }
 
 void PlayerCar::updateSpine()
@@ -111,7 +113,7 @@ void PlayerCar::updateSpine()
   float dt = (float)(s3eTimerGetMs() - lastFrameTime);
   lastFrameTime = s3eTimerGetMs();
 
-  animationTime += dt / 1000.f;        // ms to s
+  animationTime += dt / 500.f;        // ms to s
 
   animation->apply(skeleton, animationTime, true);
   skeleton->updateWorldTransform();

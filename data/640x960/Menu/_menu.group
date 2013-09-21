@@ -2,10 +2,13 @@ CIwResGroup
 {
 	name "_menu"
 	
-	"Menu/640x960/menu.png"					{ mipMapping false }
-	"Menu/640x960/button_highscore.png"		{ mipMapping false }
-	"Menu/640x960/button_howto.png"			{ mipMapping false }
-	"Menu/640x960/button_race.png"			{ mipMapping false }
-	"Menu/640x960/button_story.png"			{ mipMapping false }
-	"Menu/640x960/button_aboutus.png"		{ mipMapping false }
+	"640x960/Menu/menu.png"					{ mipMapping false }
+	"640x960/Menu/button_highscore.png"		{ mipMapping false }
+	"640x960/Menu/button_howto.png"			{ mipMapping false }
+	"640x960/Menu/button_race.png"			{ mipMapping false }
+	"640x960/Menu/button_story.png"			{ mipMapping false }
+	"640x960/Menu/button_aboutus.png"		{ mipMapping false }
+	
+	"640x960/Menu/aboutUs.png"				{ mipMapping false }
+	"640x960/Menu/howTo.png"				{ mipMapping false }
 }

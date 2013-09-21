@@ -36,6 +36,7 @@ int main ()
 		Iw2DSetColour(0xffffffff);
 		Iw2DSetTransformMatrix(CIwFMat2D::g_Identity);
 
+
 		Iw2DSurfaceShow();
 
 		fpsSetter = s3eTimerGetMs() - fpsSetter;

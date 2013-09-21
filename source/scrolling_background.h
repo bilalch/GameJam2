@@ -29,6 +29,8 @@ public:
 	float getRightBound() { return m_right_bound; }
 	float getLeftBound() { return m_left_bound; }
 
+	int click(float x, float y);
+
 private:
 	void initializeLaneBounds();
 
@@ -42,6 +44,13 @@ private:
 	CIw2DImage* m_tile2;
 	CIw2DImage* m_tile3;
 
+	CIw2DImage* m_path;
+
+	basic_Coordinates path1;
+	basic_Coordinates path2;
+
+	CIw2DImage* m_bg;
+
 	int m_lanes;
 	float m_left_bound;
 	float m_right_bound;
@@ -51,12 +60,19 @@ private:
 	int m_worldAngle;
 	int leftMostTile;
 
+	int centerTile;
+	float centerTile_x1;
+
 	int leftMostTile_x1;
-	int tileWidth;
+	float tileWidth;
+
+	int tileCount;
 
 	LevelGenerator* m_levelGenerator;
 
 	void ScrollTile();
+
+	float scale;
 };
 
 #endif
