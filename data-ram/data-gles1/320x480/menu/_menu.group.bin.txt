@@ -1,0 +1,29 @@
+ResGroupResources:
+	CIwTexture (0x3521f539)
+		"menu" (0x7c9a911a)
+		Size: 460836
+	CIwTexture (0x3521f539)
+		"button_highscore" (0xe692c7c)
+		Size: 44980
+	CIwTexture (0x3521f539)
+		"button_howto" (0xf9caa11)
+		Size: 34804
+	CIwTexture (0x3521f539)
+		"button_race" (0x10023afb)
+		Size: 23992
+	CIwTexture (0x3521f539)
+		"button_story" (0x10665341)
+		Size: 30140
+	CIwTexture (0x3521f539)
+		"button_aboutus" (0x2fb4a603)
+		Size: 14436
+	CIwTexture (0x3521f539)
+		"aboutUs" (0x1b44f568)
+		Size: 375756
+	CIwTexture (0x3521f539)
+		"howTo" (0xf97dc36)
+		Size: 375756
+	ResList 'CIwTexture' pos:36 size:1360710
+
+ResGroupResources: Wrote 1360714 bytes to CIwResGroup "_menu"
+

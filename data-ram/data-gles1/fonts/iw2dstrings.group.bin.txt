@@ -1,0 +1,14 @@
+ResGroupResources:
+	CIwGxFont (0xa68776be)
+		"arial14" (0x401fc9d3)
+		Size: 18533
+	CIwGxFont (0xa68776be)
+		"MrBubbleFont10" (0x73cd0268)
+		Size: 18053
+	CIwGxFont (0xa68776be)
+		"MrBubbleFont12" (0x73cd026a)
+		Size: 34437
+	ResList 'CIwGxFont' pos:42 size:71033
+
+ResGroupResources: Wrote 71037 bytes to CIwResGroup "Iw2DStrings"
+

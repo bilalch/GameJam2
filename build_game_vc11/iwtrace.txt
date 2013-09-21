@@ -1,0 +1,666 @@
+-- START TRACE TO FILE --
+tracing to: ''
+MarmaladeSDK v6.3.3BETA [349293] (S3E Loader v4.36.0)
+Copyright (C) 2001-2011 Ideaworks3D Ltd
+System Info:
+ OS           : WINDOWS (3)
+ OS Version   : Windows 6.2 (6.2)
+ Device ID    : Windows Simulator (0x1)
+ Device Class : WINDOWS_GENERIC (3000)
+ Phone Number : 0044123456789
+ Unique ID    : SIMULATOR_ID
+ Device Name  : My Computer
+ Memory       : 1048576KiB
+21/09/13 12:19:39.622: [0xf5c] DEVICE: Initialising FIBRE
+21/09/13 12:19:39.625: [0xf5c] DEVICE: Initialising THREAD
+21/09/13 12:19:39.628: [0xf5c] THREAD: s3eThreadCreateMain
+21/09/13 12:19:39.631: [0xfa0] DEVICE: Initialising SURFACE
+21/09/13 12:19:39.634: [0xfa0] SURFACE: s3eSurfaceSetup: PixelType=RGB565, pitch=0, ptr=0x00000000, blit=0
+21/09/13 12:19:39.636: [0xfa0] SURFACE: s3eSurfaceSetup: matches native type
+21/09/13 12:19:39.639: [0xfa0] SURFACE: s3eSurfaceSetup: no user surface needed
+21/09/13 12:19:39.641: [0xfa0] SURFACE: done s3eSurfaceInit: 800x600 p:1600 (800x600 p:1600) o:0
+21/09/13 12:19:39.644: [0xfa0] DEVICE: Initialising EXT
+21/09/13 12:19:39.646: [0xfa0] EXT: registering extension: s3eLibrary [0xe6dd6ce5]
+21/09/13 12:19:39.649: [0xfa0] EXT: registering extension: s3eExtLoadLibaray [0xf23d6d85]
+21/09/13 12:19:39.651: [0xfa0] EXT: registering extension: s3eCamera [0xa3e23039]
+21/09/13 12:19:39.654: [0xfa0] EXT: registering extension: s3eWindow [0xd31aa8a8]
+21/09/13 12:19:39.657: [0xfa0] EXT: registering extension: s3eVFS [0x17f48c9f]
+21/09/13 12:19:39.659: [0xfa0] EXT: registering extension: s3eContacts [0x5e39d2af]
+21/09/13 12:19:39.662: [0xfa0] EXT: registering extension: s3eSoundRecord [0x579dbf78]
+21/09/13 12:19:39.664: [0xfa0] EXT: registering extension: s3eTouchpad [0x1dbd7ce8]
+21/09/13 12:19:39.667: [0xfa0] EXT: registering extension: s3eDebugHeap [0xc667a795]
+21/09/13 12:19:39.669: [0xfa0] EXT: registering extension: s3eExtDebugHeap [0xff96de46]
+21/09/13 12:19:39.672: [0xfa0] EXT: registering extension: s3eClipboard [0xd68f3420]
+21/09/13 12:19:39.675: [0xfa0] EXT: registering extension: s3eOSExec [0xc121bcf7]
+21/09/13 12:19:39.679: [0xfa0] EXT: registering extension: s3eExtOSExec [0x20380948]
+21/09/13 12:19:39.683: [0xfa0] EXT: registering extension: s3eEval [0x167d1038]
+21/09/13 12:19:39.686: [0xfa0] EXT: registering extension: s3eExtEval [0xf0421449]
+21/09/13 12:19:39.691: [0xfa0] EXT: registering extension: s3eHighResTimer [0x41f2dedb]
+21/09/13 12:19:39.696: [0xfa0] EXT: registering extension: s3eOSReadString [0x9fe3ea45]
+21/09/13 12:19:39.699: [0xfa0] EXT: registering extension: s3eCameraCapture [0xd36aceed]
+21/09/13 12:19:39.702: [0xfa0] EXT: registering extension: s3eTestEmulatorConfig [0x4a0d0a4f]
+21/09/13 12:19:39.704: [0xfa0] EXT: registering extension: s3eThread [0xcc0b4a28]
+21/09/13 12:19:39.727: [0xfa0] EXT: registering extension: s3eCompass [0x40d632c6]
+21/09/13 12:19:39.730: [0xfa0] EXT: registering extension: Compass [0xd3653f1b]
+21/09/13 12:19:39.736: [0xfa0] EXT: registering extension: s3eSocketOpt [0x09cdcdec]
+21/09/13 12:19:39.738: [0xfa0] EXT: registering extension: s3eExtSocketOpt [0x42fd049d]
+21/09/13 12:19:39.741: [0xfa0] EXT: registering extension: s3eImagePicker [0xd2fc1d51]
+21/09/13 12:19:39.744: [0xfa0] EXT: registering extension: s3eTest [0x168503f0]
+21/09/13 12:19:39.746: [0xfa0] EXT: registering extension: s3eSMS [0x17f480c3]
+21/09/13 12:19:39.749: [0xfa0] EXT: registering extension: s3eMetrics [0x2bc8e047]
+21/09/13 12:19:39.752: [0xfa0] EXT: registering extension: Metrics [0xbe57ec9c]
+21/09/13 12:19:39.755: [0xfa0] EXT: registering extension: s3eLocation [0x91944229]
+21/09/13 12:19:39.757: [0xfa0] EXT: registering extension: Location [0x7604d91e]
+21/09/13 12:19:39.761: [0xfa0] EXT: registering extension: Win32Surface [0x909755c1]
+21/09/13 12:19:39.766: [0xfa0] EXT: registering extension: Win32UIProcessMessage [0x48f2a5ba]
+21/09/13 12:19:39.769: [0xfa0] EXT: registering extension: Win32DataDirChange [0xbfcfc057]
+21/09/13 12:19:39.774: [0xfa0] DEVICE: Initialising CONFIG
+21/09/13 12:19:39.780: [0xfa0] DEVICE: Initialising TIMER
+21/09/13 12:19:39.784: [0xfa0] DEVICE: Initialising COMPRESSION
+21/09/13 12:19:39.786: [0xfa0] DEVICE: DeviceInit done: services=0x0a216148
+21/09/13 12:19:39.789: [0xfa0] EXT: s3eExtGetHash: 0xd31aa8a8 [0x00000000 size=0]
+21/09/13 12:19:39.792: [0xfa0] EXT: initializing extension: s3eWindow
+21/09/13 12:19:39.797: [0xfa0] EXT: initializing extension: s3eWindow 0x5a3f5600
+21/09/13 12:19:39.800: [0xfa0] DEVICE: SetupPaths: NULL
+21/09/13 12:19:39.803: [0xfa0] LOADER: ParseCommandLineData [-via:"c:\Users\Bilal\Repositories\GameJam2\build_game_vc11\game_vc11_debug.via"]
+21/09/13 12:19:39.806: [0xfa0] LOADER: setting [commandline]  via=c:\Users\Bilal\Repositories\GameJam2\build_game_vc11\game_vc11_debug.via
+21/09/13 12:19:39.809: [0xfa0] LOADER: parsing via file: c:\Users\Bilal\Repositories\GameJam2\build_game_vc11\game_vc11_debug.via
+21/09/13 12:19:39.815: [0xfa0] FILE: s3eFileOpen('c:\Users\Bilal\Repositories\GameJam2\build_game_vc11\game_vc11_debug.via', 'r') succeeded, id=1514851856 p=0x5a4ace10
+21/09/13 12:19:39.817: [0xfa0] LOADER: reading 1206 bytes from via files
+21/09/13 12:19:39.820: [0xfa0] FILE: s3eFileClose h=0x5a4ace10
+21/09/13 12:19:39.823: [0xfa0] LOADER: ParseCommandLineData [-via:"c:\Users\Bilal\Repositories\GameJam2\build_game_vc11\game_vc11_debug.via" --dll="c:\Users\Bilal\Repositories\GameJam2\build_game_vc11\Debug_game_VC11_x86\game.s86"
+--data="c:\Users\Bilal\
+21/09/13 12:19:39.826: [0xfa0] LOADER: setting [commandline]  via=c:\Users\Bilal\Repositories\GameJam2\build_game_vc11\game_vc11_debug.via
+21/09/13 12:19:39.829: [0xfa0] LOADER: setting [commandline]  dll=c:\Users\Bilal\Repositories\GameJam2\build_game_vc11\Debug_game_VC11_x86\game.s86
+21/09/13 12:19:39.832: [0xfa0] LOADER: setting [commandline]  data=c:\Users\Bilal\Repositories\GameJam2\data
+21/09/13 12:19:39.834: [0xfa0] LOADER: setting [commandline]  checks3edir=1
+21/09/13 12:19:39.837: [0xfa0] LOADER: setting [commandline]  app-icf1=c:/Users/Bilal/Repositories/GameJam2/data/app.icf
+21/09/13 12:19:39.840: [0xfa0] LOADER: setting [commandline]  win32-ext-dll1=c:/marmalade/6.3.3beta/extensions/messagebox/lib/win32/MessageBox.dll
+21/09/13 12:19:39.843: [0xfa0] LOADER: setting [commandline]  config-txt1=c:/Users/Bilal/Repositories/GameJam2/data/app.config.txt
+21/09/13 12:19:39.849: [0xfa0] LOADER: setting [commandline]  config-txt2=c:/marmalade/6.3.3beta/examples/soundengine/docs/iwsound.config.txt
+21/09/13 12:19:39.852: [0xfa0] LOADER: setting [commandline]  config-txt3=c:/marmalade/6.3.3beta/modules/iw2d/docs/iw2d.config.txt
+21/09/13 12:19:39.858: [0xfa0] LOADER: setting [commandline]  config-txt4=c:/marmalade/6.3.3beta/modules/iwgeom/docs/iwgeom.config.txt
+21/09/13 12:19:39.863: [0xfa0] LOADER: setting [commandline]  config-txt5=c:/marmalade/6.3.3beta/modules/iwgl/docs/iwgl.config.txt
+21/09/13 12:19:39.866: [0xfa0] LOADER: setting [commandline]  config-txt6=c:/marmalade/6.3.3beta/modules/iwgx/docs/iwgx.config.txt
+21/09/13 12:19:39.869: [0xfa0] LOADER: setting [commandline]  config-txt7=c:/marmalade/6.3.3beta/modules/iwgxfont/docs/iwgxfont.config.txt
+21/09/13 12:19:39.873: [0xfa0] LOADER: setting [commandline]  config-txt8=c:/marmalade/6.3.3beta/modules/iwresmanager/docs/iwresmanager.config.txt
+21/09/13 12:19:39.876: [0xfa0] LOADER: setting [commandline]  config-txt9=c:/marmalade/6.3.3beta/modules/iwutil/docs/iwutil.config.txt
+21/09/13 12:19:39.879: [0xfa0] LOADER: setting [commandline]  config-txt10=c:/marmalade/6.3.3beta/s3e/s3e.config.txt
+21/09/13 12:19:39.882: [0xfa0] LOADER: setting [commandline]  config-txt11=c:/marmalade/6.3.3beta/s3e\s3e.config.txt
+21/09/13 12:19:39.885: [0xfa0] LOADER: setting [s3e]  app_version=1.0.0
+21/09/13 12:19:39.888: [0xfa0] LOADER: setting [commandline]  s3e-dir=c:/marmalade/6.3.3beta/s3e
+21/09/13 12:19:39.892: [0xfa0] FILE: new filesystem: drive=0 type=0 ro=1 name=rom://
+21/09/13 12:19:39.895: [0xfa0] FILE: fs[00]: system[rom://] 'c:\Users\Bilal\Repositories\GameJam2\data'
+21/09/13 12:19:39.898: [0xfa0] FILE: fs[03]: system[raw://] ''
+21/09/13 12:19:39.901: [0xfa0] FILE: listed 2 active filesystems
+21/09/13 12:19:39.904: [0xfa0] FILE: new filesystem: drive=1 type=0 ro=0 name=ram://
+21/09/13 12:19:39.907: [0xfa0] FILE: fs[00]: system[rom://] 'c:\Users\Bilal\Repositories\GameJam2\data'
+21/09/13 12:19:39.910: [0xfa0] FILE: fs[01]: system[ram://] 'c:\Users\Bilal\Repositories\GameJam2\data-ram'
+21/09/13 12:19:39.913: [0xfa0] FILE: fs[03]: system[raw://] ''
+21/09/13 12:19:39.916: [0xfa0] FILE: listed 3 active filesystems
+21/09/13 12:19:39.929: [0xfa0] FILE: new filesystem: drive=0 type=0 ro=1 name=rom://
+21/09/13 12:19:39.936: [0xfa0] FILE: new filesystem: drive=1 type=0 ro=0 name=ram://
+21/09/13 12:19:39.941: [0xfa0] LOADER: Using data directory c:\Users\Bilal\Repositories\GameJam2\data as ROM drive
+21/09/13 12:19:39.945: [0xfa0] LOADER: Using directory c:\Users\Bilal\Repositories\GameJam2\data-ram as RAM drive
+21/09/13 12:19:39.948: [0xfa0] FILE: s3eFileOpen('raw://c:/Users/Bilal/Repositories/GameJam2/data/app.config.txt', 'r') succeeded, id=1000 p=0x5a4ae48c
+21/09/13 12:19:39.951: [0xfa0] FILE: s3eFileClose h=0x5a4ae48c
+21/09/13 12:19:39.954: [0xfa0] FILE: s3eFileOpen('raw://c:/marmalade/6.3.3beta/examples/soundengine/docs/iwsound.config.txt', 'r') succeeded, id=1001 p=0x5a4ae5a8
+21/09/13 12:19:39.957: [0xfa0] FILE: s3eFileClose h=0x5a4ae5a8
+21/09/13 12:19:39.962: [0xfa0] FILE: s3eFileOpen('raw://c:/marmalade/6.3.3beta/modules/iw2d/docs/iw2d.config.txt', 'r') succeeded, id=1002 p=0x5a4ae6c4
+21/09/13 12:19:39.965: [0xfa0] FILE: s3eFileClose h=0x5a4ae6c4
+21/09/13 12:19:39.968: [0xfa0] FILE: s3eFileOpen('raw://c:/marmalade/6.3.3beta/modules/iwgeom/docs/iwgeom.config.txt', 'r') succeeded, id=1003 p=0x5a4ae7e0
+21/09/13 12:19:39.971: [0xfa0] FILE: s3eFileClose h=0x5a4ae7e0
+21/09/13 12:19:39.974: [0xfa0] FILE: s3eFileOpen('raw://c:/marmalade/6.3.3beta/modules/iwgl/docs/iwgl.config.txt', 'r') succeeded, id=1004 p=0x5a4ae8fc
+21/09/13 12:19:39.977: [0xfa0] FILE: s3eFileClose h=0x5a4ae8fc
+21/09/13 12:19:39.980: [0xfa0] FILE: s3eFileOpen('raw://c:/marmalade/6.3.3beta/modules/iwgx/docs/iwgx.config.txt', 'r') succeeded, id=1005 p=0x5a4aea18
+21/09/13 12:19:39.984: [0xfa0] FILE: s3eFileClose h=0x5a4aea18
+21/09/13 12:19:39.987: [0xfa0] FILE: s3eFileOpen('raw://c:/marmalade/6.3.3beta/modules/iwgxfont/docs/iwgxfont.config.txt', 'r') succeeded, id=1006 p=0x5a4aeb34
+21/09/13 12:19:39.991: [0xfa0] FILE: s3eFileClose h=0x5a4aeb34
+21/09/13 12:19:39.994: [0xfa0] FILE: s3eFileOpen('raw://c:/marmalade/6.3.3beta/modules/iwresmanager/docs/iwresmanager.config.txt', 'r') succeeded, id=1007 p=0x5a4aec50
+21/09/13 12:19:39.999: [0xfa0] FILE: s3eFileClose h=0x5a4aec50
+21/09/13 12:19:40.003: [0xfa0] FILE: s3eFileOpen('raw://c:/marmalade/6.3.3beta/modules/iwutil/docs/iwutil.config.txt', 'r') succeeded, id=1008 p=0x5a4aed6c
+21/09/13 12:19:40.007: [0xfa0] FILE: s3eFileClose h=0x5a4aed6c
+21/09/13 12:19:40.012: [0xfa0] FILE: s3eFileOpen('raw://c:/marmalade/6.3.3beta/s3e/s3e.config.txt', 'r') succeeded, id=1009 p=0x5a4aee88
+21/09/13 12:19:40.027: [0xfa0] FILE: s3eFileClose h=0x5a4aee88
+21/09/13 12:19:40.031: [0xfa0] FILE: s3eFileOpen('raw://c:/marmalade/6.3.3beta/s3e\s3e.config.txt', 'r') succeeded, id=1010 p=0x5a4aefa4
+21/09/13 12:19:40.041: [0xfa0] FILE: s3eFileClose h=0x5a4aefa4
+21/09/13 12:19:40.045: [0xfa0] FILE: s3eFileOpen('raw://c:\marmalade\6.3.3beta\s3e/s3e.icf', 'rb') succeeded, id=1011 p=0x5a4af0c0
+21/09/13 12:19:40.048: [0xfa0] LOADER: Loading config from: c:\marmalade\6.3.3beta\s3e/s3e.icf
+21/09/13 12:19:40.052: [0xfa0] FILE: s3eFileClose h=0x5a4af0c0
+21/09/13 12:19:40.055: [0xfa0] LOADER: Loading app-icf from command line specified location c:/Users/Bilal/Repositories/GameJam2/data/app.icf
+21/09/13 12:19:40.058: [0xfa0] FILE: s3eFileOpen('raw://c:/Users/Bilal/Repositories/GameJam2/data/app.icf', 'rb') succeeded, id=1012 p=0x5a4af1dc
+21/09/13 12:19:40.061: [0xfa0] LOADER: Loading config from: raw://c:/Users/Bilal/Repositories/GameJam2/data/app.icf
+21/09/13 12:19:40.064: [0xfa0] FILE: s3eFileClose h=0x5a4af1dc
+21/09/13 12:19:40.067: [0xfa0] LOADER: ParseCommandLineData [-via:"c:\Users\Bilal\Repositories\GameJam2\build_game_vc11\game_vc11_debug.via"]
+21/09/13 12:19:40.070: [0xfa0] LOADER: setting [commandline]  via=c:\Users\Bilal\Repositories\GameJam2\build_game_vc11\game_vc11_debug.via
+21/09/13 12:19:40.073: [0xfa0] LOADER: parsing via file: c:\Users\Bilal\Repositories\GameJam2\build_game_vc11\game_vc11_debug.via
+21/09/13 12:19:40.076: [0xfa0] FILE: s3eFileOpen('c:\Users\Bilal\Repositories\GameJam2\build_game_vc11\game_vc11_debug.via', 'r') succeeded, id=1013 p=0x5a4af2f8
+21/09/13 12:19:40.079: [0xfa0] LOADER: reading 1206 bytes from via files
+21/09/13 12:19:40.082: [0xfa0] FILE: s3eFileClose h=0x5a4af2f8
+21/09/13 12:19:40.084: [0xfa0] LOADER: ParseCommandLineData [-via:"c:\Users\Bilal\Repositories\GameJam2\build_game_vc11\game_vc11_debug.via" --dll="c:\Users\Bilal\Repositories\GameJam2\build_game_vc11\Debug_game_VC11_x86\game.s86"
+--data="c:\Users\Bilal\
+21/09/13 12:19:40.087: [0xfa0] LOADER: setting [commandline]  via=c:\Users\Bilal\Repositories\GameJam2\build_game_vc11\game_vc11_debug.via
+21/09/13 12:19:40.090: [0xfa0] LOADER: setting [commandline]  dll=c:\Users\Bilal\Repositories\GameJam2\build_game_vc11\Debug_game_VC11_x86\game.s86
+21/09/13 12:19:40.093: [0xfa0] LOADER: setting [commandline]  data=c:\Users\Bilal\Repositories\GameJam2\data
+21/09/13 12:19:40.097: [0xfa0] LOADER: setting [commandline]  checks3edir=1
+21/09/13 12:19:40.103: [0xfa0] LOADER: setting [commandline]  app-icf1=c:/Users/Bilal/Repositories/GameJam2/data/app.icf
+21/09/13 12:19:40.106: [0xfa0] LOADER: setting [commandline]  win32-ext-dll1=c:/marmalade/6.3.3beta/extensions/messagebox/lib/win32/MessageBox.dll
+21/09/13 12:19:40.110: [0xfa0] LOADER: setting [commandline]  config-txt1=c:/Users/Bilal/Repositories/GameJam2/data/app.config.txt
+21/09/13 12:19:40.113: [0xfa0] LOADER: setting [commandline]  config-txt2=c:/marmalade/6.3.3beta/examples/soundengine/docs/iwsound.config.txt
+21/09/13 12:19:40.116: [0xfa0] LOADER: setting [commandline]  config-txt3=c:/marmalade/6.3.3beta/modules/iw2d/docs/iw2d.config.txt
+21/09/13 12:19:40.119: [0xfa0] LOADER: setting [commandline]  config-txt4=c:/marmalade/6.3.3beta/modules/iwgeom/docs/iwgeom.config.txt
+21/09/13 12:19:40.121: [0xfa0] LOADER: setting [commandline]  config-txt5=c:/marmalade/6.3.3beta/modules/iwgl/docs/iwgl.config.txt
+21/09/13 12:19:40.124: [0xfa0] LOADER: setting [commandline]  config-txt6=c:/marmalade/6.3.3beta/modules/iwgx/docs/iwgx.config.txt
+21/09/13 12:19:40.128: [0xfa0] LOADER: setting [commandline]  config-txt7=c:/marmalade/6.3.3beta/modules/iwgxfont/docs/iwgxfont.config.txt
+21/09/13 12:19:40.132: [0xfa0] LOADER: setting [commandline]  config-txt8=c:/marmalade/6.3.3beta/modules/iwresmanager/docs/iwresmanager.config.txt
+21/09/13 12:19:40.135: [0xfa0] LOADER: setting [commandline]  config-txt9=c:/marmalade/6.3.3beta/modules/iwutil/docs/iwutil.config.txt
+21/09/13 12:19:40.138: [0xfa0] LOADER: setting [commandline]  config-txt10=c:/marmalade/6.3.3beta/s3e/s3e.config.txt
+21/09/13 12:19:40.141: [0xfa0] LOADER: setting [commandline]  config-txt11=c:/marmalade/6.3.3beta/s3e\s3e.config.txt
+21/09/13 12:19:40.143: [0xfa0] LOADER: setting [s3e]  app_version=1.0.0
+21/09/13 12:19:40.146: [0xfa0] LOADER: setting [commandline]  s3e-dir=c:/marmalade/6.3.3beta/s3e
+21/09/13 12:19:40.149: [0xfa0] LOADER: s3eExecMemoryCheck: Memory free: 1048576K
+21/09/13 12:19:40.152: [0xfa0] FILE: s3eFileOpen('raw://C:\Users\Bilal\AppData\Local\Temp\\_marm_temp_test_', 'w') succeeded, id=1014 p=0x5a4af414
+21/09/13 12:19:40.155: [0xfa0] FILE: s3eFileClose h=0x5a4af414
+21/09/13 12:19:40.159: [0xfa0] FILE: new filesystem: drive=4 type=0 ro=0 name=tmp://
+21/09/13 12:19:40.162: [0xfa0] FILE: fs[00]: system[rom://] 'c:\Users\Bilal\Repositories\GameJam2\data'
+21/09/13 12:19:40.165: [0xfa0] FILE: fs[01]: system[ram://] 'c:\Users\Bilal\Repositories\GameJam2\data-ram'
+21/09/13 12:19:40.168: [0xfa0] FILE: fs[03]: system[raw://] ''
+21/09/13 12:19:40.171: [0xfa0] FILE: fs[04]: system[tmp://] 'C:\Users\Bilal\AppData\Local\Temp\'
+21/09/13 12:19:40.175: [0xfa0] FILE: listed 4 active filesystems
+21/09/13 12:19:40.198: [0xfa0] SURFACE: Fixed Screen Orientation: FixedLandscape
+21/09/13 12:19:40.202: [0xfa0] SURFACE: scaling=1
+21/09/13 12:19:40.290: [0xfa0] SURFACE: s3eSurfaceSetup: PixelType=RGB565, pitch=0, ptr=0x00000000, blit=0
+21/09/13 12:19:40.299: [0xfa0] SURFACE: s3eSurfaceSetup: matches native type
+21/09/13 12:19:40.302: [0xfa0] SURFACE: s3eSurfaceSetup: no user surface needed
+21/09/13 12:19:40.323: [0xfa0] EXT: Registering user-supplied extensions
+21/09/13 12:19:40.331: [0xfa0] EXT: Loading extension dll c:/marmalade/6.3.3beta/extensions/messagebox/lib/win32/MessageBox_d.dll
+21/09/13 12:19:40.337: [0xfa0] LOADER: GL not present, resolving all GL symbols to unavailable
+21/09/13 12:19:40.344: [0xfa0] DEBUG: s3eDebugErrorShow 0x00000000 type=0 'Warning: Couldn't bind the following functions (not exported by the loader). Crash is likely.:
+s3eEdkCallbacksEnqueue
+s3eEdkCallbacksIsRegistered
+s3eEdkCallbacksRegister
+s3eEdkCal
+21/09/13 12:19:42.638: [0xfa0] FIBRE: stack switch : enabled
+21/09/13 12:19:42.642: [0xfa0] FIBRE: fast switch  : disabled
+21/09/13 12:19:42.645: [0xfa0] FIBRE: global lock  : enabled
+21/09/13 12:19:42.648: [0xfa0] FIBRE: fast lock    : disabled
+21/09/13 12:19:42.652: [0xfa0] FIBRE: thunks       : enabled
+21/09/13 12:19:42.656: [0xfa0] LOADER: Calling s3eDeviceInit()
+21/09/13 12:19:42.659: [0xfa0] DEVICE: DeviceInit: services=0xfffdffff [0xe5dc9eb7]
+21/09/13 12:19:42.662: [0xfa0] DEVICE: Initialising CALLBACKS
+21/09/13 12:19:42.665: [0xfa0] DEVICE: Initialising CRYPTO
+21/09/13 12:19:42.668: [0xfa0] DEVICE: Initialising ERROR
+21/09/13 12:19:42.672: [0xfa0] DEVICE: Initialising SOCKET
+21/09/13 12:19:42.678: [0xfa0] DEVICE: Initialising STORAGE
+21/09/13 12:19:42.681: [0xfa0] DEVICE: Initialising VIBRA
+21/09/13 12:19:42.684: [0xfa0] DEVICE: Initialising KEYBOARD
+21/09/13 12:19:42.689: [0xfa0] DEVICE: Initialising POINTER
+21/09/13 12:19:42.693: [0xfa0] DEVICE: Initialising ACCELEROMETER
+21/09/13 12:19:42.696: [0xfa0] ACCELEROMETER: damping=0 scaling=0
+21/09/13 12:19:42.699: [0xfa0] DEVICE: Initialising SOUND
+21/09/13 12:19:42.774: [0xfa0] SOUND: stereo sound enabled
+21/09/13 12:19:42.777: [0xfa0] SOUND: s3eSoundStop: started=0
+21/09/13 12:19:42.781: [0xfa0] SOUND: SetMasterVolume: 255 -> 256
+21/09/13 12:19:42.784: [0xfa0] DEVICE: Initialising AUDIO
+21/09/13 12:19:42.796: [0xfa0] AUDIO: Number of channels = 16
+21/09/13 12:19:42.800: [0xfa0] DEVICE: Initialising VIDEO
+21/09/13 12:19:42.804: [0xfa0] DEVICE: Initialising LICENSE
+21/09/13 12:19:42.808: [0xfa0] DEVICE: Initialising GL
+21/09/13 12:19:42.812: [0xfa0] DEVICE: DeviceInit done: services=0xfffdffff
+21/09/13 12:19:42.817: [0xfa0] SPLASH: displaying debug splash-screen
+21/09/13 12:19:42.837: [0x16c0] SURFACE: s3eSurfaceSetup: PixelType=RGB565, pitch=0, ptr=0x00000000, blit=0
+21/09/13 12:19:42.841: [0x16c0] SURFACE: s3eSurfaceSetup: matches native type
+21/09/13 12:19:42.850: [0x16c0] SURFACE: s3eSurfaceSetup: no user surface needed
+21/09/13 12:19:42.872: [0xfa0] SPLASH: No splash screen specified
+21/09/13 12:19:42.895: [0xfa0] LOADER: s3eExecInit Done
+21/09/13 12:19:42.905: [0xfa0] LOADER: found initial S3E file: raw://c:\Users\Bilal\Repositories\GameJam2\build_game_vc11\Debug_game_VC11_x86\game.s86
+21/09/13 12:19:42.909: [0xfa0] DEVICE: s3eExecPushNext: raw://c:\Users\Bilal\Repositories\GameJam2\build_game_vc11\Debug_game_VC11_x86\game.s86 [root=NULL 0x00000000 0x00000000]
+21/09/13 12:19:42.912: [0xfa0] DEVICE: s3eExecPushNext: raw://c:\Users\Bilal\Repositories\GameJam2\build_game_vc11\Debug_game_VC11_x86\game.s86
+21/09/13 12:19:42.915: [0xfa0] LOADER: s3eExecDoExecuteLoop
+21/09/13 12:19:42.992: [0xfa0] LOADER: AppVersion: 4 36
+21/09/13 12:19:42.995: [0xfa0] LOADER: S3E Version    : 4.36.0
+21/09/13 12:19:42.999: [0xfa0] LOADER: Arch           : X86
+21/09/13 12:19:43.002: [0xfa0] LOADER: VFP            : 1
+21/09/13 12:19:43.005: [0xfa0] LOADER: App S3E Version: 4.36.0
+21/09/13 12:19:43.008: [0xfa0] LOADER: App arch       : X86
+21/09/13 12:19:43.012: [0xfa0] LOADER: App VFP        : 0
+21/09/13 12:19:43.015: [0xfa0] LOADER: new s3eExecHandle = 0x02694b88
+21/09/13 12:19:44.820: [0xfa0] SPLASH: Clearing splashscreen background: 0xffff
+21/09/13 12:19:44.825: [0xfa0] SPLASH: No game splash screen to display
+21/09/13 12:19:44.838: [0xfa0] LOADER: Calling s3eDeviceInit(S3E_DEVICE_INIT_MEMORY)
+21/09/13 12:19:44.842: [0xfa0] DEVICE: DeviceInit: services=0x00020000 [0x00020000]
+21/09/13 12:19:44.846: [0xfa0] DEVICE: Initialising MEMORY
+21/09/13 12:19:44.850: [0xfa0] MEMORY: Loader heap size=30000
+21/09/13 12:19:44.910: [0xfa0] MEMORY: Initialised heap 0 [0x07341264-0x09966c64] size=40000000
+21/09/13 12:19:44.914: [0xfa0] MEMORY: Initialised heap 7 [0x09971464-0x0997dc64] size=51200
+21/09/13 12:19:44.917: [0xfa0] MEMORY: s3eMemorySetUserMemMgr 0x00ab1d80 0x00ab1fc0 0x00ab1a98
+21/09/13 12:19:44.921: [0xfa0] DEVICE: DeviceInit done: services=0x00020000
+21/09/13 12:19:44.925: [0xfa0] LOADER: IwS3EGetEntryPoint -> 0x55913e1f
+21/09/13 12:19:44.930: [0xfa0] LOADER: Executing S3E 0x02694b88 [c:\Users\Bilal\Repositories\GameJam2\build_game_vc11\Debug_game_VC11_x86\game.s86] entry=0x55913e1f
+21/09/13 12:19:44.935: [0xfa0] EXT: s3eExtGetHash: 0xcc0b4a28 [0x5a2c02b0 size=76]
+21/09/13 12:19:44.939: [0xfa0] EXT: initializing extension: s3eThread
+21/09/13 12:19:44.944: [0xfa0] EXT: initializing extension: s3eThread 0x5a3d1c50
+21/09/13 12:19:44.950: [0xfa0] MEMORY: s3eMemorySetUserMemMgr 0x55914a9a 0x55914abd 0x5590bc1f
+Game Model Constructor
+21/09/13 12:19:44.976: [0xfa0] GX_VERBOSE: IwGxInitBase()
+21/09/13 12:19:44.979: [0xfa0] EXT: s3eExtGetHash: 0x2bc8e047 [0x5a2c0078 size=72]
+21/09/13 12:19:44.983: [0xfa0] EXT: initializing extension: s3eMetrics
+21/09/13 12:19:44.987: [0xfa0] EXT: s3eExtGetHash: 0xc667a795 [0x5a2c00d8 size=8]
+21/09/13 12:19:44.990: [0xfa0] EXT: initializing extension: s3eDebugHeap
+21/09/13 12:19:44.995: [0xfa0] MEMORY: s3eExtDebugHeapAlloc: 60000000 bytes allocated for system debug heap
+21/09/13 12:19:45.007: [0xfa0] UTIL: IwCallStackInit
+21/09/13 12:19:45.016: [0xfa0] GX_VERBOSE: Registering for S3E_SURFACE_SCREENSIZE callback
+21/09/13 12:19:45.020: [0xfa0] SURFACE: s3eSurfaceSetup: PixelType=RGB565, pitch=0, ptr=0x00000000, blit=4
+21/09/13 12:19:45.025: [0xfa0] SURFACE: s3eSurfaceSetup: matches native type
+21/09/13 12:19:45.030: [0xfa0] SURFACE: s3eSurfaceSetup: no user surface needed
+21/09/13 12:19:45.035: [0xfa0] GX: IwGxSetScreenOrient: 0
+21/09/13 12:19:45.060: [0xfa0] IW_GL: EGL: eglGetDisplay returned 0D822CD0
+21/09/13 12:19:45.103: [0xfa0] IW_GL: eglInitialise succeeded - version 1.4
+21/09/13 12:19:45.107: [0xfa0] IW_GL: S3E_EGL_VERSION: 0104
+21/09/13 12:19:45.112: [0xfa0] IW_GL: S3E_GL_VERSION: 0200
+21/09/13 12:19:45.116: [0xfa0] IW_GL: EGL_VENDOR: Google Inc.
+21/09/13 12:19:45.120: [0xfa0] IW_GL: EGL_VERSION: 1.4 (ANGLE 1.0.0.1275)
+21/09/13 12:19:45.123: [0xfa0] IW_GL:     EGL_EXT_create_context_robustness
+21/09/13 12:19:45.126: [0xfa0] IW_GL:     EGL_ANGLE_d3d_share_handle_client_buffer
+21/09/13 12:19:45.132: [0xfa0] IW_GL:     EGL_ANGLE_query_surface_pointer
+21/09/13 12:19:45.137: [0xfa0] IW_GL:     EGL_ANGLE_surface_d3d_texture_2d_share_handle
+21/09/13 12:19:45.141: [0xfa0] IW_GL:     EGL_NV_post_sub_buffer
+21/09/13 12:19:45.146: [0xfa0] GL_CORE: rejecting config 0: EGL_DEPTH_SIZE < 16
+21/09/13 12:19:45.149: [0xfa0] GL_CORE: rejecting config 4: EGL_CONFIG_CAVEAT == EGL_SLOW_CONFIG
+21/09/13 12:19:45.153: [0xfa0] GL_CORE: rejecting config 5: EGL_CONFIG_CAVEAT == EGL_SLOW_CONFIG
+21/09/13 12:19:45.156: [0xfa0] GL_CORE: rejecting config 6: EGL_CONFIG_CAVEAT == EGL_SLOW_CONFIG
+21/09/13 12:19:45.160: [0xfa0] GL_CORE: rejecting config 7: EGL_CONFIG_CAVEAT == EGL_SLOW_CONFIG
+21/09/13 12:19:45.163: [0xfa0] GL_CORE: rejecting config 8: EGL_CONFIG_CAVEAT == EGL_SLOW_CONFIG
+21/09/13 12:19:45.166: [0xfa0] GL_CORE: rejecting config 9: EGL_CONFIG_CAVEAT == EGL_SLOW_CONFIG
+21/09/13 12:19:45.169: [0xfa0] GL_CORE: rejecting config 10: EGL_CONFIG_CAVEAT == EGL_SLOW_CONFIG
+21/09/13 12:19:45.173: [0xfa0] GL_CORE: rejecting config 11: EGL_CONFIG_CAVEAT == EGL_SLOW_CONFIG
+21/09/13 12:19:45.177: [0xfa0] GL_CORE: EGL: Chose EGL_CONFIG_ID 3
+21/09/13 12:19:45.249: [0xfa0] IW_GL: GL_VENDOR: Google Inc.
+21/09/13 12:19:45.253: [0xfa0] IW_GL: GL_RENDERER: ANGLE (NVIDIA GeForce 320M)
+21/09/13 12:19:45.256: [0xfa0] IW_GL: GL_VERSION: OpenGL ES 2.0 (ANGLE 1.0.0.1275)
+21/09/13 12:19:45.259: [0xfa0] IW_GL: GL properties reported by driver:
+21/09/13 12:19:45.263: [0xfa0] IW_GL:     GL_MAX_COMBINED_TEXTURE_IMAGE_UNITS: 20
+21/09/13 12:19:45.267: [0xfa0] IW_GL:     GL_SHADER_COMPILER: 1
+21/09/13 12:19:45.272: [0xfa0] IW_GL:     GL_MAX_VERTEX_ATTRIBS: 16
+21/09/13 12:19:45.275: [0xfa0] IW_GL:     GL_MAX_VERTEX_UNIFORM_VECTORS: 254
+21/09/13 12:19:45.279: [0xfa0] IW_GL:     GL_MAX_VARYING_VECTORS: 10
+21/09/13 12:19:45.283: [0xfa0] IW_GL:     GL_MAX_TEXTURE_IMAGE_UNITS: 16
+21/09/13 12:19:45.286: [0xfa0] IW_GL:     GL_MAX_VERTEX_TEXTURE_IMAGE_UNITS: 4
+21/09/13 12:19:45.289: [0xfa0] IW_GL:     GL_MAX_FRAGMENT_UNIFORM_VECTORS: 221
+21/09/13 12:19:45.292: [0xfa0] IW_GL:     GL_MAX_CUBE_MAP_TEXTURE_SIZE: 8192
+21/09/13 12:19:45.297: [0xfa0] IW_GL:     GL_IMPLEMENTATION_COLOR_READ_FORMAT: GL_RGB
+21/09/13 12:19:45.300: [0xfa0] IW_GL:     GL_IMPLEMENTATION_COLOR_READ_TYPE: GL_UNSIGNED_SHORT_5_6_5
+21/09/13 12:19:45.304: [0xfa0] IW_GL:     GL_MAX_RENDERBUFFER_SIZE: 8192
+21/09/13 12:19:45.307: [0xfa0] IW_GL:     GL_POINT_SIZE_MAX: -1
+21/09/13 12:19:45.311: [0xfa0] IW_GL:     GL_MAX_TEXTURE_SIZE: 8192
+21/09/13 12:19:45.314: [0xfa0] IW_GL:     GL_MAX_VIEWPORT_DIMS: (8192, 8192)
+21/09/13 12:19:45.318: [0xfa0] IW_GL: Supported GL_EXTENSIONS:
+21/09/13 12:19:45.321: [0xfa0] IW_GL:     GL_OES_packed_depth_stencil
+21/09/13 12:19:45.325: [0xfa0] IW_GL:     GL_OES_element_index_uint
+21/09/13 12:19:45.328: [0xfa0] IW_GL:     GL_OES_texture_half_float_linear
+21/09/13 12:19:45.332: [0xfa0] IW_GL:     GL_NV_fence
+21/09/13 12:19:45.335: [0xfa0] IW_GL:     GL_EXT_read_format_bgra
+21/09/13 12:19:45.339: [0xfa0] IW_GL:     GL_OES_get_program_binary
+21/09/13 12:19:45.342: [0xfa0] IW_GL:     GL_OES_rgb8_rgba8
+21/09/13 12:19:45.348: [0xfa0] IW_GL:     GL_EXT_texture_compression_dxt1
+21/09/13 12:19:45.352: [0xfa0] IW_GL:     GL_ANGLE_texture_compression_dxt3
+21/09/13 12:19:45.357: [0xfa0] IW_GL:     GL_ANGLE_texture_compression_dxt5
+21/09/13 12:19:45.361: [0xfa0] IW_GL:     GL_ARB_texture_env_combine
+21/09/13 12:19:45.365: [0xfa0] IW_GL:     GL_OES_texture_npot
+21/09/13 12:19:45.369: [0xfa0] IW_GL:     GL_EXT_texture_format_BGRA8888
+21/09/13 12:19:45.372: [0xfa0] IW_GL:     GL_OES_texture_half_float
+21/09/13 12:19:45.375: [0xfa0] IW_GL:     GL_ANGLE_framebuffer_multisample
+21/09/13 12:19:45.379: [0xfa0] IW_GL:     GL_ANGLE_framebuffer_blit
+21/09/13 12:19:45.383: [0xfa0] IW_GL:     GL_OES_standard_derivatives
+21/09/13 12:19:45.386: [0xfa0] IW_GL:     GL_OES_texture_float
+21/09/13 12:19:45.389: [0xfa0] IW_GL:     GL_OES_texture_float_linear
+21/09/13 12:19:45.394: [0xfa0] IW_GL:     GL_EXT_texture_filter_anisotropic
+21/09/13 12:19:45.397: [0xfa0] SURFACE: s3eSurfaceSetup: PixelType=RGB565, pitch=0, ptr=0x00000000, blit=4
+21/09/13 12:19:45.401: [0xfa0] SURFACE: s3eSurfaceSetup: matches native type
+21/09/13 12:19:45.405: [0xfa0] SURFACE: s3eSurfaceSetup: no user surface needed
+21/09/13 12:19:45.457: [0xfa0] GX: Parsing GL driver strings
+21/09/13 12:19:45.461: [0xfa0] GX_VERBOSE: Hardware capabilities:
+21/09/13 12:19:45.466: [0xfa0] FILE: s3eFileOpen('resource_cache/cachedSize.bin', 'rb') succeeded, id=1015 p=0x5a4af530
+21/09/13 12:19:45.469: [0xfa0] FILE: s3eFileClose h=0x5a4af530
+21/09/13 12:19:45.472: [0xfa0] UTIL: Added class factory for CIwGxShaderTechnique (hash 0x62ab11c4)
+21/09/13 12:19:45.476: [0xfa0] UTIL: Added class factory for CIwGxCubeMap (hash 0x5474a064)
+21/09/13 12:19:45.479: [0xfa0] GX_VERBOSE: IwGxInit() end
+21/09/13 12:19:45.482: [0xfa0] GX_VERBOSE: _IwGxInitGL()
+21/09/13 12:19:45.486: [0xfa0] GX_VERBOSE: Reported: Max texture stages 20. Max dimensions 8192x8192
+21/09/13 12:19:45.490: [0xfa0] GX_VERBOSE: Default framebuffer binding is 0
+21/09/13 12:19:45.493: [0xfa0] GX_VERBOSE: _IwGxInitGL() end
+21/09/13 12:19:45.497: [0xfa0] FILE: s3eFileClose h=0x5a4af64c
+21/09/13 12:19:45.502: [0xfa0] EXT: s3eExtGetHash: 0x167d1038 [0x5a2c00e8 size=8]
+21/09/13 12:19:45.505: [0xfa0] EXT: initializing extension: s3eEval
+21/09/13 12:19:45.509: [0xfa0] FILE: s3eFileClose h=0x5a4af768
+21/09/13 12:19:45.515: [0xfa0] UTIL: Added class factory for CIwResTemplateImage (hash 0x4d5ab6b1)
+21/09/13 12:19:45.519: [0xfa0] UTIL: Added class factory for CIwResTemplateMTL (hash 0x3a22b5bb)
+21/09/13 12:19:45.526: [0xfa0] UTIL: Added class factory for CIwResTemplateGROUP (hash 0x4d3980fb)
+21/09/13 12:19:45.530: [0xfa0] UTIL: Added class factory for CIwMaterial (hash 0x2544f997)
+21/09/13 12:19:45.533: [0xfa0] UTIL: Added class factory for CIwResGroup (hash 0xf446397f)
+21/09/13 12:19:45.537: [0xfa0] UTIL: Added class factory for CIwTexture (hash 0x3521f539)
+21/09/13 12:19:45.540: [0xfa0] UTIL: Added class factory for CIwResBuildStyle (hash 0xa59f2593)
+21/09/13 12:19:45.544: [0xfa0] RESMANAGER: Added serialise block for ResGroupMembers
+21/09/13 12:19:45.548: [0xfa0] RESMANAGER: Added serialise block for ResGroupBuildData
+21/09/13 12:19:45.551: [0xfa0] RESMANAGER: Added serialise block for ResGroupChildPaths
+21/09/13 12:19:45.554: [0xfa0] RESMANAGER: Added serialise block for ResGroupHST
+21/09/13 12:19:45.557: [0xfa0] RESMANAGER: Added serialise block for ResGroupDirectory
+21/09/13 12:19:45.560: [0xfa0] RESMANAGER: Added serialise block for ResGroupResources
+21/09/13 12:19:45.563: [0xfa0] RESMANAGER: Added serialise block for ResGroupResourcesOptimised
+21/09/13 12:19:45.567: [0xfa0] RESMANAGER: Setting build style to 'gles1'
+21/09/13 12:19:45.571: [0xfa0] UTIL: Added class factory for CIwGxFont (hash 0xa68776be)
+21/09/13 12:19:45.574: [0xfa0] UTIL: Added class factory for CIwGxFontTTFont (hash 0xc084661d)
+21/09/13 12:19:45.577: [0xfa0] UTIL: Added class factory for CIwResTemplateGXFONT (hash 0xf4d12aa4)
+Game Model - Initialize Slider
+21/09/13 12:19:45.645: [0xfa0] UTIL: Found '320x480/Menu/_menu.group' using default path
+21/09/13 12:19:45.648: [0xfa0] FILE: s3eFileOpen('320x480/Menu/_menu.group', 'r') succeeded, id=1018 p=0x5a4af884
+21/09/13 12:19:45.652: [0xfa0] FILE: s3eFileClose h=0x5a4af884
+21/09/13 12:19:45.655: [0xfa0] RESMANAGER: Reading asset: 320x480/Menu/menu.png
+21/09/13 12:19:45.659: [0xfa0] UTIL: Found '320x480/Menu/menu.png' using default path
+21/09/13 12:19:45.663: [0xfa0] FILE: s3eFileOpen('320x480/Menu/menu.png', 'rb') succeeded, id=1019 p=0x5a4af9a0
+21/09/13 12:19:45.690: [0xfa0] FILE: s3eFileClose h=0x5a4af9a0
+21/09/13 12:19:45.697: [0xfa0] RESMANAGER: Reading asset: 320x480/Menu/button_highscore.png
+21/09/13 12:19:45.700: [0xfa0] UTIL: Found '320x480/Menu/button_highscore.png' using default path
+21/09/13 12:19:45.704: [0xfa0] FILE: s3eFileOpen('320x480/Menu/button_highscore.png', 'rb') succeeded, id=1020 p=0x5a4afabc
+21/09/13 12:19:45.710: [0xfa0] FILE: s3eFileClose h=0x5a4afabc
+21/09/13 12:19:45.714: [0xfa0] RESMANAGER: Reading asset: 320x480/Menu/button_howto.png
+21/09/13 12:19:45.719: [0xfa0] UTIL: Found '320x480/Menu/button_howto.png' using default path
+21/09/13 12:19:45.724: [0xfa0] FILE: s3eFileOpen('320x480/Menu/button_howto.png', 'rb') succeeded, id=1021 p=0x5a4afbd8
+21/09/13 12:19:45.730: [0xfa0] FILE: s3eFileClose h=0x5a4afbd8
+21/09/13 12:19:45.734: [0xfa0] RESMANAGER: Reading asset: 320x480/Menu/button_race.png
+21/09/13 12:19:45.738: [0xfa0] UTIL: Found '320x480/Menu/button_race.png' using default path
+21/09/13 12:19:45.742: [0xfa0] FILE: s3eFileOpen('320x480/Menu/button_race.png', 'rb') succeeded, id=1022 p=0x5a4afcf4
+21/09/13 12:19:45.747: [0xfa0] FILE: s3eFileClose h=0x5a4afcf4
+21/09/13 12:19:45.750: [0xfa0] RESMANAGER: Reading asset: 320x480/Menu/button_story.png
+21/09/13 12:19:45.754: [0xfa0] UTIL: Found '320x480/Menu/button_story.png' using default path
+21/09/13 12:19:45.757: [0xfa0] FILE: s3eFileOpen('320x480/Menu/button_story.png', 'rb') succeeded, id=1023 p=0x5a4afe10
+21/09/13 12:19:45.764: [0xfa0] FILE: s3eFileClose h=0x5a4afe10
+21/09/13 12:19:45.770: [0xfa0] RESMANAGER: Reading asset: 320x480/Menu/button_aboutus.png
+21/09/13 12:19:45.776: [0xfa0] UTIL: Found '320x480/Menu/button_aboutus.png' using default path
+21/09/13 12:19:45.780: [0xfa0] FILE: s3eFileOpen('320x480/Menu/button_aboutus.png', 'rb') succeeded, id=1024 p=0x5a4aff2c
+21/09/13 12:19:45.784: [0xfa0] FILE: s3eFileClose h=0x5a4aff2c
+21/09/13 12:19:45.788: [0xfa0] RESMANAGER: Reading asset: 320x480/Menu/aboutUs.png
+21/09/13 12:19:45.792: [0xfa0] UTIL: Found '320x480/Menu/aboutUs.png' using default path
+21/09/13 12:19:45.795: [0xfa0] FILE: s3eFileOpen('320x480/Menu/aboutUs.png', 'rb') succeeded, id=1025 p=0x5a4b0048
+21/09/13 12:19:45.821: [0xfa0] FILE: s3eFileClose h=0x5a4b0048
+21/09/13 12:19:45.992: [0xfa0] RESMANAGER: Reading asset: 320x480/Menu/howTo.png
+21/09/13 12:19:45.996: [0xfa0] UTIL: Found '320x480/Menu/howTo.png' using default path
+21/09/13 12:19:45.999: [0xfa0] FILE: s3eFileOpen('320x480/Menu/howTo.png', 'rb') succeeded, id=1026 p=0x5a4b0164
+21/09/13 12:19:46.026: [0xfa0] FILE: s3eFileClose h=0x5a4b0164
+21/09/13 12:19:46.034: [0xfa0] UTIL: Found 'data-gles1/320x480/Menu/_menu.group.bin' using path global 'data-gles1'
+21/09/13 12:19:46.037: [0xfa0] FILE: s3eFileOpen('data-gles1/320x480/Menu/_menu.group.bin', 'wb') succeeded, id=1027 p=0x5a4b0280
+21/09/13 12:19:46.041: [0xfa0] UTIL: Found 'data-gles1/320x480/Menu/_menu.group.bin.txt' using path global 'data-gles1'
+21/09/13 12:19:46.045: [0xfa0] FILE: s3eFileOpen('data-gles1/320x480/Menu/_menu.group.bin.txt', 'wt') succeeded, id=1028 p=0x5a4b039c
+21/09/13 12:19:46.048: [0xfa0] RESMANAGER: Serialising CIwResList of 8 items
+21/09/13 12:19:46.051: [0xfa0] RESMANAGER: Serialising item 0
+21/09/13 12:19:46.064: [0xfa0] RESMANAGER: Wrote item: classname 0x3521f539, name 0x7c9a911a
+21/09/13 12:19:46.067: [0xfa0] RESMANAGER: Serialising item 1
+21/09/13 12:19:46.070: [0xfa0] RESMANAGER: Wrote item: classname 0x3521f539, name 0xe692c7c
+21/09/13 12:19:46.074: [0xfa0] RESMANAGER: Serialising item 2
+21/09/13 12:19:46.077: [0xfa0] RESMANAGER: Wrote item: classname 0x3521f539, name 0xf9caa11
+21/09/13 12:19:46.080: [0xfa0] RESMANAGER: Serialising item 3
+21/09/13 12:19:46.084: [0xfa0] RESMANAGER: Wrote item: classname 0x3521f539, name 0x10023afb
+21/09/13 12:19:46.087: [0xfa0] RESMANAGER: Serialising item 4
+21/09/13 12:19:46.090: [0xfa0] RESMANAGER: Wrote item: classname 0x3521f539, name 0x10665341
+21/09/13 12:19:46.094: [0xfa0] RESMANAGER: Serialising item 5
+21/09/13 12:19:46.098: [0xfa0] RESMANAGER: Wrote item: classname 0x3521f539, name 0x2fb4a603
+21/09/13 12:19:46.101: [0xfa0] RESMANAGER: Serialising item 6
+21/09/13 12:19:46.107: [0xfa0] RESMANAGER: Wrote item: classname 0x3521f539, name 0x1b44f568
+21/09/13 12:19:46.112: [0xfa0] RESMANAGER: Serialising item 7
+21/09/13 12:19:46.120: [0xfa0] RESMANAGER: Wrote item: classname 0x3521f539, name 0xf97dc36
+21/09/13 12:19:46.123: [0xfa0] FILE: s3eFileClose h=0x5a4b039c
+21/09/13 12:19:46.127: [0xfa0] FILE: s3eFileClose h=0x5a4b0280
+21/09/13 12:19:46.132: [0xfa0] UTIL: Found 'data-gles1/320x480/Menu/_menu.group.bin.debug' using path global 'data-gles1'
+21/09/13 12:19:46.138: [0xfa0] FILE: s3eFileOpen('data-gles1/320x480/Menu/_menu.group.bin.debug', 'wb') succeeded, id=1029 p=0x5a4b04b8
+21/09/13 12:19:46.141: [0xfa0] UTIL: Found 'data-gles1/320x480/Menu/_menu.group.bin.debug.txt' using path global 'data-gles1'
+21/09/13 12:19:46.145: [0xfa0] FILE: s3eFileOpen('data-gles1/320x480/Menu/_menu.group.bin.debug.txt', 'wt') succeeded, id=1030 p=0x5a4b05d4
+21/09/13 12:19:46.148: [0xfa0] FILE: s3eFileClose h=0x5a4b05d4
+21/09/13 12:19:46.152: [0xfa0] FILE: s3eFileClose h=0x5a4b04b8
+21/09/13 12:19:46.156: [0xfa0] UTIL: Found 'data-gles1/320x480/Menu/_menu.group.hst' using path global 'data-gles1'
+21/09/13 12:19:46.159: [0xfa0] FILE: s3eFileOpen('data-gles1/320x480/Menu/_menu.group.hst', 'wb') succeeded, id=1031 p=0x5a4b06f0
+21/09/13 12:19:46.162: [0xfa0] FILE: s3eFileClose h=0x5a4b06f0
+21/09/13 12:19:46.166: [0xfa0] UTIL: Found 'data-gles1/320x480/Menu/_menu.group.bin' using path global 'data-gles1'
+21/09/13 12:19:46.170: [0xfa0] FILE: s3eFileOpen('data-gles1/320x480/Menu/_menu.group.bin', 'rb') succeeded, id=1000 p=0x5a4ae48c
+21/09/13 12:19:46.173: [0xfa0] UTIL: Found 'data-gles1/320x480/Menu/_menu.group.hst' using path global 'data-gles1'
+21/09/13 12:19:46.177: [0xfa0] FILE: s3eFileOpen('data-gles1/320x480/Menu/_menu.group.hst', 'r') succeeded, id=1001 p=0x5a4ae5a8
+21/09/13 12:19:46.180: [0xfa0] FILE: s3eFileClose h=0x5a4ae5a8
+21/09/13 12:19:46.184: [0xfa0] UTIL: Found 'data-gles1/320x480/Menu/_menu.group.hst' using path global 'data-gles1'
+21/09/13 12:19:46.187: [0xfa0] FILE: s3eFileOpen('data-gles1/320x480/Menu/_menu.group.hst', 'rb') succeeded, id=1002 p=0x5a4ae6c4
+21/09/13 12:19:46.191: [0xfa0] FILE: s3eFileClose h=0x5a4ae6c4
+21/09/13 12:19:46.197: [0xfa0] UTIL: Found 'data-gles1/320x480/Menu/_menu.group.bin.debug' using path global 'data-gles1'
+21/09/13 12:19:46.200: [0xfa0] UTIL: Found 'data-gles1/320x480/Menu/_menu.group.bin.debug' using path global 'data-gles1'
+21/09/13 12:19:46.204: [0xfa0] FILE: s3eFileOpen('data-gles1/320x480/Menu/_menu.group.bin.debug', 'rb') succeeded, id=1003 p=0x5a4ae7e0
+21/09/13 12:19:46.209: [0xfa0] FILE: s3eFileClose h=0x5a4ae7e0
+21/09/13 12:19:46.213: [0xfa0] RESMANAGER: Serialising CIwResList of 8 items
+21/09/13 12:19:46.222: [0xfa0] RESMANAGER: Serialising item 0
+21/09/13 12:19:46.225: [0xfa0] RESMANAGER: Read item: classname 0x3521f539, name 0x7c9a911a
+21/09/13 12:19:46.237: [0xfa0] RESMANAGER: Serialising item 1
+21/09/13 12:19:46.241: [0xfa0] RESMANAGER: Read item: classname 0x3521f539, name 0xe692c7c
+21/09/13 12:19:46.245: [0xfa0] RESMANAGER: Serialising item 2
+21/09/13 12:19:46.249: [0xfa0] RESMANAGER: Read item: classname 0x3521f539, name 0xf9caa11
+21/09/13 12:19:46.254: [0xfa0] RESMANAGER: Serialising item 3
+21/09/13 12:19:46.257: [0xfa0] RESMANAGER: Read item: classname 0x3521f539, name 0x10023afb
+21/09/13 12:19:46.264: [0xfa0] RESMANAGER: Serialising item 4
+21/09/13 12:19:46.267: [0xfa0] RESMANAGER: Read item: classname 0x3521f539, name 0x10665341
+21/09/13 12:19:46.272: [0xfa0] RESMANAGER: Serialising item 5
+21/09/13 12:19:46.277: [0xfa0] RESMANAGER: Read item: classname 0x3521f539, name 0x2fb4a603
+21/09/13 12:19:46.284: [0xfa0] RESMANAGER: Serialising item 6
+21/09/13 12:19:46.287: [0xfa0] RESMANAGER: Read item: classname 0x3521f539, name 0x1b44f568
+21/09/13 12:19:46.298: [0xfa0] RESMANAGER: Serialising item 7
+21/09/13 12:19:46.301: [0xfa0] RESMANAGER: Read item: classname 0x3521f539, name 0xf97dc36
+21/09/13 12:19:46.310: [0xfa0] FILE: s3eFileClose h=0x5a4ae48c
+21/09/13 12:19:46.316: [0xfa0] ACCELEROMETER: Start
+21/09/13 12:19:46.320: [0xfa0] UTIL: Found 'fonts/Iw2DStrings.group' using default path
+21/09/13 12:19:46.323: [0xfa0] FILE: s3eFileOpen('fonts/Iw2DStrings.group', 'r') succeeded, id=1004 p=0x5a4ae8fc
+21/09/13 12:19:46.326: [0xfa0] FILE: s3eFileClose h=0x5a4ae8fc
+21/09/13 12:19:46.330: [0xfa0] RESMANAGER: Reading asset: Fonts/arial14.gxfont
+21/09/13 12:19:46.333: [0xfa0] UTIL: Found 'Fonts/arial14.gxfont' using default path
+21/09/13 12:19:46.337: [0xfa0] UTIL: Found 'Fonts/arial14.gxfont' using default path
+21/09/13 12:19:46.340: [0xfa0] FILE: s3eFileOpen('Fonts/arial14.gxfont', 'r') succeeded, id=1005 p=0x5a4aea18
+21/09/13 12:19:46.343: [0xfa0] FILE: s3eFileClose h=0x5a4aea18
+21/09/13 12:19:46.350: [0xfa0] UTIL: Found 'Fonts/arial14.tga' using default path
+21/09/13 12:19:46.353: [0xfa0] FILE: s3eFileOpen('Fonts/arial14.tga', 'rb') succeeded, id=1006 p=0x5a4aeb34
+21/09/13 12:19:46.359: [0xfa0] FILE: s3eFileClose h=0x5a4aeb34
+21/09/13 12:19:46.370: [0xfa0] GX_FONT_VERBOSE: Font build took 21 ms
+21/09/13 12:19:46.373: [0xfa0] RESMANAGER: Reading asset: Fonts/MrBubbleFont10.gxfont
+21/09/13 12:19:46.379: [0xfa0] UTIL: Found 'Fonts/MrBubbleFont10.gxfont' using default path
+21/09/13 12:19:46.384: [0xfa0] UTIL: Found 'Fonts/MrBubbleFont10.gxfont' using default path
+21/09/13 12:19:46.387: [0xfa0] FILE: s3eFileOpen('Fonts/MrBubbleFont10.gxfont', 'r') succeeded, id=1007 p=0x5a4aec50
+21/09/13 12:19:46.390: [0xfa0] FILE: s3eFileClose h=0x5a4aec50
+21/09/13 12:19:46.394: [0xfa0] UTIL: Found 'Fonts/MrBubbleFont10.tga' using default path
+21/09/13 12:19:46.397: [0xfa0] FILE: s3eFileOpen('Fonts/MrBubbleFont10.tga', 'rb') succeeded, id=1008 p=0x5a4aed6c
+21/09/13 12:19:46.401: [0xfa0] FILE: s3eFileClose h=0x5a4aed6c
+21/09/13 12:19:46.410: [0xfa0] GX_FONT_VERBOSE: Font build took 17 ms
+21/09/13 12:19:46.414: [0xfa0] RESMANAGER: Reading asset: Fonts/MrBubbleFont12.gxfont
+21/09/13 12:19:46.418: [0xfa0] UTIL: Found 'Fonts/MrBubbleFont12.gxfont' using default path
+21/09/13 12:19:46.422: [0xfa0] UTIL: Found 'Fonts/MrBubbleFont12.gxfont' using default path
+21/09/13 12:19:46.425: [0xfa0] FILE: s3eFileOpen('Fonts/MrBubbleFont12.gxfont', 'r') succeeded, id=1009 p=0x5a4aee88
+21/09/13 12:19:46.431: [0xfa0] FILE: s3eFileClose h=0x5a4aee88
+21/09/13 12:19:46.435: [0xfa0] UTIL: Found 'Fonts/MrBubbleFont12.tga' using default path
+21/09/13 12:19:46.443: [0xfa0] FILE: s3eFileOpen('Fonts/MrBubbleFont12.tga', 'rb') succeeded, id=1010 p=0x5a4aefa4
+21/09/13 12:19:46.448: [0xfa0] FILE: s3eFileClose h=0x5a4aefa4
+21/09/13 12:19:46.462: [0xfa0] GX_FONT_VERBOSE: Font build took 28 ms
+21/09/13 12:19:46.465: [0xfa0] UTIL: Found 'data-gles1/fonts/Iw2DStrings.group.bin' using path global 'data-gles1'
+21/09/13 12:19:46.469: [0xfa0] FILE: s3eFileOpen('data-gles1/fonts/Iw2DStrings.group.bin', 'wb') succeeded, id=1011 p=0x5a4af0c0
+21/09/13 12:19:46.472: [0xfa0] UTIL: Found 'data-gles1/fonts/Iw2DStrings.group.bin.txt' using path global 'data-gles1'
+21/09/13 12:19:46.475: [0xfa0] FILE: s3eFileOpen('data-gles1/fonts/Iw2DStrings.group.bin.txt', 'wt') succeeded, id=1012 p=0x5a4af1dc
+21/09/13 12:19:46.479: [0xfa0] RESMANAGER: Serialising CIwResList of 3 items
+21/09/13 12:19:46.482: [0xfa0] RESMANAGER: Serialising item 0
+21/09/13 12:19:46.489: [0xfa0] RESMANAGER: Wrote item: classname 0xa68776be, name 0x401fc9d3
+21/09/13 12:19:46.492: [0xfa0] RESMANAGER: Serialising item 1
+21/09/13 12:19:46.498: [0xfa0] RESMANAGER: Wrote item: classname 0xa68776be, name 0x73cd0268
+21/09/13 12:19:46.502: [0xfa0] RESMANAGER: Serialising item 2
+21/09/13 12:19:46.513: [0xfa0] RESMANAGER: Wrote item: classname 0xa68776be, name 0x73cd026a
+21/09/13 12:19:46.516: [0xfa0] FILE: s3eFileClose h=0x5a4af1dc
+21/09/13 12:19:46.524: [0xfa0] FILE: s3eFileClose h=0x5a4af0c0
+21/09/13 12:19:46.533: [0xfa0] UTIL: Found 'data-gles1/fonts/Iw2DStrings.group.bin.debug' using path global 'data-gles1'
+21/09/13 12:19:46.536: [0xfa0] FILE: s3eFileOpen('data-gles1/fonts/Iw2DStrings.group.bin.debug', 'wb') succeeded, id=1013 p=0x5a4af2f8
+21/09/13 12:19:46.539: [0xfa0] UTIL: Found 'data-gles1/fonts/Iw2DStrings.group.bin.debug.txt' using path global 'data-gles1'
+21/09/13 12:19:46.544: [0xfa0] FILE: s3eFileOpen('data-gles1/fonts/Iw2DStrings.group.bin.debug.txt', 'wt') succeeded, id=1014 p=0x5a4af414
+21/09/13 12:19:46.548: [0xfa0] FILE: s3eFileClose h=0x5a4af414
+21/09/13 12:19:46.551: [0xfa0] FILE: s3eFileClose h=0x5a4af2f8
+21/09/13 12:19:46.555: [0xfa0] UTIL: Found 'data-gles1/fonts/Iw2DStrings.group.hst' using path global 'data-gles1'
+21/09/13 12:19:46.559: [0xfa0] FILE: s3eFileOpen('data-gles1/fonts/Iw2DStrings.group.hst', 'wb') succeeded, id=1015 p=0x5a4af530
+21/09/13 12:19:46.562: [0xfa0] FILE: s3eFileClose h=0x5a4af530
+21/09/13 12:19:46.567: [0xfa0] UTIL: Found 'data-gles1/fonts/Iw2DStrings.group.bin' using path global 'data-gles1'
+21/09/13 12:19:46.571: [0xfa0] FILE: s3eFileOpen('data-gles1/fonts/Iw2DStrings.group.bin', 'rb') succeeded, id=1016 p=0x5a4af64c
+21/09/13 12:19:46.574: [0xfa0] UTIL: Found 'data-gles1/fonts/Iw2DStrings.group.hst' using path global 'data-gles1'
+21/09/13 12:19:46.577: [0xfa0] FILE: s3eFileOpen('data-gles1/fonts/Iw2DStrings.group.hst', 'r') succeeded, id=1017 p=0x5a4af768
+21/09/13 12:19:46.580: [0xfa0] FILE: s3eFileClose h=0x5a4af768
+21/09/13 12:19:46.584: [0xfa0] UTIL: Found 'data-gles1/fonts/Iw2DStrings.group.hst' using path global 'data-gles1'
+21/09/13 12:19:46.587: [0xfa0] FILE: s3eFileOpen('data-gles1/fonts/Iw2DStrings.group.hst', 'rb') succeeded, id=1018 p=0x5a4af884
+21/09/13 12:19:46.591: [0xfa0] FILE: s3eFileClose h=0x5a4af884
+21/09/13 12:19:46.597: [0xfa0] UTIL: Found 'data-gles1/fonts/Iw2DStrings.group.bin.debug' using path global 'data-gles1'
+21/09/13 12:19:46.600: [0xfa0] UTIL: Found 'data-gles1/fonts/Iw2DStrings.group.bin.debug' using path global 'data-gles1'
+21/09/13 12:19:46.604: [0xfa0] FILE: s3eFileOpen('data-gles1/fonts/Iw2DStrings.group.bin.debug', 'rb') succeeded, id=1019 p=0x5a4af9a0
+21/09/13 12:19:46.610: [0xfa0] FILE: s3eFileClose h=0x5a4af9a0
+21/09/13 12:19:46.614: [0xfa0] RESMANAGER: Serialising CIwResList of 3 items
+21/09/13 12:19:46.617: [0xfa0] RESMANAGER: Serialising item 0
+21/09/13 12:19:46.620: [0xfa0] RESMANAGER: Read item: classname 0xa68776be, name 0x401fc9d3
+21/09/13 12:19:46.633: [0xfa0] RESMANAGER: Serialising item 1
+21/09/13 12:19:46.636: [0xfa0] RESMANAGER: Read item: classname 0xa68776be, name 0x73cd0268
+21/09/13 12:19:46.645: [0xfa0] RESMANAGER: Serialising item 2
+21/09/13 12:19:46.649: [0xfa0] RESMANAGER: Read item: classname 0xa68776be, name 0x73cd026a
+21/09/13 12:19:46.661: [0xfa0] FILE: s3eFileClose h=0x5a4af64c
+21/09/13 12:19:46.670: [0xfa0] GX_VERBOSE: Generating default shader: #define FRAGMENT 
+#define UV0_STREAM 
+#define COL_STREAM 
+#define TEX0 
+21/09/13 12:19:46.675: [0xfa0] GX_VERBOSE: Generating default shader: #define UV0_STREAM 
+#define COL_STREAM 
+21/09/13 12:19:46.723: [0xfa0] GX_VERBOSE: Generating default shader: #define FRAGMENT 
+#define UV0_STREAM 
+#define COL_STREAM 
+#define TEX0 
+#define ALPHA_TEST 7
+21/09/13 12:19:46.728: [0xfa0] GX_VERBOSE: Generating default shader: #define UV0_STREAM 
+#define COL_STREAM 
+21/09/13 12:19:48.904: [0xfa0] UTIL: Found '640x960/Arcade/_arcade.group' using default path
+21/09/13 12:19:48.907: [0xfa0] FILE: s3eFileOpen('640x960/Arcade/_arcade.group', 'r') succeeded, id=1020 p=0x5a4afabc
+21/09/13 12:19:48.910: [0xfa0] FILE: s3eFileClose h=0x5a4afabc
+21/09/13 12:19:48.913: [0xfa0] RESMANAGER: Reading asset: 640x960/Arcade/highway.png
+21/09/13 12:19:48.917: [0xfa0] UTIL: Found '640x960/Arcade/highway.png' using default path
+21/09/13 12:19:48.920: [0xfa0] FILE: s3eFileOpen('640x960/Arcade/highway.png', 'rb') succeeded, id=1021 p=0x5a4afbd8
+21/09/13 12:19:49.032: [0xfa0] FILE: s3eFileClose h=0x5a4afbd8
+21/09/13 12:19:49.036: [0xfa0] RESMANAGER: Reading asset: 640x960/Arcade/blowfish.png
+21/09/13 12:19:49.040: [0xfa0] UTIL: Found '640x960/Arcade/blowfish.png' using default path
+21/09/13 12:19:49.044: [0xfa0] FILE: s3eFileOpen('640x960/Arcade/blowfish.png', 'rb') succeeded, id=1022 p=0x5a4afcf4
+21/09/13 12:19:49.052: [0xfa0] FILE: s3eFileClose h=0x5a4afcf4
+21/09/13 12:19:49.057: [0xfa0] RESMANAGER: Reading asset: 640x960/Arcade/speed_normal.png
+21/09/13 12:19:49.060: [0xfa0] UTIL: Found '640x960/Arcade/speed_normal.png' using default path
+21/09/13 12:19:49.064: [0xfa0] FILE: s3eFileOpen('640x960/Arcade/speed_normal.png', 'rb') succeeded, id=1023 p=0x5a4afe10
+21/09/13 12:19:49.074: [0xfa0] FILE: s3eFileClose h=0x5a4afe10
+21/09/13 12:19:49.077: [0xfa0] RESMANAGER: Reading asset: 640x960/Arcade/speed_pressed.png
+21/09/13 12:19:49.081: [0xfa0] UTIL: Found '640x960/Arcade/speed_pressed.png' using default path
+21/09/13 12:19:49.084: [0xfa0] FILE: s3eFileOpen('640x960/Arcade/speed_pressed.png', 'rb') succeeded, id=1024 p=0x5a4aff2c
+21/09/13 12:19:49.095: [0xfa0] FILE: s3eFileClose h=0x5a4aff2c
+21/09/13 12:19:49.099: [0xfa0] RESMANAGER: Reading asset: 640x960/Arcade/left.png
+21/09/13 12:19:49.104: [0xfa0] UTIL: Found '640x960/Arcade/left.png' using default path
+21/09/13 12:19:49.108: [0xfa0] FILE: s3eFileOpen('640x960/Arcade/left.png', 'rb') succeeded, id=1025 p=0x5a4b0048
+21/09/13 12:19:49.115: [0xfa0] FILE: s3eFileClose h=0x5a4b0048
+21/09/13 12:19:49.118: [0xfa0] RESMANAGER: Reading asset: 640x960/Arcade/right.png
+21/09/13 12:19:49.124: [0xfa0] UTIL: Found '640x960/Arcade/right.png' using default path
+21/09/13 12:19:49.127: [0xfa0] FILE: s3eFileOpen('640x960/Arcade/right.png', 'rb') succeeded, id=1026 p=0x5a4b0164
+21/09/13 12:19:49.135: [0xfa0] FILE: s3eFileClose h=0x5a4b0164
+21/09/13 12:19:49.139: [0xfa0] RESMANAGER: Reading asset: 640x960/Arcade/tile1.png
+21/09/13 12:19:49.142: [0xfa0] UTIL: Found '640x960/Arcade/tile1.png' using default path
+21/09/13 12:19:49.146: [0xfa0] FILE: s3eFileOpen('640x960/Arcade/tile1.png', 'rb') succeeded, id=1027 p=0x5a4b0280
+21/09/13 12:19:49.150: [0xfa0] FILE: s3eFileClose h=0x5a4b0280
+21/09/13 12:19:49.154: [0xfa0] RESMANAGER: Reading asset: 640x960/Arcade/tile2.png
+21/09/13 12:19:49.157: [0xfa0] UTIL: Found '640x960/Arcade/tile2.png' using default path
+21/09/13 12:19:49.160: [0xfa0] FILE: s3eFileOpen('640x960/Arcade/tile2.png', 'rb') succeeded, id=1028 p=0x5a4b039c
+21/09/13 12:19:49.165: [0xfa0] FILE: s3eFileClose h=0x5a4b039c
+21/09/13 12:19:49.169: [0xfa0] RESMANAGER: Reading asset: 640x960/Arcade/tile3.png
+21/09/13 12:19:49.172: [0xfa0] UTIL: Found '640x960/Arcade/tile3.png' using default path
+21/09/13 12:19:49.175: [0xfa0] FILE: s3eFileOpen('640x960/Arcade/tile3.png', 'rb') succeeded, id=1029 p=0x5a4b04b8
+21/09/13 12:19:49.180: [0xfa0] FILE: s3eFileClose h=0x5a4b04b8
+21/09/13 12:19:49.184: [0xfa0] UTIL: Found 'data-gles1/640x960/Arcade/_arcade.group.bin' using path global 'data-gles1'
+21/09/13 12:19:49.188: [0xfa0] FILE: s3eFileOpen('data-gles1/640x960/Arcade/_arcade.group.bin', 'wb') succeeded, id=1030 p=0x5a4b05d4
+21/09/13 12:19:49.191: [0xfa0] UTIL: Found 'data-gles1/640x960/Arcade/_arcade.group.bin.txt' using path global 'data-gles1'
+21/09/13 12:19:49.195: [0xfa0] FILE: s3eFileOpen('data-gles1/640x960/Arcade/_arcade.group.bin.txt', 'wt') succeeded, id=1031 p=0x5a4b06f0
+21/09/13 12:19:49.198: [0xfa0] RESMANAGER: Serialising CIwResList of 9 items
+21/09/13 12:19:49.203: [0xfa0] RESMANAGER: Serialising item 0
+21/09/13 12:19:49.266: [0xfa0] RESMANAGER: Wrote item: classname 0x3521f539, name 0x45d8e056
+21/09/13 12:19:49.269: [0xfa0] RESMANAGER: Serialising item 1
+21/09/13 12:19:49.274: [0xfa0] RESMANAGER: Wrote item: classname 0x3521f539, name 0x720827e3
+21/09/13 12:19:49.278: [0xfa0] RESMANAGER: Serialising item 2
+21/09/13 12:19:49.285: [0xfa0] RESMANAGER: Wrote item: classname 0x3521f539, name 0x1f0d035e
+21/09/13 12:19:49.288: [0xfa0] RESMANAGER: Serialising item 3
+21/09/13 12:19:49.292: [0xfa0] RESMANAGER: Wrote item: classname 0x3521f539, name 0xa0b9ba4b
+21/09/13 12:19:49.295: [0xfa0] RESMANAGER: Serialising item 4
+21/09/13 12:19:49.298: [0xfa0] RESMANAGER: Wrote item: classname 0x3521f539, name 0x7c9a03b0
+21/09/13 12:19:49.302: [0xfa0] RESMANAGER: Serialising item 5
+21/09/13 12:19:49.306: [0xfa0] RESMANAGER: Wrote item: classname 0x3521f539, name 0x10494163
+21/09/13 12:19:49.310: [0xfa0] RESMANAGER: Serialising item 6
+21/09/13 12:19:49.313: [0xfa0] RESMANAGER: Wrote item: classname 0x3521f539, name 0x106d8704
+21/09/13 12:19:49.317: [0xfa0] RESMANAGER: Serialising item 7
+21/09/13 12:19:49.320: [0xfa0] RESMANAGER: Wrote item: classname 0x3521f539, name 0x106d8705
+21/09/13 12:19:49.323: [0xfa0] RESMANAGER: Serialising item 8
+21/09/13 12:19:49.327: [0xfa0] RESMANAGER: Wrote item: classname 0x3521f539, name 0x106d8706
+21/09/13 12:19:49.330: [0xfa0] FILE: s3eFileClose h=0x5a4b06f0
+21/09/13 12:19:49.334: [0xfa0] FILE: s3eFileClose h=0x5a4b05d4
+21/09/13 12:19:49.340: [0xfa0] UTIL: Found 'data-gles1/640x960/Arcade/_arcade.group.bin.debug' using path global 'data-gles1'
+21/09/13 12:19:49.346: [0xfa0] FILE: s3eFileOpen('data-gles1/640x960/Arcade/_arcade.group.bin.debug', 'wb') succeeded, id=1000 p=0x5a4ae48c
+21/09/13 12:19:49.350: [0xfa0] UTIL: Found 'data-gles1/640x960/Arcade/_arcade.group.bin.debug.txt' using path global 'data-gles1'
+21/09/13 12:19:49.354: [0xfa0] FILE: s3eFileOpen('data-gles1/640x960/Arcade/_arcade.group.bin.debug.txt', 'wt') succeeded, id=1001 p=0x5a4ae5a8
+21/09/13 12:19:49.357: [0xfa0] FILE: s3eFileClose h=0x5a4ae5a8
+21/09/13 12:19:49.363: [0xfa0] FILE: s3eFileClose h=0x5a4ae48c
+21/09/13 12:19:49.368: [0xfa0] UTIL: Found 'data-gles1/640x960/Arcade/_arcade.group.hst' using path global 'data-gles1'
+21/09/13 12:19:49.372: [0xfa0] FILE: s3eFileOpen('data-gles1/640x960/Arcade/_arcade.group.hst', 'wb') succeeded, id=1002 p=0x5a4ae6c4
+21/09/13 12:19:49.376: [0xfa0] FILE: s3eFileClose h=0x5a4ae6c4
+21/09/13 12:19:49.384: [0xfa0] UTIL: Found 'data-gles1/640x960/Arcade/_arcade.group.bin' using path global 'data-gles1'
+21/09/13 12:19:49.388: [0xfa0] FILE: s3eFileOpen('data-gles1/640x960/Arcade/_arcade.group.bin', 'rb') succeeded, id=1003 p=0x5a4ae7e0
+21/09/13 12:19:49.391: [0xfa0] UTIL: Found 'data-gles1/640x960/Arcade/_arcade.group.hst' using path global 'data-gles1'
+21/09/13 12:19:49.394: [0xfa0] FILE: s3eFileOpen('data-gles1/640x960/Arcade/_arcade.group.hst', 'r') succeeded, id=1004 p=0x5a4ae8fc
+21/09/13 12:19:49.398: [0xfa0] FILE: s3eFileClose h=0x5a4ae8fc
+21/09/13 12:19:49.401: [0xfa0] UTIL: Found 'data-gles1/640x960/Arcade/_arcade.group.hst' using path global 'data-gles1'
+21/09/13 12:19:49.405: [0xfa0] FILE: s3eFileOpen('data-gles1/640x960/Arcade/_arcade.group.hst', 'rb') succeeded, id=1005 p=0x5a4aea18
+21/09/13 12:19:49.408: [0xfa0] FILE: s3eFileClose h=0x5a4aea18
+21/09/13 12:19:49.412: [0xfa0] UTIL: Found 'data-gles1/640x960/Arcade/_arcade.group.bin.debug' using path global 'data-gles1'
+21/09/13 12:19:49.415: [0xfa0] UTIL: Found 'data-gles1/640x960/Arcade/_arcade.group.bin.debug' using path global 'data-gles1'
+21/09/13 12:19:49.418: [0xfa0] FILE: s3eFileOpen('data-gles1/640x960/Arcade/_arcade.group.bin.debug', 'rb') succeeded, id=1006 p=0x5a4aeb34
+21/09/13 12:19:49.421: [0xfa0] FILE: s3eFileClose h=0x5a4aeb34
+21/09/13 12:19:49.425: [0xfa0] RESMANAGER: Serialising CIwResList of 9 items
+21/09/13 12:19:49.430: [0xfa0] RESMANAGER: Serialising item 0
+21/09/13 12:19:49.433: [0xfa0] RESMANAGER: Read item: classname 0x3521f539, name 0x45d8e056
+21/09/13 12:19:49.503: [0xfa0] RESMANAGER: Serialising item 1
+21/09/13 12:19:49.506: [0xfa0] RESMANAGER: Read item: classname 0x3521f539, name 0x720827e3
+21/09/13 12:19:49.515: [0xfa0] RESMANAGER: Serialising item 2
+21/09/13 12:19:49.520: [0xfa0] RESMANAGER: Read item: classname 0x3521f539, name 0x1f0d035e
+21/09/13 12:19:49.526: [0xfa0] RESMANAGER: Serialising item 3
+21/09/13 12:19:49.529: [0xfa0] RESMANAGER: Read item: classname 0x3521f539, name 0xa0b9ba4b
+21/09/13 12:19:49.535: [0xfa0] RESMANAGER: Serialising item 4
+21/09/13 12:19:49.539: [0xfa0] RESMANAGER: Read item: classname 0x3521f539, name 0x7c9a03b0
+21/09/13 12:19:49.544: [0xfa0] RESMANAGER: Serialising item 5
+21/09/13 12:19:49.547: [0xfa0] RESMANAGER: Read item: classname 0x3521f539, name 0x10494163
+21/09/13 12:19:49.552: [0xfa0] RESMANAGER: Serialising item 6
+21/09/13 12:19:49.556: [0xfa0] RESMANAGER: Read item: classname 0x3521f539, name 0x106d8704
+21/09/13 12:19:49.560: [0xfa0] RESMANAGER: Serialising item 7
+21/09/13 12:19:49.565: [0xfa0] RESMANAGER: Read item: classname 0x3521f539, name 0x106d8705
+21/09/13 12:19:49.569: [0xfa0] RESMANAGER: Serialising item 8
+21/09/13 12:19:49.575: [0xfa0] RESMANAGER: Read item: classname 0x3521f539, name 0x106d8706
+21/09/13 12:19:49.580: [0xfa0] FILE: s3eFileClose h=0x5a4ae7e0
+21/09/13 12:19:49.585: [0xfa0] DEBUG: s3eDebugAssertShow 0x00000000 type=2 'IwAssert failure (GX, 1313).
+Message: Could not find resource hashed f294442 (of type CIwTexture)
+'
+Ignoring...
+21/09/13 12:19:50.651: [0xfa0] IWCRT: mode rb -> 0
+21/09/13 12:19:50.666: [0xfa0] IWCRT: open 3
+21/09/13 12:19:50.678: [0xfa0] FILE: s3eFileOpen('spineboy.atlas', 'rb') succeeded, id=1007 p=0x5a4aec50
+21/09/13 12:19:50.701: [0xfa0] UTIL: Found 'spineboy.png' using default path
+21/09/13 12:19:50.714: [0xfa0] FILE: s3eFileOpen('spineboy.png', 'rb') succeeded, id=1008 p=0x5a4aed6c
+21/09/13 12:19:50.730: [0xfa0] FILE: s3eFileClose h=0x5a4aed6c
+21/09/13 12:19:50.779: [0xfa0] IWCRT: mode rb -> 0
+21/09/13 12:19:50.791: [0xfa0] IWCRT: open 4
+21/09/13 12:19:50.805: [0xfa0] FILE: s3eFileOpen('spineboy-skeleton.json', 'rb') succeeded, id=1009 p=0x5a4aee88
+21/09/13 12:19:51.229: [0xfa0] IWCRT: mode rb -> 0
+21/09/13 12:19:51.240: [0xfa0] IWCRT: open 5
+21/09/13 12:19:51.253: [0xfa0] FILE: s3eFileOpen('spineboy-walk.json', 'rb') succeeded, id=1010 p=0x5a4aefa4
+21/09/13 12:19:51.960: [0xfa0] IWCRT: close 5
+21/09/13 12:19:51.972: [0xfa0] FILE: s3eFileClose h=0x5a4aefa4
+21/09/13 12:19:51.984: [0xfa0] IWCRT: close 4
+21/09/13 12:19:51.995: [0xfa0] FILE: s3eFileClose h=0x5a4aee88
+21/09/13 12:19:52.007: [0xfa0] IWCRT: close 3
+21/09/13 12:19:52.020: [0xfa0] FILE: s3eFileClose h=0x5a4aec50
+21/09/13 12:19:52.043: [0xfa0] THREAD: *** Warning: The application is not calling s3eDeviceYield often enough. This can cause problems during suspend and resume. Time since last yield: 3140 ms
+21/09/13 12:19:52.112: [0xfa0] THREAD: *** Warning: The application is not calling s3eDeviceYield often enough. This can cause problems during suspend and resume. Time since last yield: 3209 ms

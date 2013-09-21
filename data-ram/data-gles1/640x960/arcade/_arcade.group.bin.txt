@@ -1,0 +1,32 @@
+ResGroupResources:
+	CIwTexture (0x3521f539)
+		"highway" (0x45d8e056)
+		Size: 2304036
+	CIwTexture (0x3521f539)
+		"blowfish" (0x720827e3)
+		Size: 407628
+	CIwTexture (0x3521f539)
+		"speed_normal" (0x1f0d035e)
+		Size: 113636
+	CIwTexture (0x3521f539)
+		"speed_pressed" (0xa0b9ba4b)
+		Size: 113636
+	CIwTexture (0x3521f539)
+		"left" (0x7c9a03b0)
+		Size: 57636
+	CIwTexture (0x3521f539)
+		"right" (0x10494163)
+		Size: 57636
+	CIwTexture (0x3521f539)
+		"tile1" (0x106d8704)
+		Size: 6436
+	CIwTexture (0x3521f539)
+		"tile2" (0x106d8705)
+		Size: 6436
+	CIwTexture (0x3521f539)
+		"tile3" (0x106d8706)
+		Size: 6436
+	ResList 'CIwTexture' pos:38 size:3073526
+
+ResGroupResources: Wrote 3073530 bytes to CIwResGroup "_arcade"
+

@@ -1,0 +1,2 @@
+^C:\USERS\BILAL\REPOSITORIES\GAMEJAM2\GAME.MKB
+"C:\Marmalade\6.3.3BETA\s3e\python\python.exe" "C:\Marmalade\6.3.3BETA\s3e\makefile_builder\mkb.py" "c:/Users/Bilal/Repositories/GameJam2/game.mkb" "--default-buildenv=vc11" --msvc-project
