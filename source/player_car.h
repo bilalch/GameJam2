@@ -33,9 +33,9 @@ public:
 	void loadGreyCar();
 	void unloadCar();
 
-	float getX1() { return m_x1; }
+	float getX1() { return x; }
 	float getX2() { return m_x2; }
-	float getY1() { return m_y1; }
+	float getY1() { return y; }
 	float getY2() { return m_y2; }
 
 	float getSpeed() { return car_speed; }

@@ -59,6 +59,12 @@ files
 	level_generator.h
 	level_generator.cpp
 	
+	collidable.h
+	collidable.cpp
+
+	cart.h
+	cart.cpp
+	
 	[Awm]
 	(source/awm)
 	AwmSoundManager.h
@@ -83,10 +89,6 @@ files
 	[Util]
 	(source/util)
 	dynamicArray.h
-
-	
-	
-	
 
 }
 
