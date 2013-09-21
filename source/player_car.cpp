@@ -41,6 +41,13 @@ void PlayerCar::initializeSpine()
 	animation = NULL;
 	animationTime = 0;
 	lastFrameTime = 0;
+
+	atlas1 = NULL;
+	skeletonData1 = NULL;
+	skeleton1 = NULL;
+	animation1 = NULL;
+	animationTime1 = 0;
+	lastFrameTime1 = 0;
 }
 
 void PlayerCar::loadSpine()
@@ -66,6 +73,30 @@ void PlayerCar::loadSpine()
     skeleton->getRootBone()->y = y;
 	
     skeleton->updateWorldTransform();
+  } catch (exception &ex) {
+    cout << ex.what() << endl << flush;
+  }
+
+    try {
+    ifstream atlasFile1("chicken.atlas");
+    atlas1 = new Atlas(atlasFile1);
+
+    SkeletonJson skeletonJson1(atlas1);
+	skeletonJson1.scale = 0.5;
+
+    ifstream skeletonFile1("chicken-skeleton.json");
+    skeletonData1 = skeletonJson1.readSkeletonData(skeletonFile1);
+
+    ifstream animationFile1("chicken-running.json");
+    animation1 = skeletonJson1.readAnimation(animationFile1, skeletonData1);
+
+    skeleton1 = new Skeleton(skeletonData1);
+    skeleton1->flipX = false;
+    skeleton1->flipY = false;
+    skeleton1->setToBindPose();
+	skeleton1->getRootBone()->x = 100;
+    skeleton1->getRootBone()->y = 300;
+    skeleton1->updateWorldTransform();
   } catch (exception &ex) {
     cout << ex.what() << endl << flush;
   }
@@ -106,6 +137,7 @@ void PlayerCar::draw()
 	//spriteSheet->Render(CIwFVec2(x,y),1.0f,0.0f,0.0f);
 	IwGxFlush();
 	skeleton->draw();
+	skeleton1->draw();
 }
 
 void PlayerCar::updateSpine()
@@ -118,13 +150,15 @@ void PlayerCar::updateSpine()
   } else {
 	animationTime += dt / 500.f;        // ms to s
   }
-
+  animationTime1 += dt / 1000.f;
   skeleton->getRootBone()->x = x;
   skeleton->getRootBone()->y = y;
   
   animation->apply(skeleton, animationTime, true);
-  
   skeleton->updateWorldTransform();
+
+  animation1->apply(skeleton1, animationTime1, true);
+  skeleton1->updateWorldTransform();
 }
 
 void PlayerCar::update(float speed)
