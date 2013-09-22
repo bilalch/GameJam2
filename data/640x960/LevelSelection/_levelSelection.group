@@ -1,0 +1,8 @@
+CIwResGroup
+{
+	name "_levelSelection"
+	
+	"640x960/LevelSelection/button.png"				{ mipMapping false }
+	
+	"640x960/Background/_background.group"
+}

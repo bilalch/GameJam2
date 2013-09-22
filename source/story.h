@@ -12,13 +12,14 @@ public:
 	int update();
 	void draw();
 
+	int click(float x, float y);
+
 private:
 
 	CIwResGroup* imagesGroup;
 
 	CIw2DImage* m_background;
 	CIw2DImage* m_dialog;
-	CIw2DImage* m_chotu;
 };
 
 #endif //STORY_SCREEN_H
