@@ -7,6 +7,8 @@ Arcade::Arcade()
 	loadImages();
 	m_scrolling_background = new ScrollingBackground(m_scrolling_image, 3);
 	m_playerCar = new PlayerCar(1);
+	m_boy = new SpineChar();
+	m_boy->loadSpine("boy.atlas","boy.json","boy-jump.json",400,300);
 	initializeButtons();
 }
 
@@ -97,6 +99,7 @@ void Arcade::draw()
 	}
 
 	m_playerCar -> draw();
+	m_boy->draw();
 	/*m_speed_button -> Draw();
 	m_right_button -> Draw();
 	m_left_button -> Draw();*/
@@ -113,6 +116,7 @@ bool Arcade::update(sliderStruct& m_slider)
 	m_scrolling_background -> Update();
 
 	m_playerCar -> update(m_scrolling_background->getSpeed());
+	m_boy->update();
 	
 	/*if ( m_speed_button -> isPressed() ) {
 		

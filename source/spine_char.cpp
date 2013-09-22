@@ -57,6 +57,8 @@ void SpineChar::update(int _x, int _y)
   float dt = (float)(s3eTimerGetMs() - lastFrameTime);
   lastFrameTime = s3eTimerGetMs();
 
+  animationTime += dt / 1000.f;
+
   skeleton->getRootBone()->x = _x;
   skeleton->getRootBone()->y = _y;
   
@@ -68,7 +70,7 @@ void SpineChar::update()
 {
   float dt = (float)(s3eTimerGetMs() - lastFrameTime);
   lastFrameTime = s3eTimerGetMs();
-  
+  animationTime += dt / 1000.f;
   animation->apply(skeleton, animationTime, true);
   skeleton->updateWorldTransform();
 }

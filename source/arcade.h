@@ -14,6 +14,7 @@
 #include "opponent_car.h"
 #include "cart.h"
 #include "collidable.h"
+#include "spine_char.h"
 
 class Arcade : public View
 {
@@ -66,6 +67,8 @@ private:
 	AeDynArray<Collidable*> m_opponents;
 
 	int maximum_cars;
+
+	SpineChar* m_boy;
 };
 
 #endif
