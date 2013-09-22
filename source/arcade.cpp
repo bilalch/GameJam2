@@ -310,11 +310,54 @@ void Arcade::generateCase5()
 void Arcade::generateCase6()
 {
 	// hard
+	Collidable* cart = new Cart(960,400,m_cart_image->GetWidth(),m_cart_image->GetHeight(),m_cart_image);
+	m_opponents.Add(cart);
+
+	Collidable* mud = new Mud(cart->getX2() + 10,400 + 77,m_mud_image->GetWidth(),m_mud_image->GetHeight(),m_mud_image);
+	m_opponents.Add(mud);
+
+	Collidable* mud1 = new Mud(mud->getX2() + 10,400 + 77,m_mud_image->GetWidth(),m_mud_image->GetHeight(),m_mud_image);
+	m_opponents.Add(mud1);
+
+	Collidable* mud2 = new Mud(mud1->getX2() + 10,400 + 77,m_mud_image->GetWidth(),m_mud_image->GetHeight(),m_mud_image);
+	m_opponents.Add(mud2);
+
+	Collidable* mud3 = new Mud(mud2->getX2() + 10,400 + 77,m_mud_image->GetWidth(),m_mud_image->GetHeight(),m_mud_image);
+	m_opponents.Add(mud3);
+
+	Collidable* box = new Box(mud3->getX2() + 10,400 + 33,m_box_image->GetWidth(),m_box_image->GetHeight(),m_box_image);
+	m_opponents.Add(box);
+
+	Collidable* mud4 = new Mud(box->getX2() + 10,400 + 77,m_mud_image->GetWidth(),m_mud_image->GetHeight(),m_mud_image);
+	m_opponents.Add(mud4);
+
+	Collidable* mud5 = new Mud(mud4->getX2() + 10,400 + 77,m_mud_image->GetWidth(),m_mud_image->GetHeight(),m_mud_image);
+	m_opponents.Add(mud5);
+
+	Collidable* mud6 = new Mud(mud5->getX2() + 10,400 + 77,m_mud_image->GetWidth(),m_mud_image->GetHeight(),m_mud_image);
+	m_opponents.Add(mud6);
 }
 
 void Arcade::generateCase7()
 {
 	// hard
+	Collidable* cart = new Cart(960,400,m_cart_image->GetWidth(),m_cart_image->GetHeight(),m_cart_image);
+	m_opponents.Add(cart);
+
+	Collidable* mud = new Mud(cart->getX2() + 10,400 + 77,m_mud_image->GetWidth(),m_mud_image->GetHeight(),m_mud_image);
+	m_opponents.Add(mud);
+
+	Collidable* box = new Box(mud->getX2() + 10 + 3*m_mud_image->GetWidth(),400 + 33,m_box_image->GetWidth(),m_box_image->GetHeight(),m_box_image);
+	m_opponents.Add(box);
+
+	Collidable* mud4 = new Mud(box->getX2() + 10,400 + 77,m_mud_image->GetWidth(),m_mud_image->GetHeight(),m_mud_image);
+	m_opponents.Add(mud4);
+
+	Collidable* mud5 = new Mud(mud4->getX2() + 10,400 + 77,m_mud_image->GetWidth(),m_mud_image->GetHeight(),m_mud_image);
+	m_opponents.Add(mud5);
+
+	Collidable* mud6 = new Mud(mud5->getX2() + 10,400 + 77,m_mud_image->GetWidth(),m_mud_image->GetHeight(),m_mud_image);
+	m_opponents.Add(mud6);
 }
 
 void Arcade::generateCase8()
