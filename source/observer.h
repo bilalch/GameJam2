@@ -62,6 +62,11 @@ private:
 	int accelerometer_y;
 	int accelerometer_z;
 
+	float deviceWidth;
+	float deviceHeight;
+
+	float ratio;
+
 public:
 	static Observer* getInstance();
 	~Observer(void);
@@ -77,9 +82,6 @@ public:
 	void setAccelerometerY(int _y) { accelerometer_y = _y; }
 	void setAccelerometerZ(int _z) { accelerometer_z = _z; }
 
-
-	float deviceWidth;
-	float deviceHeight;
-
+	float getRatio();
 };
 
