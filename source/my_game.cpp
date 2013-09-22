@@ -53,11 +53,11 @@ void MyGame::Update()
 	case GAME_MENU:
 		if ( m_menu ) {
 
-			m_menu -> update(getSliderStruct());
+			m_menu -> update(m_slider);
 		} else {
 			
 			m_menu = new Menu();
-			m_menu -> update(getSliderStruct());
+			m_menu -> update(m_slider);
 		}
 		break;
 
@@ -66,11 +66,11 @@ void MyGame::Update()
 			int ret = 0;
 			if ( m_arcade ) {
 
-				ret = m_arcade -> update(getSliderStruct());
+				ret = m_arcade -> update(m_slider);
 			} else {
 
 				m_arcade = new Arcade(arcade_difficulty_level);
-				ret = m_arcade -> update(getSliderStruct());
+				ret = m_arcade -> update(m_slider);
 			}
 			switch (ret)
 			{
@@ -132,11 +132,11 @@ void MyGame::Update()
 	case GAME_LEVEL_SELECTION:
 		if ( m_level_selection ) {
 
-			m_level_selection -> update(getSliderStruct());
+			m_level_selection -> update(m_slider);
 		} else {
 
 			m_level_selection = new LevelSelection();
-			m_level_selection -> update(getSliderStruct());
+			m_level_selection -> update(m_slider);
 		}
 		break;
 
