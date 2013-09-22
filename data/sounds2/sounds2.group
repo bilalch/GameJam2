@@ -1,0 +1,88 @@
+CIwResGroup
+{
+	name "Sounds2"
+
+	"./chicken.wav"
+	"./running.wav"
+	"./click.wav"
+	"./menu.wav"
+	"./morning.wav"
+	"./mud.wav"
+	"./bg.wav"
+	"./thud.wav"
+
+
+	CIwSoundSpec
+	{
+		name		"chicken"		# The name we want to use to refer to this sound effect in out code
+		data		"chicken"		# The WAv file name (without .wav
+		vol 		0.7				# Default volume to be played at
+		loop		false			# Do we want this sound effect to play forever?
+	}
+	CIwSoundSpec
+	{
+		name		"running"		# The name we want to use to refer to this sound effect in out code
+		data		"running"		# The WAv file name (without .wav
+		vol 		0.7				# Default volume to be played at
+		loop		false			# Do we want this sound effect to play forever?
+	}
+	CIwSoundSpec
+	{
+		name		"click"			# The name we want to use to refer to this sound effect in out code
+		data		"click"			# The WAv file name (without .wav
+		vol 		0.7				# Default volume to be played at
+		loop		false			# Do we want this sound effect to play forever?
+	}
+	CIwSoundSpec
+	{
+		name		"menu"		# The name we want to use to refer to this sound effect in out code
+		data		"menu"		# The WAv file name (without .wav
+		vol 		1.0				# Default volume to be played at
+		loop		false			# Do we want this sound effect to play forever?
+	}
+	CIwSoundSpec
+	{
+		name		"morning"		# The name we want to use to refer to this sound effect in out code
+		data		"morning"		# The WAv file name (without .wav
+		vol 		0.7				# Default volume to be played at
+		loop		false			# Do we want this sound effect to play forever?
+	}
+	CIwSoundSpec
+	{
+		name		"mud"		# The name we want to use to refer to this sound effect in out code
+		data		"mud"		# The WAv file name (without .wav
+		vol 		0.7				# Default volume to be played at
+		loop		false			# Do we want this sound effect to play forever?
+	}
+	CIwSoundSpec
+	{
+		name		"bg"		# The name we want to use to refer to this sound effect in out code
+		data		"bg"		# The WAv file name (without .wav
+		vol 		0.7				# Default volume to be played at
+		loop		false			# Do we want this sound effect to play forever?
+	}
+	CIwSoundSpec
+	{
+		name		"thud"		# The name we want to use to refer to this sound effect in out code
+		data		"thud"		# The WAv file name (without .wav
+		vol 		0.7				# Default volume to be played at
+		loop		false			# Do we want this sound effect to play forever?
+	}
+
+	//Sound Group
+	CIwSoundGroup
+	{
+		name		"sound_effects"		# Name of our sound group
+		maxPolyphony 16				# Maximum sounds that can be played simultaneously
+		killOldest	true			# Tell system not to stop the oldest sound effects frmo playing if we run out of channels
+		addSpec		"chicken"		# Add the explosion sound spec to our sound group
+		addSpec		"running"		# Add the explosion sound spec to our sound group
+		addSpec		"click"			# Add the explosion sound spec to our sound group
+		addSpec		"menu"			# Add the explosion sound spec to our sound group
+		addSpec		"morning"		# Add the explosion sound spec to our sound group
+		addSpec		"mud"			# Add the explosion sound spec to our sound group
+		addSpec		"bg"			# Add the explosion sound spec to our sound group
+		addSpec		"thud"			# Add the explosion sound spec to our sound group
+
+	}
+}

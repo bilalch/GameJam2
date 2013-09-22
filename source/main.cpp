@@ -18,7 +18,7 @@ int main ()
 		m_game->InitializeTouch();
 	}
 
-	//m_game -> InitializeSound ("sounds/sounds.group", "sounds");
+	m_game -> InitializeSound ("sounds2/sounds2.group", "sounds2");
 	m_game -> InitializeFonts ("fonts/Iw2DStrings.group", "MrBubbleFont12");
 
 	uint64 fpsSetter = 0;//for fps setting
