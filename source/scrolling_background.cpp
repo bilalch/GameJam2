@@ -85,10 +85,12 @@ void ScrollingBackground::Update()
 		if ( m_speed < 15 )
 			m_speed++;
 		m_worldAngle = 45;
-	} else if ( OBSERVER->getAccelerometerX() < 30 ) {
+	} else if ( OBSERVER->getAccelerometerX() < -30 ) {
 		if ( m_speed > 5 )
 			m_speed--;
 		m_worldAngle = -45;
+	} else {
+		m_speed = 10;
 	}
 
 	path1.m_x1 = path1.m_x1 - m_speed*multiplier;

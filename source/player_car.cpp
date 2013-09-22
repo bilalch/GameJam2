@@ -168,6 +168,7 @@ void PlayerCar::update(float speed)
 	car_speed = speed;
 	if (jumping)
 	{
+		skeleton->getRootBone()->rotation = -30;
 		if (y + jumpVelocity < groundY)
 		{
 			y = y + jumpVelocity;
@@ -177,6 +178,10 @@ void PlayerCar::update(float speed)
 		{
 			jumping = false;
 		}
+	}
+	else
+	{
+		skeleton->getRootBone()->rotation = 0;
 	}
 	//else
 	//{
@@ -189,7 +194,7 @@ void PlayerCar::jump()
 {
 	if (!jumping)
 	{
-		jumpVelocity = -2*car_speed;//-30;
+		jumpVelocity = -3*car_speed;//-30;
 		jumping = true;
 	}
 }
