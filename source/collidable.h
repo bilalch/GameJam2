@@ -19,6 +19,9 @@ public:
 	float getY1() { return m_y1; }
 	float getY2() { return m_y2; }
 
+	void setOptimumVelocity(float _value) { m_collide_optimum_velocity = _value; }
+	float getOptimumVelocity() { return m_collide_optimum_velocity; }
+
 protected:
 	float m_x1;
 	float m_y1;
@@ -28,6 +31,8 @@ protected:
 	float m_height;
 
 	CIw2DImage* m_image;
+
+	float m_collide_optimum_velocity;
 };
 
 #endif //COLLIDABLE_H
