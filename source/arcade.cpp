@@ -154,7 +154,7 @@ int Arcade::click(float x, float y)
 
 void Arcade::generateLevel()
 {
-/*	int _number = 0;
+	int _number = 0;
 
 	if ( difficulty == 4 )
 		_number = rand()%10;
@@ -207,12 +207,12 @@ void Arcade::generateLevel()
 		generateCase9();
 		break;
 	};
-	*/
+	
 	//generateCase0();
 	//generateCase1();
 	//generateCase2();
 	//generateCase3();
-	generateCase4();
+	//generateCase4();
 	//generateCase5();
 	//generateCase6();
 	//generateCase7();
@@ -279,6 +279,7 @@ void Arcade::generateCase4()
 {
 	// medium
 	Collidable* cart = new Cart(960,400,m_cart_image->GetWidth(),m_cart_image->GetHeight(),m_cart_image);
+	cart->setOptimumVelocity(12);
 	m_opponents.Add(cart);
 
 	Collidable* mud = new Mud(cart->getX2() + 10,400 + 77,m_mud_image->GetWidth(),m_mud_image->GetHeight(),m_mud_image);
@@ -298,6 +299,7 @@ void Arcade::generateCase5()
 {
 	// medium
 	Collidable* cart = new Cart(960,400,m_cart_image->GetWidth(),m_cart_image->GetHeight(),m_cart_image);
+	cart->setOptimumVelocity(11);
 	m_opponents.Add(cart);
 
 	Collidable* box = new Box(cart->getX2() + 10,400 + 33,m_box_image->GetWidth(),m_box_image->GetHeight(),m_box_image);
@@ -307,6 +309,7 @@ void Arcade::generateCase5()
 	m_opponents.Add(mud1);
 
 	Collidable* box1 = new Box(mud1->getX2() + 10,400 + 33,m_box_image->GetWidth(),m_box_image->GetHeight(),m_box_image);
+	box1->setOptimumVelocity(11);
 	m_opponents.Add(box1);
 
 	Collidable* mud2 = new Mud(box1->getX2() + 10,400 + 77,m_mud_image->GetWidth(),m_mud_image->GetHeight(),m_mud_image);
@@ -320,6 +323,7 @@ void Arcade::generateCase6()
 {
 	// hard
 	Collidable* cart = new Cart(960,400,m_cart_image->GetWidth(),m_cart_image->GetHeight(),m_cart_image);
+	cart->setOptimumVelocity(15);
 	m_opponents.Add(cart);
 
 	Collidable* mud = new Mud(cart->getX2() + 10,400 + 77,m_mud_image->GetWidth(),m_mud_image->GetHeight(),m_mud_image);
@@ -335,6 +339,7 @@ void Arcade::generateCase6()
 	m_opponents.Add(mud3);
 
 	Collidable* box = new Box(mud3->getX2() + 10,400 + 33,m_box_image->GetWidth(),m_box_image->GetHeight(),m_box_image);
+	box->setOptimumVelocity(12);
 	m_opponents.Add(box);
 
 	Collidable* mud4 = new Mud(box->getX2() + 10,400 + 77,m_mud_image->GetWidth(),m_mud_image->GetHeight(),m_mud_image);
@@ -351,6 +356,7 @@ void Arcade::generateCase7()
 {
 	// hard
 	Collidable* cart = new Cart(960,400,m_cart_image->GetWidth(),m_cart_image->GetHeight(),m_cart_image);
+	cart->setOptimumVelocity(15);
 	m_opponents.Add(cart);
 
 	Collidable* box = new Box(cart->getX2() + 10 + 4*m_mud_image->GetWidth(),400 + 33,m_box_image->GetWidth(),m_box_image->GetHeight(),m_box_image);
