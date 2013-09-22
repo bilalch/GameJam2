@@ -57,8 +57,6 @@ private:
 
 	AeDynArray<Collidable*> m_opponents;
 
-	SpineChar* m_boy;
-
 	void generateCase0();
 	void generateCase1();
 	void generateCase2();
