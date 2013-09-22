@@ -16,7 +16,8 @@ enum GameState
 {
 	GAME_MENU,
 	GAME_ARCADE,
-	GAME_LEVEL_1
+	GAME_LEVEL_1,
+	GAME_OVER,
 };
 
 class MyGame : public Game

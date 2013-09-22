@@ -73,6 +73,9 @@ files
 
 	spine_char.h
 	spine_char.cpp
+
+	gameover.h
+	gameover.cpp
 	
 	[Awm]
 	(source/awm)

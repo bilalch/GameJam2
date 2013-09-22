@@ -34,7 +34,7 @@ public:
 	void initializeButtons();
 	void destroyButtons();
 
-	void spawnCart();
+	void generateLevel();
 
 private:
 	ScrollingBackground* m_scrolling_background;

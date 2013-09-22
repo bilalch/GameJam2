@@ -40,7 +40,7 @@ void Arcade::unloadImages()
 
 void Arcade::initializeButtons()
 {
-	spawnCart();
+	generateLevel();
 	/*m_speed_button = new AwmButton(m_speed_normal_image,m_speed_pressed_image,OBSERVER->getDeviceWidth()*0.05,OBSERVER->getDeviceHeight() - m_speed_normal_image->GetHeight() - OBSERVER->getDeviceWidth()*0.05);
 	m_right_button  = new AwmButton(OBSERVER->getDeviceWidth() - m_right_image->GetWidth() - OBSERVER->getDeviceWidth()*0.05,OBSERVER->getDeviceHeight() - m_right_image->GetHeight() - OBSERVER->getDeviceWidth()*0.05,m_right_image);
 	m_left_button  = new AwmButton(m_right_button->getX1() - m_left_image->GetWidth() - OBSERVER->getDeviceWidth()*0.05,OBSERVER->getDeviceHeight() - m_left_image->GetHeight() - OBSERVER->getDeviceWidth()*0.05,m_left_image);*/
@@ -97,10 +97,12 @@ bool Arcade::update(sliderStruct& m_slider)
 			break;
 		case 2:
 			//collision with mud
+			//GAME OVER
 			cout<<"MUD COLLISION"<<endl;
 			break;
 		case 3:
 			//collision with box
+			//GAME OVER
 			cout<<"BOX COLLISION"<<endl;
 			break;
 		default:
@@ -119,7 +121,7 @@ bool Arcade::update(sliderStruct& m_slider)
 		m_i++;
 
 		if(m_opponents.GetSize() == 0)
-			spawnCart();
+			generateLevel();
 	}
 
 	return true;
@@ -131,7 +133,7 @@ int Arcade::click(float x, float y)
 	return 0;
 }
 
-void Arcade::spawnCart()
+void Arcade::generateLevel()
 {
 	Collidable* cart = new Cart(960,400,m_cart_image->GetWidth(),m_cart_image->GetHeight(),m_cart_image);
 	m_opponents.Add(cart);
@@ -142,7 +144,7 @@ void Arcade::spawnCart()
 	Collidable* box = new Box(mud->getX2() + 10,400 + 33,m_box_image->GetWidth(),m_box_image->GetHeight(),m_box_image);
 	m_opponents.Add(box);
 
-	Collidable* mud2 = new Mud(box->getX2() + 80,400 + 77,m_mud_image->GetWidth(),m_mud_image->GetHeight(),m_mud_image);
+	Collidable* mud2 = new Mud(box->getX2() + 200,400 + 77,m_mud_image->GetWidth(),m_mud_image->GetHeight(),m_mud_image);
 	m_opponents.Add(mud2);
 
 	Collidable* box2 = new Box(mud2->getX2() + 50,400 + 33,m_box_image->GetWidth(),m_box_image->GetHeight(),m_box_image);
