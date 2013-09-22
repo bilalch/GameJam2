@@ -48,6 +48,8 @@ private:
 	AwmButton* m_backButton;
 	
 	MenuState m_menuState;
+
+	bool firstDraw;
 };
 
 #endif
