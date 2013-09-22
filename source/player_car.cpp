@@ -29,8 +29,12 @@ PlayerCar::PlayerCar(int number)
 	};
 
 	initializeCar();
-	initializeSpine();
-	loadSpine();
+	
+	m_boy = new SpineChar();
+	m_boy->loadSpine("boy.atlas","boy.json","boy-walk.json","boy-jump.json","boy-run.json",x,y);
+	
+	//initializeSpine();
+	//loadSpine();
 }
 
 void PlayerCar::initializeSpine()
@@ -135,9 +139,10 @@ void PlayerCar::unloadCar()
 void PlayerCar::draw()
 {
 	//spriteSheet->Render(CIwFVec2(x,y),1.0f,0.0f,0.0f);
-	IwGxFlush();
-	skeleton->draw();
-	skeleton1->draw();
+	//IwGxFlush();
+	//skeleton->draw();
+	//skeleton1->draw();
+	m_boy->draw();
 }
 
 void PlayerCar::updateSpine()
@@ -163,12 +168,13 @@ void PlayerCar::updateSpine()
 
 void PlayerCar::update(float speed)
 {
-	updateSpine();
+	m_boy->update(x,y);
+	//updateSpine();
 	//spriteSheet->Step();
 	car_speed = speed;
 	if (jumping)
 	{
-		skeleton->getRootBone()->rotation = -30;
+		//skeleton->getRootBone()->rotation = -30;
 		if (y + jumpVelocity < groundY)
 		{
 			y = y + jumpVelocity;
@@ -177,17 +183,13 @@ void PlayerCar::update(float speed)
 		else
 		{
 			jumping = false;
+			m_boy->land();
 		}
 	}
 	else
 	{
-		skeleton->getRootBone()->rotation = 0;
+		//skeleton->getRootBone()->rotation = 0;
 	}
-	//else
-	//{
-	//	jumpVelocity = -2*speed;//-30;
-	//	jumping = true;
-	//}
 }
 
 void PlayerCar::jump()
@@ -205,6 +207,7 @@ void PlayerCar::jump()
 			jumpVelocity = -2.5f*car_speed;
 		}
 		jumping = true;
+		m_boy->jump();
 	}
 }
 

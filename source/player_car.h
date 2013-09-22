@@ -13,6 +13,7 @@
 #include <iostream>
 #include <fstream>
 #include <spine-marm/spine.h>
+#include "spine_char.h"
 
 using namespace std;
 using namespace spine;
@@ -79,6 +80,7 @@ private:
 	void initializeSpine();
 	void loadSpine();
 	void updateSpine();
+	SpineChar* m_boy;
 
 	Atlas *atlas;
 	SkeletonData *skeletonData;
