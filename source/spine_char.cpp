@@ -14,6 +14,7 @@ SpineChar::SpineChar()
 	isJumping = false;
 	isWalking = true;
 	isRunning = false;
+	isWaving = false;
 }
 
 SpineChar::~SpineChar()
@@ -27,7 +28,7 @@ SpineChar::~SpineChar()
 }
 
 void SpineChar::loadSpine(const char* _atlas, const char* _skeleton, const char* _animation_walk, const char* _animation_jump,
-	const char* _animation_run, int _x, int _y)
+	const char* _animation_run, const char* _animation_wave, const char* _animation_slip, int _x, int _y)
 {
 	try {
 		ifstream atlasFile(_atlas);
@@ -55,6 +56,18 @@ void SpineChar::loadSpine(const char* _atlas, const char* _skeleton, const char*
 			
 			ifstream animationFile3(_animation_run);
 			animation_run = skeletonJson.readAnimation(animationFile3, skeletonData);
+		}
+
+		if ( _animation_wave ) {
+			
+			ifstream animationFile4(_animation_wave);
+			animation_wave = skeletonJson.readAnimation(animationFile4, skeletonData);
+		}
+
+		if ( _animation_slip ) {
+			
+			ifstream animationFile5(_animation_slip);
+			animation_slip = skeletonJson.readAnimation(animationFile5, skeletonData);
 		}
 
 		skeleton = new Skeleton(skeletonData);
@@ -94,6 +107,11 @@ void SpineChar::walk()
 	isWalking = true;
 }
 
+void SpineChar::wave()
+{
+	isWaving = true;
+}
+
 void SpineChar::draw()
 {
 	IwGxFlush();
@@ -113,7 +131,10 @@ void SpineChar::update(int _x, int _y)
   skeleton->getRootBone()->x = _x;
   skeleton->getRootBone()->y = _y;
 
-  animation_run->apply(skeleton, animationTime, true);
+  if ( isWaving )
+	  animation_wave->apply(skeleton, animationTime, true);
+  else
+	  animation_run->apply(skeleton, animationTime, true);
   
 /*  if (isJumping)
 	animation_jump->apply(skeleton, animationTime, true);
@@ -140,7 +161,10 @@ void SpineChar::update()
   else
 	animationTime += dt / 1000.f;
 
-  animation_run->apply(skeleton, animationTime, true);
+  if ( isWaving )
+	  animation_wave->apply(skeleton, animationTime, true);
+  else
+	  animation_run->apply(skeleton, animationTime, true);
   
 /*  if (isJumping)
 	animation_jump->apply(skeleton, animationTime, false);
