@@ -1,0 +1,9 @@
+CIwResGroup
+{
+	name "_winner"
+	
+	"640x960/Winner/boy-with-chicken.png"				{ mipMapping false }
+	"640x960/Winner/winning-text.png"				{ mipMapping false }
+	
+	"640x960/Background/_background.group"
+}

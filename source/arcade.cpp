@@ -77,7 +77,7 @@ void Arcade::draw()
 	m_left_button -> Draw();*/
 }
 
-bool Arcade::update(sliderStruct& m_slider)
+int Arcade::update(sliderStruct& m_slider)
 {
 	/*m_speed_button -> Update();
 	m_right_button -> Update();
@@ -99,6 +99,7 @@ bool Arcade::update(sliderStruct& m_slider)
 			//collision with mud
 			//GAME OVER
 			cout<<"MUD COLLISION"<<endl;
+			return 2;
 			break;
 		case 3:
 			//collision with box
@@ -123,8 +124,7 @@ bool Arcade::update(sliderStruct& m_slider)
 		if(m_opponents.GetSize() == 0)
 			generateLevel();
 	}
-
-	return true;
+	return -100;
 }
 
 int Arcade::click(float x, float y)

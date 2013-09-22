@@ -43,7 +43,7 @@ public:
 	virtual bool isVisible() { return visible; }
 	virtual void setIsVisible(bool _visible) { visible = _visible; }
 	virtual void draw() = 0;
-	virtual bool update(sliderStruct &_slider) = 0;
+	virtual int update(sliderStruct &_slider) = 0;
 	virtual int click(float _x, float _y) = 0;
 
 protected:

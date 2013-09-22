@@ -25,7 +25,7 @@ public:
 	~Arcade();
 
 	void draw();
-	bool update(sliderStruct&);
+	int update(sliderStruct&);
 	int click(float x, float y);
 
 	void loadImages();

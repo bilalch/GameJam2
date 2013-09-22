@@ -1,0 +1,8 @@
+CIwResGroup
+{
+	name "_gameover"
+	
+	"640x960/GameOver/game-over.png"				{ mipMapping false }
+
+	"640x960/Background/_background.group"
+}
