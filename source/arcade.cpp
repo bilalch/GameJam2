@@ -1,9 +1,9 @@
 #include "arcade.h"
 #include "observer.h"
 
-#define LEVEL_PROGRESS_COUNTER 5
+#define LEVEL_PROGRESS_COUNTER 50
 
-Arcade::Arcade()
+Arcade::Arcade(int difficulty_level)
 {
 	loadImages();
 	m_scrolling_background = new ScrollingBackground(m_scrolling_image, 3);
@@ -11,7 +11,7 @@ Arcade::Arcade()
 	m_chicken = new Chicken(1);
 	initializeButtons();
 
-	difficulty = 1;
+	difficulty = difficulty_level;
 	levelProgressCount = 0;
 }
 

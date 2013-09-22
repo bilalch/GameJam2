@@ -11,6 +11,8 @@ MyGame::MyGame()
 
 	m_menu = new Menu();
 	m_gameState = GAME_MENU;
+
+	arcade_difficulty_level = 1;
 	
 	s3eAccelerometerStart();
 }
@@ -67,7 +69,7 @@ void MyGame::Update()
 				ret = m_arcade -> update(getSliderStruct());
 			} else {
 
-				m_arcade = new Arcade();
+				m_arcade = new Arcade(arcade_difficulty_level);
 				ret = m_arcade -> update(getSliderStruct());
 			}
 			switch (ret)
@@ -361,6 +363,7 @@ void MyGame::parseLevelSelectionClick(int number)
 		if ( m_level_selection )
 			delete m_level_selection;
 		m_level_selection = NULL;
+		arcade_difficulty_level = 1;
 		m_gameState = GAME_STORY;
 		break;
 
@@ -368,6 +371,7 @@ void MyGame::parseLevelSelectionClick(int number)
 		if ( m_level_selection )
 			delete m_level_selection;
 		m_level_selection = NULL;
+		arcade_difficulty_level = 2;
 		m_gameState = GAME_ARCADE;
 		break;
 
@@ -375,6 +379,7 @@ void MyGame::parseLevelSelectionClick(int number)
 		if ( m_level_selection )
 			delete m_level_selection;
 		m_level_selection = NULL;
+		arcade_difficulty_level = 3;
 		m_gameState = GAME_ARCADE;
 		break;
 
@@ -382,6 +387,7 @@ void MyGame::parseLevelSelectionClick(int number)
 		if ( m_level_selection )
 			delete m_level_selection;
 		m_level_selection = NULL;
+		arcade_difficulty_level = 4;
 		m_gameState = GAME_ARCADE;
 		break;
 

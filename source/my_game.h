@@ -54,7 +54,8 @@ private:
 
 //	touchStruct[S3E_POINTER_TOUCH_MAX];
 	GameState m_gameState;
-
+	
+	int arcade_difficulty_level;
 };
 
 #endif

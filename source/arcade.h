@@ -22,7 +22,7 @@
 class Arcade : public View
 {
 public:
-	Arcade();
+	Arcade(int difficulty_level);
 	~Arcade();
 
 	void draw();
