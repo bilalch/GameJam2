@@ -34,5 +34,10 @@ void LevelSelection::draw()
 
 int LevelSelection::click(float x, float y)
 {
-	return -1;
+
+	if ( m_level1 -> Click (x,y) ) {
+
+		return -1;
+	}
+	return 0;
 }
