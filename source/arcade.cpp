@@ -344,10 +344,7 @@ void Arcade::generateCase7()
 	Collidable* cart = new Cart(960,400,m_cart_image->GetWidth(),m_cart_image->GetHeight(),m_cart_image);
 	m_opponents.Add(cart);
 
-	Collidable* mud = new Mud(cart->getX2() + 10,400 + 77,m_mud_image->GetWidth(),m_mud_image->GetHeight(),m_mud_image);
-	m_opponents.Add(mud);
-
-	Collidable* box = new Box(mud->getX2() + 10 + 3*m_mud_image->GetWidth(),400 + 33,m_box_image->GetWidth(),m_box_image->GetHeight(),m_box_image);
+	Collidable* box = new Box(cart->getX2() + 10 + 4*m_mud_image->GetWidth(),400 + 33,m_box_image->GetWidth(),m_box_image->GetHeight(),m_box_image);
 	m_opponents.Add(box);
 
 	Collidable* mud4 = new Mud(box->getX2() + 10,400 + 77,m_mud_image->GetWidth(),m_mud_image->GetHeight(),m_mud_image);
@@ -363,9 +360,32 @@ void Arcade::generateCase7()
 void Arcade::generateCase8()
 {
 	// harder
+	Collidable* cart = new Cart(960,400,m_cart_image->GetWidth(),m_cart_image->GetHeight(),m_cart_image);
+	m_opponents.Add(cart);
+
+	Collidable* box = new Box(cart->getX2() + 10 + 4*m_box_image->GetWidth(),400 + 33,m_box_image->GetWidth(),m_box_image->GetHeight(),m_box_image);
+	m_opponents.Add(box);
+
+	Collidable* box2 = new Box(box->getX2() + 10 + 4*m_box_image->GetWidth(),400 + 33,m_box_image->GetWidth(),m_box_image->GetHeight(),m_box_image);
+	m_opponents.Add(box2);
+
+	Collidable* box3 = new Box(box2->getX2() + 10 + 4*m_box_image->GetWidth(),400 + 33,m_box_image->GetWidth(),m_box_image->GetHeight(),m_box_image);
+	m_opponents.Add(box3);
+
 }
 
 void Arcade::generateCase9()
 {
 	// harder
+	Collidable* cart = new Cart(960,400,m_cart_image->GetWidth(),m_cart_image->GetHeight(),m_cart_image);
+	m_opponents.Add(cart);
+
+	Collidable* mud = new Mud(cart->getX2() + 10 + 4*m_mud_image->GetWidth(),400 + 33,m_mud_image->GetWidth(),m_mud_image->GetHeight(),m_mud_image);
+	m_opponents.Add(mud);
+
+	Collidable* mud2 = new Box(mud->getX2() + 10 + 4*m_mud_image->GetWidth(),400 + 33,m_mud_image->GetWidth(),m_mud_image->GetHeight(),m_mud_image);
+	m_opponents.Add(mud2);
+
+	Collidable* mud3 = new Box(mud2->getX2() + 10 + 4*m_mud_image->GetWidth(),400 + 33,m_mud_image->GetWidth(),m_mud_image->GetHeight(),m_mud_image);
+	m_opponents.Add(mud3);
 }
