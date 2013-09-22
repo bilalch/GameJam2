@@ -3,12 +3,9 @@
 
 Arcade::Arcade()
 {
-	maximum_cars = 5;
 	loadImages();
 	m_scrolling_background = new ScrollingBackground(m_scrolling_image, 3);
 	m_playerCar = new PlayerCar(1);
-	//m_boy = new SpineChar();
-	//m_boy->loadSpine("boy.atlas","boy.json","boy-walk.json","boy-jump.json","boy-run.json",400,300);
 	initializeButtons();
 }
 
@@ -23,16 +20,6 @@ void Arcade::loadImages()
 	
 	m_scrolling_image = Iw2DCreateImageResource("bg");
 
-	m_speed_normal_image = Iw2DCreateImageResource("speed_normal");
-	m_speed_pressed_image = Iw2DCreateImageResource("speed_pressed");
-
-	m_left_image = Iw2DCreateImageResource("left");
-	m_right_image = Iw2DCreateImageResource("right");
-
-	m_car1_image = Iw2DCreateImageResource("black");
-	m_car2_image = Iw2DCreateImageResource("blue");
-	m_car3_image = Iw2DCreateImageResource("green");
-
 	m_cart_image = Iw2DCreateImageResource("cart");
 	m_box_image	 = Iw2DCreateImageResource("box");
 	m_mud_image	 = Iw2DCreateImageResource("mud");
@@ -43,22 +30,6 @@ void Arcade::unloadImages()
 	if ( m_scrolling_image )
 		delete m_scrolling_image;
 	m_scrolling_image = NULL;
-
-	if ( m_speed_normal_image )
-		delete m_speed_normal_image;
-	m_speed_normal_image = NULL;
-
-	if ( m_speed_pressed_image )
-		delete m_speed_pressed_image;
-	m_speed_pressed_image = NULL;
-
-	if ( m_left_image )
-		delete m_left_image;
-	m_left_image = NULL;
-
-	if ( m_right_image )
-		delete m_right_image;
-	m_right_image = NULL;
 
 	if ( m_cart_image )
 		delete m_cart_image;
@@ -96,12 +67,11 @@ void Arcade::draw()
 
 	for (int i = 0; i < m_opponents.GetSize(); i++) {
 		
-		//OpponentCar* temp = (OpponentCar*)m_opponents[i];
 		m_opponents[i]->draw();
 	}
 
 	m_playerCar -> draw();
-	//m_boy->draw();
+	
 	/*m_speed_button -> Draw();
 	m_right_button -> Draw();
 	m_left_button -> Draw();*/
@@ -109,8 +79,6 @@ void Arcade::draw()
 
 bool Arcade::update(sliderStruct& m_slider)
 {
-	//spawnOpponents();
-
 	/*m_speed_button -> Update();
 	m_right_button -> Update();
 	m_left_button -> Update();*/
@@ -118,31 +86,9 @@ bool Arcade::update(sliderStruct& m_slider)
 	m_scrolling_background -> Update();
 
 	m_playerCar -> update(m_scrolling_background->getSpeed());
-	//m_boy->update();
 	
-	/*if ( m_speed_button -> isPressed() ) {
-		
-		m_playerCar -> accelerate() ;
-	} else {
-
-		m_playerCar -> decelerate() ;
-	}*/
-
-	/*if ( m_right_button -> isPressed() && m_playerCar -> getX2() < m_scrolling_background -> getRightBound() ) {
-		
-		m_playerCar -> goRight();
-	} else if ( m_left_button -> isPressed() && m_playerCar -> getX1() > m_scrolling_background -> getLeftBound() ) {
-		
-		m_playerCar -> goLeft();
-	}*/
-
 	for ( int i = 0; i < m_opponents.GetSize(); i++ ) {
 		
-		//OpponentCar* temp = (OpponentCar*)m_opponents[i];
-		/*if ( !temp->Update(m_playerCar) ) {
-			
-			m_opponents.Delete(i);
-		}*/
 		switch (m_opponents[i]->update(m_playerCar, m_scrolling_background))
 		{
 		case 1:
@@ -150,35 +96,31 @@ bool Arcade::update(sliderStruct& m_slider)
 			m_playerCar->jump();
 			break;
 		case 2:
-			{
 			//collision with mud
-			int xyz =0;
+			cout<<"MUD COLLISION"<<endl;
 			break;
-			}
 		case 3:
-			{
 			//collision with box
-			int xyz = 0;
+			cout<<"BOX COLLISION"<<endl;
 			break;
-			}
 		default:
 			break;
 		};
 	}
 
-	//int i = 0;
-	//while (i < m_opponents.GetSize()) {
-	//	if (m_opponents[i]->getX2() < 0)
-	//	{
-	//		m_opponents.Delete(i);
-	//		//spawnCart();
-	//		i--;
-	//	}
+	int m_i = 0;
+	while (m_i < m_opponents.GetSize()) {
+		if (m_opponents[m_i]->getX2() < 0)
+		{
+			m_opponents.Delete(m_i);
+			m_i--;
+		}
 
-	//	i++;
-	//}
+		m_i++;
 
-	opponentsCollisionHandling();
+		if(m_opponents.GetSize() == 0)
+			spawnCart();
+	}
 
 	return true;
 }
@@ -189,82 +131,6 @@ int Arcade::click(float x, float y)
 	return 0;
 }
 
-void Arcade::spawnOpponents()
-{
-	//if ( m_opponents.GetSize() < maximum_cars ) {
-	//	
-	//	// new car can be added
-	//	int _lane = rand()%3 + 1;
-	//	int _speed = rand()%10 + 10;
-	//	
-	//	if ( laneIsOpen(_lane) ) {
-
-	//		CIw2DImage* tempImage = randomizeCarImage();
-	//		OpponentCar* temp = new OpponentCar(3,m_scrolling_background->getLeftBound(),m_scrolling_background->getRightBound(),tempImage,_speed);
-	//		temp->setLane(_lane);
-	//		m_opponents.Add(temp);
-	//	}
-	//	
-	//}
-}
-
-CIw2DImage* Arcade::randomizeCarImage()
-{
-	int number = rand()%3 + 1;
-	if ( number == 1 ) {
-		
-		return m_car1_image;
-	} else if ( number == 2 ) {
-		
-		return m_car2_image;
-	} else {
-		
-		return m_car3_image;
-	}
-}
-
-bool Arcade::laneIsOpen(int number) 
-{
-	for (int i = 0; i < m_opponents.GetSize(); i++) {
-		
-		OpponentCar* temp = (OpponentCar*)m_opponents[i];
-		if ( temp->getLane() == number ) {
-
-			if ( temp->getY1() < m_car1_image->GetHeight()*2 ) {
-				
-				return false;
-			}
-		}
-	}
-	return true;
-}
-
-void Arcade::opponentsCollisionHandling()
-{
-	for ( int i = 0; i < m_opponents.GetSize(); i++ ) {
-		
-		OpponentCar* car1 = (OpponentCar*)m_opponents[i];
-		for ( int j = 0; j < m_opponents.GetSize(); j++ ) {
-		
-			OpponentCar* car2 = (OpponentCar*)m_opponents[j];
-			if ( i != j ) {
-				
-				if ( car1->getLane() == car2->getLane() ) {
-					
-					if ( car1->getY2() >= car2->getY1() && car1->getY1() < car2->getY2() ) {
-					
-						// BOOM GOES THE DYNAMITE
-						car1->collision();
-						car1->setCurrentSpeed(car2->getCurrentSpeed() + 10);
-						car2->setCurrentSpeed(car1->getCurrentSpeed() - 10);
-
-					}
-				}
-			}
-		}
-	}
-}
-
 void Arcade::spawnCart()
 {
 	Collidable* cart = new Cart(960,400,m_cart_image->GetWidth(),m_cart_image->GetHeight(),m_cart_image);
@@ -273,6 +139,12 @@ void Arcade::spawnCart()
 	Collidable* mud = new Mud(cart->getX2() + 10,400 + 77,m_mud_image->GetWidth(),m_mud_image->GetHeight(),m_mud_image);
 	m_opponents.Add(mud);
 
-	/*Collidable* box = new Box(mud->getX2() + 10,400 + 33,m_box_image->GetWidth(),m_box_image->GetHeight(),m_box_image);
-	m_opponents.Add(box);*/
+	Collidable* box = new Box(mud->getX2() + 10,400 + 33,m_box_image->GetWidth(),m_box_image->GetHeight(),m_box_image);
+	m_opponents.Add(box);
+
+	Collidable* mud2 = new Mud(box->getX2() + 80,400 + 77,m_mud_image->GetWidth(),m_mud_image->GetHeight(),m_mud_image);
+	m_opponents.Add(mud2);
+
+	Collidable* box2 = new Box(mud2->getX2() + 50,400 + 33,m_box_image->GetWidth(),m_box_image->GetHeight(),m_box_image);
+	m_opponents.Add(box2);
 }

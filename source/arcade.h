@@ -34,13 +34,6 @@ public:
 	void initializeButtons();
 	void destroyButtons();
 
-	void spawnOpponents();
-	bool laneIsOpen(int);
-
-	void opponentsCollisionHandling();
-
-	CIw2DImage* randomizeCarImage();
-
 	void spawnCart();
 
 private:
@@ -49,14 +42,6 @@ private:
 	PlayerCar* m_playerCar;
 
 	CIw2DImage* m_scrolling_image;
-	CIw2DImage* m_speed_normal_image;
-	CIw2DImage* m_speed_pressed_image;
-	CIw2DImage* m_left_image;
-	CIw2DImage* m_right_image;
-
-	CIw2DImage* m_car1_image;
-	CIw2DImage* m_car2_image;
-	CIw2DImage* m_car3_image;
 
 	CIw2DImage* m_cart_image;
 	CIw2DImage* m_box_image;
@@ -69,8 +54,6 @@ private:
 	CIwResGroup* imagesGroup;
 
 	AeDynArray<Collidable*> m_opponents;
-
-	int maximum_cars;
 
 	SpineChar* m_boy;
 };
