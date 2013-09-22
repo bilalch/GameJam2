@@ -79,6 +79,11 @@ void Game::Clicker(float x, float y)
 	s3eDeviceExit();
 }
 
+sliderStruct Game::getSliderStruct()
+{ 
+	return m_slider; 
+}
+
 /*
 void Game::Clicker(s3ePointerTouchEvent* event)
 {

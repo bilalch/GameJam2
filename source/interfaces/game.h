@@ -89,7 +89,7 @@ public:
 
 	bool IsMultitouch() { return m_multitouch_available; }
 
-	sliderStruct getSliderStruct() { return m_slider; }
+	sliderStruct getSliderStruct(); 
 
 	bool getSound() { 
 		
