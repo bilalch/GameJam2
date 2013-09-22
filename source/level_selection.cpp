@@ -2,7 +2,7 @@
 
 LevelSelection::LevelSelection()
 {
-	imagesGroup = IwGetResManager()->LoadGroup("640x960/Story/_story.group");
+	imagesGroup = IwGetResManager()->LoadGroup("640x960/LevelSelection/_levelSelection.group");
 
 	m_background = Iw2DCreateImageResource("background");
 	m_button = Iw2DCreateImageResource("button");

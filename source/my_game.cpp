@@ -6,6 +6,8 @@ MyGame::MyGame()
 	m_arcade = NULL;
 	m_gameOver = NULL;
 	m_gameWinner = NULL;
+	m_story = NULL;
+	m_level_selection = NULL;
 
 	m_menu = new Menu();
 	m_gameState = GAME_MENU;
@@ -26,6 +28,14 @@ MyGame::~MyGame()
 	if (m_gameWinner)
 		delete m_gameWinner;
 	m_gameWinner = NULL;
+
+	if (m_story)
+		delete m_story;
+	m_story = NULL;
+
+	if (m_level_selection)
+		delete m_level_selection;
+	m_level_selection = NULL;
 }
 
 void MyGame::Update()
@@ -106,6 +116,28 @@ void MyGame::Update()
 		}
 		break;
 
+	case GAME_STORY:
+		if ( m_story ) {
+
+			m_story -> update();
+		} else {
+
+			m_story = new Story();
+			m_story -> update();
+		}
+		break;
+
+	case GAME_LEVEL_SELECTION:
+		if ( m_level_selection ) {
+
+			m_level_selection -> update(getSliderStruct());
+		} else {
+
+			m_level_selection = new LevelSelection();
+			m_level_selection -> update(getSliderStruct());
+		}
+		break;
+
 	default:
 		break;
 	};
@@ -150,6 +182,24 @@ void MyGame::Draw()
 			s3eDeviceExit();
 		}
 		break;
+
+	case GAME_STORY:
+		if ( m_story )
+			m_story -> draw();
+		else {
+			s3eDebugErrorShow(S3E_MESSAGE_CONTINUE,"trying to draw story when it does not exist");
+			s3eDeviceExit();
+		}
+		break;
+
+	case GAME_LEVEL_SELECTION:
+		if ( m_level_selection )
+			m_level_selection -> draw();
+		else {
+			s3eDebugErrorShow(S3E_MESSAGE_CONTINUE,"trying to draw level selection when it does not exist");
+			s3eDeviceExit();
+		}
+		break;
 	};
 }
 
@@ -185,6 +235,14 @@ void MyGame::Clicker(s3ePointerTouchEvent* event)
 		case GAME_WINNER:
 			parseGameWinnerClick(m_gameWinner->click(event->m_x,event->m_y));
 			break;
+
+		case GAME_STORY:
+			parseStoryClick(m_story->click(event->m_x,event->m_y));
+			break;
+
+		case GAME_LEVEL_SELECTION:
+			parseLevelSelectionClick(m_level_selection->click(event->m_x,event->m_y));
+			break;
 		
 		default:
 			break;
@@ -218,6 +276,14 @@ void MyGame::Clicker(float x, float y)
 		parseGameWinnerClick(m_gameWinner->click(x,y));
 		break;
 
+	case GAME_STORY:
+		parseStoryClick(m_story->click(x,y));
+		break;
+
+	case GAME_LEVEL_SELECTION:
+		parseLevelSelectionClick(m_level_selection->click(x,y));
+		break;
+
 	default:
 		break;
 	};
@@ -231,7 +297,7 @@ void MyGame::parseGameMenuClick(int number)
 		if ( m_menu )
 			delete m_menu;
 		m_menu = NULL;
-		m_gameState = GAME_ARCADE;
+		m_gameState = GAME_LEVEL_SELECTION;
 		break;
 
 	default:
@@ -264,6 +330,59 @@ void MyGame::parseGameWinnerClick(int number)
 			delete m_gameWinner;
 		m_gameWinner = NULL;
 		m_gameState = GAME_MENU;
+		break;
+
+	default:
+		break;
+	};
+}
+
+void MyGame::parseStoryClick(int number)
+{
+	switch(number)
+	{
+	case -1:
+		if ( m_story )
+			delete m_story;
+		m_story = NULL;
+		m_gameState = GAME_ARCADE;
+		break;
+
+	default:
+		break;
+	};
+}
+
+void MyGame::parseLevelSelectionClick(int number)
+{
+	switch(number)
+	{
+	case -1:
+		if ( m_level_selection )
+			delete m_level_selection;
+		m_level_selection = NULL;
+		m_gameState = GAME_STORY;
+		break;
+
+	case -2:
+		if ( m_level_selection )
+			delete m_level_selection;
+		m_level_selection = NULL;
+		m_gameState = GAME_ARCADE;
+		break;
+
+	case -3:
+		if ( m_level_selection )
+			delete m_level_selection;
+		m_level_selection = NULL;
+		m_gameState = GAME_ARCADE;
+		break;
+
+	case -4:
+		if ( m_level_selection )
+			delete m_level_selection;
+		m_level_selection = NULL;
+		m_gameState = GAME_ARCADE;
 		break;
 
 	default:

@@ -13,6 +13,8 @@
 #include "arcade.h"
 #include "gameover.h"
 #include "gamewinner.h"
+#include "level_selection.h"
+#include "story.h"
 
 enum GameState
 {
@@ -21,6 +23,8 @@ enum GameState
 	GAME_LEVEL_1,
 	GAME_OVER,
 	GAME_WINNER,
+	GAME_STORY,
+	GAME_LEVEL_SELECTION,
 };
 
 class MyGame : public Game
@@ -38,11 +42,15 @@ private:
 	void parseGameMenuClick(int number);
 	void parseGameOverClick(int number);
 	void parseGameWinnerClick(int number);
+	void parseStoryClick(int number);
+	void parseLevelSelectionClick(int number);
 
 	Menu* m_menu;
 	Arcade* m_arcade;
 	GameOver* m_gameOver;
 	GameWinner* m_gameWinner;
+	Story* m_story;
+	LevelSelection* m_level_selection;
 
 //	touchStruct[S3E_POINTER_TOUCH_MAX];
 	GameState m_gameState;
