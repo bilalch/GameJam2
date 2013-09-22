@@ -2,13 +2,16 @@ CIwResGroup
 {
 	name "_menu"
 	
-	"640x960/Menu/menu.png"					{ mipMapping false }
-	"640x960/Menu/button_highscore.png"		{ mipMapping false }
-	"640x960/Menu/button_howto.png"			{ mipMapping false }
-	"640x960/Menu/button_race.png"			{ mipMapping false }
-	"640x960/Menu/button_story.png"			{ mipMapping false }
-	"640x960/Menu/button_aboutus.png"		{ mipMapping false }
+	"640x960/Menu/background.png"					{ mipMapping false }
+	"640x960/Menu/credit-pressed.png"				{ mipMapping false }
+	"640x960/Menu/credit-unpressed.png"				{ mipMapping false }
+	"640x960/Menu/game-name.png"					{ mipMapping false }
+	"640x960/Menu/run-pressed.png"					{ mipMapping false }
+	"640x960/Menu/run-unpressed.png"					{ mipMapping false }
+	"640x960/Menu/sound-off.png"					{ mipMapping false }
+	"640x960/Menu/sound-on.png"					{ mipMapping false }
+	"640x960/Menu/names.png"					{ mipMapping false }
+	"640x960/Menu/back-button-pressed.png"					{ mipMapping false }
+	"640x960/Menu/back-button-unpressed.png"					{ mipMapping false }
 	
-	"640x960/Menu/aboutUs.png"				{ mipMapping false }
-	"640x960/Menu/howTo.png"				{ mipMapping false }
 }

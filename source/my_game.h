@@ -11,6 +11,7 @@
 #include "game.h"
 #include "menu.h"
 #include "arcade.h"
+#include "gameover.h"
 
 enum GameState
 {
@@ -36,6 +37,8 @@ private:
 
 	Menu* m_menu;
 	Arcade* m_arcade;
+	GameOver* m_gameover;
+
 //	touchStruct[S3E_POINTER_TOUCH_MAX];
 	GameState m_gameState;
 

@@ -5,170 +5,139 @@ Menu::Menu()
 {
 	
 	loadMenuImages();
-	buttons_top_limit_multiplier = 0.3;
-	buttons_side_limit_multiplier = 0.05;
 	initializeButtons();
 	m_menuState = MENU_MAIN;
 }
 
 Menu::~Menu()
 {
-	if ( m_storyButton )
-		delete m_storyButton;
+	if ( m_runButton )
+		delete m_runButton;
 
-	if ( m_raceButton )
-		delete m_raceButton;
+	if ( m_creditsButton )
+		delete m_creditsButton;
 
-	if ( m_highscoreButton )
-		delete m_highscoreButton;
+	if ( m_soundButton )
+		delete m_soundButton;
 
-	if ( m_howtoButton )
-		delete m_howtoButton;
-
-	if ( m_aboutUsButton )
-		delete m_aboutUsButton;
+	if ( m_backButton )
+		delete m_backButton;
 
 	unloadMenuImages();
 }
 
 void Menu::initializeButtons()
 {
-	float total_height_for_buttons = OBSERVER->getDeviceHeight()*(1-buttons_top_limit_multiplier);
-	float button_height = m_storyButtonImage->GetHeight();
-	float button_difference = (total_height_for_buttons - 4*button_height)/5;
-
-	float button_x = buttons_side_limit_multiplier*OBSERVER->getDeviceWidth();
-
-	float current_button_y = buttons_top_limit_multiplier*OBSERVER->getDeviceHeight() + button_difference;
-
-	m_storyButton = new AwmButton(button_x, current_button_y, m_storyButtonImage);
-
-	current_button_y = current_button_y + button_height + button_difference;
-
-	m_raceButton = new AwmButton(button_x, current_button_y, m_raceButtonImage);
-
-	current_button_y = current_button_y + button_height + button_difference;
-
-	m_highscoreButton = new AwmButton(button_x,current_button_y,m_highscoreButtonImage);
-
-	current_button_y = current_button_y + button_height + button_difference;
-
-	m_howtoButton = new AwmButton(button_x,current_button_y,m_howtoButtonImage);
-
-	m_aboutUsButton = new AwmButton(OBSERVER->getDeviceWidth() - m_aboutUsButtonImage->GetWidth() - button_x, OBSERVER->getDeviceHeight() - m_aboutUsButtonImage->GetHeight() - button_x, m_aboutUsButtonImage);
-
-	m_aboutUsButton -> Slide ( -200, 0, 20 );
+	m_runButton = new AwmButton(m_run_unpressed,m_run_pressed,(OBSERVER->getDeviceWidth() - m_run_pressed->GetWidth())/2,((OBSERVER->getDeviceHeight() - m_run_pressed->GetHeight())/2)+50);
+	m_creditsButton = new AwmButton(m_credits_unpressed,m_credits_pressed, (OBSERVER->getDeviceWidth()*0.5 + 200), 500 );
+	m_soundButton = new AwmButton (m_sound_off,m_sound_on,(OBSERVER->getDeviceWidth()*0.5 - 350), 500);
+	m_backButton = new AwmButton (m_back_unpressed,m_back_pressed,(OBSERVER->getDeviceWidth()*0.5 - 350), 500);
 }
 
 void Menu::loadMenuImages()
 {
 	imagesGroup = IwGetResManager()->LoadGroup("640x960/Menu/_menu.group");
 
-	m_storyButtonImage = Iw2DCreateImageResource("button_story");
-	m_raceButtonImage = Iw2DCreateImageResource("button_race");
-	m_highscoreButtonImage = Iw2DCreateImageResource("button_highscore");
-	m_howtoButtonImage = Iw2DCreateImageResource("button_howto");
-	m_aboutUsButtonImage = Iw2DCreateImageResource("button_aboutus");
+	m_background = Iw2DCreateImageResource("background");
+	m_title = Iw2DCreateImageResource("game-name");
+	m_run_pressed = Iw2DCreateImageResource("run-pressed");
+	m_run_unpressed = Iw2DCreateImageResource("run-unpressed");
+	m_credits_pressed = Iw2DCreateImageResource("credit-pressed");
+	m_credits_unpressed = Iw2DCreateImageResource("credit-unpressed");
+	m_sound_on = Iw2DCreateImageResource("sound-on");
+	m_sound_off = Iw2DCreateImageResource("sound-off");
+	m_names = Iw2DCreateImageResource("names");
+	m_back_pressed = Iw2DCreateImageResource("back-button-pressed");
+	m_back_unpressed = Iw2DCreateImageResource("back-button-unpressed");
 
-	m_about_us = Iw2DCreateImageResource("aboutUs");
-	m_how_to = Iw2DCreateImageResource("howTo");
-	m_background = Iw2DCreateImageResource("menu");
 }
 
 void Menu::unloadMenuImages()
 {
-	if ( m_storyButtonImage )
-		delete m_storyButtonImage;
-	m_storyButtonImage = NULL;
-
-	if ( m_raceButtonImage )
-		delete m_raceButtonImage;
-	m_raceButtonImage = NULL;
-
-	if ( m_highscoreButtonImage )
-		delete m_highscoreButtonImage;
-	m_highscoreButtonImage = NULL;
-
-	if ( m_howtoButtonImage )
-		delete m_howtoButtonImage;
-	m_howtoButtonImage = NULL;
-
-	if ( m_aboutUsButtonImage )
-		delete m_aboutUsButtonImage;
-	m_aboutUsButtonImage = NULL;
-
 	if ( m_background )
 		delete m_background;
-	m_background = NULL;	
+	m_background = NULL;
 
-	if ( m_about_us )
-		delete m_about_us;
-	m_about_us = NULL;	
+	if ( m_title )
+		delete m_title;
+	m_title = NULL;
 
-	if ( m_how_to )
-		delete m_how_to;
-	m_how_to = NULL;	
+	if ( m_run_unpressed)
+		delete m_run_unpressed;
+	m_run_unpressed = NULL;
+
+	if ( m_run_pressed )
+		delete m_run_pressed;
+	m_run_pressed = NULL;
+
+	if ( m_credits_pressed )
+		delete m_credits_pressed;
+	m_credits_pressed = NULL;
+
+	if ( m_credits_unpressed )
+		delete m_credits_unpressed;
+	m_credits_unpressed = NULL;	
+
+	if ( m_sound_on )
+		delete m_sound_on;
+	m_sound_on = NULL;	
+
+	if ( m_sound_off )
+		delete m_sound_off;
+	m_sound_off = NULL;
+
+	if ( m_names )
+		delete m_names;
+	m_names = NULL;
+
+	if ( m_back_pressed )
+		delete m_back_pressed;
+	m_back_pressed = NULL;
+
+	if ( m_back_unpressed )
+		delete m_back_unpressed ;
+	m_back_unpressed  = NULL;
 
 	IwGetResManager()->DestroyGroup(imagesGroup);
 }
 
 bool Menu::update(sliderStruct &m_slider)
 {
-	m_storyButton -> Update(m_slider.click,m_slider.distanceX1,m_slider.distanceY1);
-	//m_raceButton -> Update(m_slider.click,m_slider.distanceX1,m_slider.distanceY1);
-	m_raceButton -> Update();
-	m_highscoreButton -> Update(m_slider.click,m_slider.distanceX1,m_slider.distanceY1);
-	m_howtoButton -> Update(m_slider.click,m_slider.distanceX1,m_slider.distanceY1);
-	m_aboutUsButton -> Update(m_slider.click,m_slider.distanceX1,m_slider.distanceY1);
+	switch ( m_menuState )
+	{
+	case MENU_MAIN:
+		m_runButton -> Update(m_slider.click,m_slider.distanceX1,m_slider.distanceY1);
+		m_creditsButton -> Update(m_slider.click,m_slider.distanceX1,m_slider.distanceY1);
+		m_soundButton -> Update(m_slider.click,m_slider.distanceX1,m_slider.distanceY1);
+		break;
+
+	case MENU_ABOUT_US:
+		m_backButton -> Update(m_slider.click,m_slider.distanceX1,m_slider.distanceY1);
+		break;
+
+	default:
+		break;
+	};
 
 	return true;
-}
-
-void Menu::drawSwipes()
-{
-	if ( AWM_INPUT -> getSwipe() ) {
-		
-		if ( AWM_INPUT -> getSwipeRight() ) {
-			
-			Iw2DDrawString("SWIPE RIGHT",CIwFVec2(0,0),CIwFVec2(OBSERVER->getDeviceWidth(),OBSERVER->getDeviceHeight()),IW_2D_FONT_ALIGN_CENTRE,IW_2D_FONT_ALIGN_CENTRE);
-		} else if ( AWM_INPUT -> getSwipeLeft() ) {
-			
-			Iw2DDrawString("SWIPE LEFT",CIwFVec2(0,0),CIwFVec2(OBSERVER->getDeviceWidth(),OBSERVER->getDeviceHeight()),IW_2D_FONT_ALIGN_CENTRE,IW_2D_FONT_ALIGN_CENTRE);
-		} else if ( AWM_INPUT -> getSwipeUp() ) {
-		
-			Iw2DDrawString("SWIPE UP",CIwFVec2(0,0),CIwFVec2(OBSERVER->getDeviceWidth(),OBSERVER->getDeviceHeight()),IW_2D_FONT_ALIGN_CENTRE,IW_2D_FONT_ALIGN_CENTRE);
-		} else if ( AWM_INPUT -> getSwipeDown() ) {
-		
-			Iw2DDrawString("SWIPE DOWN",CIwFVec2(0,0),CIwFVec2(OBSERVER->getDeviceWidth(),OBSERVER->getDeviceHeight()),IW_2D_FONT_ALIGN_CENTRE,IW_2D_FONT_ALIGN_CENTRE);
-		}
-	}
 }
 
 void Menu::draw()
 {
 	drawBackgroundStretched();
 
-	m_storyButton -> Draw();
-	m_raceButton -> Draw();
-	m_highscoreButton -> Draw();
-	m_howtoButton -> Draw();
-	m_aboutUsButton -> Draw();
-
-	drawSwipes();
-
 	switch ( m_menuState )
 	{
 	case MENU_MAIN:
+		Iw2DDrawImage(m_title,CIwFVec2((OBSERVER->getDeviceWidth() - m_title->GetWidth())/2,20));
+		m_runButton->Draw();
+		m_creditsButton->Draw();
+		m_soundButton->Draw();
 		break;
 
 	case MENU_ABOUT_US:
-
-		drawScreenBelowLogo(m_about_us);
-		break;
-
-	case MENU_HOW_TO:
-
-		drawScreenBelowLogo(m_how_to);
+		drawImageCentered(m_names);
+		m_backButton->Draw();
 		break;
 
 	default:
@@ -189,47 +158,29 @@ void Menu::drawImageCentered(CIw2DImage* image)
 	Iw2DDrawImage(image,CIwFVec2(drawX,drawY));
 }
 
-void Menu::drawScreenBelowLogo(CIw2DImage* image)
-{
-	float drawX = (OBSERVER->getDeviceWidth() - image->GetWidth())/2;
-	float drawY = buttons_top_limit_multiplier*OBSERVER->getDeviceHeight() + ((1 - buttons_top_limit_multiplier)*OBSERVER->getDeviceHeight() - image->GetHeight())/2;
-
-	Iw2DDrawImage(image,CIwFVec2(drawX,drawY));
-}
-
 int Menu::click(float x, float y)
 {
 	switch ( m_menuState )
 	{
 	case MENU_MAIN:
 
-		m_storyButton -> Click (x,y);
-		m_highscoreButton -> Click (x,y);
-
-		if ( m_raceButton -> Click (x,y) ) {
-		
+		if ( m_runButton -> Click (x,y) ) {
+			
+			cout<<"Run Button Clicked!!!"<<endl;
 			return -1;
-		} else if ( m_howtoButton -> Click (x,y) ) {
-		
-			hideMainMenuButtons();
-			m_menuState = MENU_HOW_TO;
-		} else if ( m_aboutUsButton -> Click (x,y) ) {
-		
-			hideMainMenuButtons();
+		}
+		if ( m_creditsButton -> Click (x,y) ) {
+
 			m_menuState = MENU_ABOUT_US;
 		}
 		break;
 
 	case MENU_ABOUT_US:
 
-		showMainMenuButtons();
-		m_menuState = MENU_MAIN;
-		break;
-
-	case MENU_HOW_TO:
-
-		showMainMenuButtons();
-		m_menuState = MENU_MAIN;
+		if ( m_backButton -> Click (x,y) ) { 
+			
+			m_menuState = MENU_MAIN;
+		}
 		break;
 
 	default:
@@ -237,22 +188,4 @@ int Menu::click(float x, float y)
 	};
 	
 	return 0;
-}
-
-void Menu::hideMainMenuButtons()
-{
-	m_storyButton -> hide();
-	m_raceButton -> hide();
-	m_highscoreButton -> hide();
-	m_howtoButton -> hide();
-	m_aboutUsButton -> hide();
-}
-
-void Menu::showMainMenuButtons()
-{
-	m_storyButton -> show();
-	m_raceButton -> show();
-	m_highscoreButton -> show();
-	m_howtoButton -> show();
-	m_aboutUsButton -> show();
 }

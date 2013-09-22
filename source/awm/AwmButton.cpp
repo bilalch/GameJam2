@@ -681,7 +681,7 @@ void AwmButton::Draw()
 		stringstream ss;
 		ss<<click_id;
 
-		Iw2DDrawString(ss.str().c_str(),CIwFVec2(m_x1, m_y1),CIwFVec2(m_width,m_height),IW_2D_FONT_ALIGN_CENTRE,IW_2D_FONT_ALIGN_CENTRE);
+		//Iw2DDrawString(ss.str().c_str(),CIwFVec2(m_x1, m_y1),CIwFVec2(m_width,m_height),IW_2D_FONT_ALIGN_CENTRE,IW_2D_FONT_ALIGN_CENTRE);
 	}
 }
 
