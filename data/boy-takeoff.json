@@ -1,0 +1,1 @@
+{"bones":{"hip":{"translate":[{"time":0,"x":0,"y":0},{"time":0.6666,"x":589.49,"y":603.71},{"time":1.3333,"x":1116.11,"y":0}]},"right upper leg":{"rotate":[{"time":0,"angle":0},{"time":0.6666,"angle":-51},{"time":1.3333,"angle":0}]},"left upper leg":{"rotate":[{"time":0,"angle":0},{"time":0.6666,"angle":41.91,"curve":[0.27,0.76,0.666,1]},{"time":1.3333,"angle":0}]}}}
