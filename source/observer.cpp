@@ -20,35 +20,31 @@ Observer* Observer::getInstance()
 
 Observer::Observer(void)
 {	
-
 	uint32 x = IwGxGetDeviceWidth();
-	deviceWidth = x;
 	uint32 y = IwGxGetDeviceHeight();
-	deviceHeight = y;
-	if ((x==320 && y==480) || (x==480 && y==320)) {
-		
-		currentDevice = GLOBAL_IPHONE3;
-		//deviceWidth = 320;
-		//deviceHeight = 480;
+	if ( x > y ) {
 
-	} else if ((x==640 && y==960) || (x==960 && y==640)) {
-		
-		currentDevice = GLOBAL_IPHONE4;
-		//deviceWidth = 640;
-		//deviceHeight = 960;
+		deviceWidth = x;
+		deviceHeight = y;
+	} else {
 
-	} else if ((x==480 && y==800) || (x==800 && y==480)) {
-
-		currentDevice = GLOBAL_ANDROID1;
-		//deviceWidth = 480;
-		//deviceHeight = 800;
-
-	} else if ((x==480 && y==854) || (x==854 && y==480)) {
-
-		currentDevice = GLOBAL_ANDROID2;
-		//deviceWidth = 480;
-		//deviceHeight = 854;
+		deviceWidth = y;
+		deviceHeight = x;
 	}
+
+	float ratio1 = deviceWidth / 960;
+	float ratio2 = deviceHeight / 640;
+	ratio = 1;
+
+	if ( ratio1 > ratio2 )
+		ratio = ratio2;
+	else
+		ratio = ratio1;
+}
+
+float Observer::getRatio()
+{
+	return ratio;
 }
 
 Observer::~Observer(void)
