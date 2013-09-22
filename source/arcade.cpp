@@ -159,6 +159,7 @@ bool Arcade::update(sliderStruct& m_slider)
 		if (m_opponents[i]->getX2() < 0)
 		{
 			m_opponents.Delete(i);
+			spawnCart();
 		}
 	}
 

@@ -2,6 +2,9 @@
 
 int Cart::update(PlayerCar *m_char, ScrollingBackground *m_scroll_bg)
 {
+	m_x1-=m_scroll_bg->getScrollSpeed();
+	m_x2-=m_scroll_bg->getScrollSpeed();
+
 	//detect collision
 	if (m_char->getY2() > m_y1)
 	{
@@ -13,9 +16,6 @@ int Cart::update(PlayerCar *m_char, ScrollingBackground *m_scroll_bg)
 			return 1;
 		}	
 	}
-
-	m_x1-=m_scroll_bg->getScrollSpeed();
-	m_x2-=m_scroll_bg->getScrollSpeed();
 }
 
 void Cart::draw()

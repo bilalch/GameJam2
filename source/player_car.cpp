@@ -194,7 +194,16 @@ void PlayerCar::jump()
 {
 	if (!jumping)
 	{
-		jumpVelocity = -3*car_speed;//-30;
+		if (car_speed < 10) {
+			
+			jumpVelocity = -2.5f*10;
+		} else if ( car_speed > 10 ) {
+
+			jumpVelocity = -2.5f*car_speed;
+		} else {
+
+			jumpVelocity = -2.5f*car_speed;
+		}
 		jumping = true;
 	}
 }
