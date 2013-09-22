@@ -1,5 +1,6 @@
 #include "menu.h"
 #include "observer.h"
+#include "AwmSoundManager.h"
 
 Menu::Menu()
 {
@@ -7,6 +8,7 @@ Menu::Menu()
 	loadMenuImages();
 	initializeButtons();
 	m_menuState = MENU_MAIN;
+	firstDraw = true;
 }
 
 Menu::~Menu()
@@ -124,6 +126,12 @@ int Menu::update(sliderStruct &m_slider)
 
 void Menu::draw()
 {
+	if ( firstDraw ) {
+		
+		AWM_SOUND_MANAGER -> PlaySound ("sounds2/Loops/bg.mp3");
+		AWM_SOUND_MANAGER -> PlaySoundEffect ( "menu" );
+		firstDraw = false;
+	}
 	drawBackgroundStretched();
 
 	switch ( m_menuState )

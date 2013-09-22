@@ -69,8 +69,8 @@ void AwmSoundManager::Init(const char* groupPath, const char* groupName){
 	soundFlag = true;
 	soundEffectsFlag = true;
 	soundChange = false;
-	currentSound = "sounds/Loops/MainTheme.mp3";
-	PlaySound(currentSound.c_str());
+	//currentSound = "sounds/Loops/MainTheme.mp3";
+	//PlaySound(currentSound.c_str());
 }
 
 void AwmSoundManager::PlaySoundEffect(const char* whichSoundEffect){
