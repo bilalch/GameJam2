@@ -8,6 +8,7 @@ Arcade::Arcade()
 	loadImages();
 	m_scrolling_background = new ScrollingBackground(m_scrolling_image, 3);
 	m_playerCar = new PlayerCar(1);
+	m_chicken = new Chicken(1);
 	initializeButtons();
 
 	difficulty = 1;
@@ -76,6 +77,7 @@ void Arcade::draw()
 	}
 
 	m_playerCar -> draw();
+	m_chicken -> draw();
 	
 	/*m_speed_button -> Draw();
 	m_right_button -> Draw();
@@ -91,6 +93,7 @@ int Arcade::update(sliderStruct& m_slider)
 	m_scrolling_background -> Update();
 
 	m_playerCar -> update(m_scrolling_background->getSpeed());
+	m_chicken -> update(m_scrolling_background->getSpeed());
 	
 	for ( int i = 0; i < m_opponents.GetSize(); i++ ) {
 		
@@ -118,6 +121,35 @@ int Arcade::update(sliderStruct& m_slider)
 			//GAME OVER
 			cout<<"BOX COLLISION SIDE"<<endl;
 			return 2;//gameover
+			break;
+		default:
+			break;
+		};
+
+		switch (m_opponents[i]->update(m_chicken, m_scrolling_background))
+		{
+		case 1:
+			//collision with cart
+			m_chicken->jump(true);
+			break;
+		case 2:
+			//collision with mud
+			//GAME OVER
+			cout<<"MUD COLLISION"<<endl;
+			//return 2;//gameover
+			break;
+		case 3:
+			//collision with box from top
+			//GAME OVER
+			cout<<"BOX COLLISION TOP"<<endl;
+			//m_chicken->jump(true);
+			break;
+
+		case 4:
+			//collision with box from side
+			//GAME OVER
+			cout<<"BOX COLLISION SIDE"<<endl;
+			//return 2;//gameover
 			break;
 		default:
 			break;
