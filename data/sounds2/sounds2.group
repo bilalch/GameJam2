@@ -6,9 +6,7 @@ CIwResGroup
 	"./running.wav"
 	"./click.wav"
 	"./menu.wav"
-	"./morning.wav"
 	"./mud.wav"
-	"./bg.wav"
 	"./thud.wav"
 
 
@@ -40,13 +38,7 @@ CIwResGroup
 		vol 		1.0				# Default volume to be played at
 		loop		false			# Do we want this sound effect to play forever?
 	}
-	CIwSoundSpec
-	{
-		name		"morning"		# The name we want to use to refer to this sound effect in out code
-		data		"morning"		# The WAv file name (without .wav
-		vol 		0.7				# Default volume to be played at
-		loop		false			# Do we want this sound effect to play forever?
-	}
+	
 	CIwSoundSpec
 	{
 		name		"mud"		# The name we want to use to refer to this sound effect in out code
@@ -54,13 +46,7 @@ CIwResGroup
 		vol 		0.7				# Default volume to be played at
 		loop		false			# Do we want this sound effect to play forever?
 	}
-	CIwSoundSpec
-	{
-		name		"bg"		# The name we want to use to refer to this sound effect in out code
-		data		"bg"		# The WAv file name (without .wav
-		vol 		0.7				# Default volume to be played at
-		loop		false			# Do we want this sound effect to play forever?
-	}
+
 	CIwSoundSpec
 	{
 		name		"thud"		# The name we want to use to refer to this sound effect in out code
@@ -79,9 +65,7 @@ CIwResGroup
 		addSpec		"running"		# Add the explosion sound spec to our sound group
 		addSpec		"click"			# Add the explosion sound spec to our sound group
 		addSpec		"menu"			# Add the explosion sound spec to our sound group
-		addSpec		"morning"		# Add the explosion sound spec to our sound group
 		addSpec		"mud"			# Add the explosion sound spec to our sound group
-		addSpec		"bg"			# Add the explosion sound spec to our sound group
 		addSpec		"thud"			# Add the explosion sound spec to our sound group
 
 	}
