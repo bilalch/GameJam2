@@ -71,7 +71,6 @@ private:
 	void generateCase9();
 
 	int difficulty;
-	int levelProgressCount;
 };
 
 #endif
