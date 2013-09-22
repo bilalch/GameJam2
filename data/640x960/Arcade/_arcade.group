@@ -3,5 +3,5 @@ CIwResGroup{	name "_arcade"
 "640x960/Arcade/tile1.png"					{ mipMapping false }
 "640x960/Arcade/tile2.png"					{ mipMapping false }
 "640x960/Arcade/tile3.png"					{ mipMapping false }"640x960/Arcade/menu.png"					{ mipMapping false }"640x960/Arcade/bg.png"						{ mipMapping false }"640x960/Arcade/path.png"					{ mipMapping false }"640x960/Arcade/cart.png"					{ mipMapping false }
-"640x960/Arcade/mud.png"					{ mipMapping false }"640x960/Arcade/box.png"					{ mipMapping false }
+"640x960/Arcade/mud.png"					{ mipMapping false }"640x960/Arcade/box.png"					{ mipMapping false }"640x960/Arcade/pause-button-unpressed.png"					{ mipMapping false }"640x960/Arcade/energy-bar.png"					{ mipMapping false }"640x960/Arcade/energy-bar-tray.png"					{ mipMapping false }"640x960/Arcade/energy-icon.png"					{ mipMapping false }
 }
