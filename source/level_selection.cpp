@@ -12,12 +12,14 @@ LevelSelection::~LevelSelection()
 
 }
 
-int LevelSelection::update()
+int LevelSelection::update(sliderStruct &m_slider)
 {
-	m_level1->Update();
-	m_level2->Update();
-	m_level3->Update();
-	m_level4->Update();
+	m_level1->Update(m_slider.click,m_slider.distanceX1,m_slider.distanceY1);
+	m_level2->Update(m_slider.click,m_slider.distanceX1,m_slider.distanceY1);
+	m_level3->Update(m_slider.click,m_slider.distanceX1,m_slider.distanceY1);
+	m_level4->Update(m_slider.click,m_slider.distanceX1,m_slider.distanceY1);
+
+	return 1;
 }
 
 void LevelSelection::draw()
