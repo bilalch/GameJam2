@@ -17,6 +17,7 @@
 #include "mud.h"
 #include "collidable.h"
 #include "spine_char.h"
+#include "chicken.h"
 
 class Arcade : public View
 {
@@ -70,6 +71,8 @@ private:
 
 	int difficulty;
 	int levelProgressCount;
+
+	Chicken* m_chicken;
 };
 
 #endif

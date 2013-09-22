@@ -4,6 +4,7 @@
 #include "Iw2D.h"
 #include "player_car.h"
 #include "scrolling_background.h"
+#include "chicken.h"
 
 class Collidable 
 {
@@ -12,6 +13,7 @@ public:
 	~Collidable();
 
 	virtual int update(PlayerCar *m_char, ScrollingBackground *m_scroll_bg) = 0;
+	virtual int update(Chicken *m_char, ScrollingBackground *m_scroll_bg) = 0;
 	virtual void draw() = 0;
 
 	float getX1() { return m_x1; }

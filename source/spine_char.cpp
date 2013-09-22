@@ -39,8 +39,11 @@ void SpineChar::loadSpine(const char* _atlas, const char* _skeleton, const char*
 		ifstream skeletonFile(_skeleton);
 		skeletonData = skeletonJson.readSkeletonData(skeletonFile);
 
-		ifstream animationFile(_animation_walk);
-		animation_walk = skeletonJson.readAnimation(animationFile, skeletonData);
+		if ( _animation_walk ) {
+
+			ifstream animationFile(_animation_walk);
+			animation_walk = skeletonJson.readAnimation(animationFile, skeletonData);
+		}
 
 		if ( _animation_jump ) {
 
@@ -131,14 +134,20 @@ void SpineChar::update()
 {
   float dt = (float)(s3eTimerGetMs() - lastFrameTime);
   lastFrameTime = s3eTimerGetMs();
-  animationTime += dt / 1000.f;
-  
+
   if (isJumping)
+	animationTime += dt / 10000.f;
+  else
+	animationTime += dt / 1000.f;
+
+  animation_run->apply(skeleton, animationTime, true);
+  
+/*  if (isJumping)
 	animation_jump->apply(skeleton, animationTime, false);
   else if (isRunning)
 	animation_run->apply(skeleton, animationTime, true);
   else if (isWalking)
 	animation_walk->apply(skeleton, animationTime, true);
-
+*/
   skeleton->updateWorldTransform();
 }
