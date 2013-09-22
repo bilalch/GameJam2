@@ -82,7 +82,7 @@ int Arcade::update(sliderStruct& m_slider)
 	/*m_speed_button -> Update();
 	m_right_button -> Update();
 	m_left_button -> Update();*/
-	
+	s3eDeviceBacklightOn();
 	m_scrolling_background -> Update();
 
 	m_playerCar -> update(m_scrolling_background->getSpeed());
