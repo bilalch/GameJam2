@@ -135,6 +135,50 @@ int Arcade::click(float x, float y)
 
 void Arcade::generateLevel()
 {
+	int _number = rand()%10;
+
+	switch(_number)
+	{
+	case 0:
+		generateCase0();
+		break;
+
+	case 1:
+		generateCase1();
+		break;
+
+	case 2:
+		generateCase2();
+		break;
+
+	case 3:
+		generateCase3();
+		break;
+
+	case 4:
+		generateCase4();
+		break;
+
+	case 5:
+		generateCase5();
+		break;
+
+	case 6:
+		generateCase6();
+		break;
+
+	case 7:
+		generateCase7();
+		break;
+
+	case 8:
+		generateCase8();
+		break;
+
+	case 9:
+		generateCase9();
+		break;
+	};
 	Collidable* cart = new Cart(960,400,m_cart_image->GetWidth(),m_cart_image->GetHeight(),m_cart_image);
 	m_opponents.Add(cart);
 
@@ -149,4 +193,54 @@ void Arcade::generateLevel()
 
 	Collidable* box2 = new Box(mud2->getX2() + 50,400 + 33,m_box_image->GetWidth(),m_box_image->GetHeight(),m_box_image);
 	m_opponents.Add(box2);
+}
+
+void Arcade::generateCase0()
+{
+
+}
+
+void Arcade::generateCase1()
+{
+
+}
+
+void Arcade::generateCase2()
+{
+
+}
+
+void Arcade::generateCase3()
+{
+
+}
+
+void Arcade::generateCase4()
+{
+
+}
+
+void Arcade::generateCase5()
+{
+
+}
+
+void Arcade::generateCase6()
+{
+
+}
+
+void Arcade::generateCase7()
+{
+
+}
+
+void Arcade::generateCase8()
+{
+
+}
+
+void Arcade::generateCase9()
+{
+
 }
