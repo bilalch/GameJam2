@@ -36,6 +36,8 @@ public:
 
 	void generateLevel();
 
+	void setDifficulty(int _number) { difficulty = _number; }
+
 private:
 	ScrollingBackground* m_scrolling_background;
 
@@ -67,6 +69,8 @@ private:
 	void generateCase7();
 	void generateCase8();
 	void generateCase9();
+
+	int difficulty;
 };
 
 #endif

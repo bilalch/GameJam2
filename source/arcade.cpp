@@ -7,6 +7,8 @@ Arcade::Arcade()
 	m_scrolling_background = new ScrollingBackground(m_scrolling_image, 3);
 	m_playerCar = new PlayerCar(1);
 	initializeButtons();
+
+	difficulty = 1;
 }
 
 Arcade::~Arcade()
@@ -135,7 +137,16 @@ int Arcade::click(float x, float y)
 
 void Arcade::generateLevel()
 {
-	int _number = rand()%10;
+	int _number = 0;
+
+	if ( difficulty == 4 )
+		_number = rand()%10;
+	else if ( difficulty == 3 )
+		_number = rand()%8;
+	else if ( difficulty == 2 )
+		_number = rand()%6;
+	else
+		_number = rand()%4;
 
 	switch(_number)
 	{
@@ -197,50 +208,50 @@ void Arcade::generateLevel()
 
 void Arcade::generateCase0()
 {
-
+	// easy
 }
 
 void Arcade::generateCase1()
 {
-
+	// easy
 }
 
 void Arcade::generateCase2()
 {
-
+	// easy
 }
 
 void Arcade::generateCase3()
 {
-
+	// easy
 }
 
 void Arcade::generateCase4()
 {
-
+	// medium
 }
 
 void Arcade::generateCase5()
 {
-
+	// medium
 }
 
 void Arcade::generateCase6()
 {
-
+	// hard
 }
 
 void Arcade::generateCase7()
 {
-
+	// hard
 }
 
 void Arcade::generateCase8()
 {
-
+	// harder
 }
 
 void Arcade::generateCase9()
 {
-
+	// harder
 }
