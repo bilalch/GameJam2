@@ -1,5 +1,6 @@
 #include "arcade.h"
 #include "observer.h"
+#include "AwmSoundManager.h"
 
 #define LEVEL_PROGRESS_COUNTER 50
 
@@ -13,6 +14,8 @@ Arcade::Arcade(int difficulty_level)
 
 	difficulty = difficulty_level;
 	levelProgressCount = 0;
+
+	AWM_SOUND_MANAGER -> PlaySound ("sounds2/Loops/morning.mp3");
 }
 
 Arcade::~Arcade()
