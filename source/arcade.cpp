@@ -1,6 +1,8 @@
 #include "arcade.h"
 #include "observer.h"
 
+#define LEVEL_PROGRESS_COUNTER 5
+
 Arcade::Arcade()
 {
 	loadImages();
@@ -9,6 +11,7 @@ Arcade::Arcade()
 	initializeButtons();
 
 	difficulty = 1;
+	levelProgressCount = 0;
 }
 
 Arcade::~Arcade()
@@ -95,7 +98,7 @@ int Arcade::update(sliderStruct& m_slider)
 		{
 		case 1:
 			//collision with cart
-			m_playerCar->jump(false);
+			m_playerCar->jump(true);
 			break;
 		case 2:
 			//collision with mud
@@ -134,6 +137,12 @@ int Arcade::update(sliderStruct& m_slider)
 		if(m_opponents.GetSize() == 0)
 			generateLevel();
 	}
+
+	if (levelProgressCount >= LEVEL_PROGRESS_COUNTER)
+	{
+		return 1;//level complete .. WINNER SCREEN
+	}
+
 	return -100;
 }
 
@@ -209,6 +218,8 @@ void Arcade::generateLevel()
 	//generateCase7();
 	//generateCase8();
 	//generateCase9();
+
+	levelProgressCount++;
 }
 
 void Arcade::generateCase0()
