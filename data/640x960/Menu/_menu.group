@@ -2,7 +2,6 @@ CIwResGroup
 {
 	name "_menu"
 	
-	"640x960/Menu/background.png"					{ mipMapping false }
 	"640x960/Menu/credit-pressed.png"				{ mipMapping false }
 	"640x960/Menu/credit-unpressed.png"				{ mipMapping false }
 	"640x960/Menu/game-name.png"					{ mipMapping false }
@@ -14,4 +13,5 @@ CIwResGroup
 	"640x960/Menu/back-button-pressed.png"					{ mipMapping false }
 	"640x960/Menu/back-button-unpressed.png"					{ mipMapping false }
 	
+	"640x960/Background/_background.group"
 }

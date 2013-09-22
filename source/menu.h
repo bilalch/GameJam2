@@ -19,7 +19,7 @@ class Menu : public View
 public:
 	Menu();
 	~Menu();
-	bool update(sliderStruct &m_slider);
+	int update(sliderStruct &m_slider);
 	void draw();
 	int click(float x, float y);
 

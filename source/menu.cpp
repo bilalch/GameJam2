@@ -101,7 +101,7 @@ void Menu::unloadMenuImages()
 	IwGetResManager()->DestroyGroup(imagesGroup);
 }
 
-bool Menu::update(sliderStruct &m_slider)
+int Menu::update(sliderStruct &m_slider)
 {
 	switch ( m_menuState )
 	{

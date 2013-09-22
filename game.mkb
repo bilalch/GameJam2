@@ -77,6 +77,9 @@ files
 	gameover.h
 	gameover.cpp
 	
+	gamewinner.h
+	gamewinner.cpp
+	
 	[Awm]
 	(source/awm)
 	AwmSoundManager.h

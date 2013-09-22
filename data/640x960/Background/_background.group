@@ -1,0 +1,6 @@
+CIwResGroup
+{
+	name "_background"
+	
+	"640x960/Background/background.png"					{ mipMapping false }
+}
