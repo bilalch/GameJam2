@@ -29,11 +29,6 @@ public:
 
 	void initializeCar();
 
-	void loadRedCar();
-	void loadYellowCar();
-	void loadGreyCar();
-	void unloadCar();
-
 	float getX1() { return x-30; }//40
 	float getX2() { return x+50; }
 	float getY1() { return y-180; }//160
@@ -78,25 +73,7 @@ private:
 	float groundY;
 	//Jumping variables end
 
-
-	void initializeSpine();
-	void loadSpine();
-	void updateSpine();
 	SpineChar* m_boy;
-
-	Atlas *atlas;
-	SkeletonData *skeletonData;
-	Skeleton *skeleton;
-	Animation *animation;
-	float animationTime;
-	uint64 lastFrameTime;
-
-	Atlas *atlas1;
-	SkeletonData *skeletonData1;
-	Skeleton *skeleton1;
-	Animation *animation1;
-	float animationTime1;
-	uint64 lastFrameTime1;
 };
 
 #endif
