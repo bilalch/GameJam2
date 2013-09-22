@@ -95,7 +95,7 @@ int Arcade::update(sliderStruct& m_slider)
 		{
 		case 1:
 			//collision with cart
-			m_playerCar->jump();
+			m_playerCar->jump(false);
 			break;
 		case 2:
 			//collision with mud
@@ -107,7 +107,7 @@ int Arcade::update(sliderStruct& m_slider)
 			//collision with box from top
 			//GAME OVER
 			cout<<"BOX COLLISION TOP"<<endl;
-			m_playerCar->jump();
+			m_playerCar->jump(true);
 			break;
 
 		case 4:

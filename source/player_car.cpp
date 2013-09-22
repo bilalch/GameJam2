@@ -193,9 +193,9 @@ void PlayerCar::update(float speed)
 	}
 }
 
-void PlayerCar::jump()
+void PlayerCar::jump(bool fromBoxTopCollision)
 {
-	if (!jumping)
+	if (!jumping || fromBoxTopCollision)
 	{
 		if (car_speed < 10) {
 			
