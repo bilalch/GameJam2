@@ -70,7 +70,7 @@ void SpineChar::loadSpine(const char* _atlas, const char* _skeleton, const char*
 void SpineChar::jump()
 {
 	isJumping = true;
-	setAngle(-30);
+	setAngle(-10);
 }
 
 void SpineChar::land()
@@ -102,18 +102,23 @@ void SpineChar::update(int _x, int _y)
   float dt = (float)(s3eTimerGetMs() - lastFrameTime);
   lastFrameTime = s3eTimerGetMs();
 
-  animationTime += dt / 1000.f;
-
+  if (isJumping)
+	animationTime += dt / 10000.f;
+  else
+	animationTime += dt / 1000.f;
+  
   skeleton->getRootBone()->x = _x;
   skeleton->getRootBone()->y = _y;
+
+  animation_run->apply(skeleton, animationTime, true);
   
-  if (isJumping)
+/*  if (isJumping)
 	animation_jump->apply(skeleton, animationTime, true);
   else if (isRunning)
 	animation_run->apply(skeleton, animationTime, true);
   else if (isWalking)
 	animation_walk->apply(skeleton, animationTime, true);
-
+*/
   skeleton->updateWorldTransform();
 }
 
@@ -129,7 +134,7 @@ void SpineChar::update()
   animationTime += dt / 1000.f;
   
   if (isJumping)
-	animation_jump->apply(skeleton, animationTime, true);
+	animation_jump->apply(skeleton, animationTime, false);
   else if (isRunning)
 	animation_run->apply(skeleton, animationTime, true);
   else if (isWalking)

@@ -31,7 +31,7 @@ PlayerCar::PlayerCar(int number)
 	initializeCar();
 	
 	m_boy = new SpineChar();
-	m_boy->loadSpine("boy.atlas","boy.json","boy-walk.json","boy-grab.json","boy-run.json",x,y);
+	m_boy->loadSpine("boy.atlas","boy.json","boy-run.json","boy-takeoff.json","boy-run.json",x,y);
 	
 	//initializeSpine();
 	//loadSpine();
@@ -214,7 +214,7 @@ void PlayerCar::jump()
 void PlayerCar::initializeCar()
 {
 	x = 200;
-	y = 500;
+	y = 530;
 	initY = y;
 	
 	gravity = 2;
