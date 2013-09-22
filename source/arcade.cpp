@@ -32,6 +32,8 @@ void Arcade::loadImages()
 	m_cart_image = Iw2DCreateImageResource("cart");
 	m_box_image	 = Iw2DCreateImageResource("box");
 	m_mud_image	 = Iw2DCreateImageResource("mud");
+
+	m_pause_image = Iw2DCreateImageResource("pause-button-unpressed");
 }
 
 void Arcade::unloadImages()
@@ -44,15 +46,31 @@ void Arcade::unloadImages()
 		delete m_cart_image;
 	m_cart_image = NULL;
 
+	if ( m_box_image )
+		delete m_box_image;
+	m_box_image = NULL;
+
+	if (m_mud_image)
+		delete m_mud_image;
+	m_mud_image = NULL;
+
+	if (m_pause_image)
+		delete m_pause_image;
+	m_pause_image = NULL;
+
 	IwGetResManager() -> DestroyGroup(imagesGroup);
 }
 
 void Arcade::initializeButtons()
 {
+	isPaused = false;
 	generateLevel();
+	
 	/*m_speed_button = new AwmButton(m_speed_normal_image,m_speed_pressed_image,OBSERVER->getDeviceWidth()*0.05,OBSERVER->getDeviceHeight() - m_speed_normal_image->GetHeight() - OBSERVER->getDeviceWidth()*0.05);
 	m_right_button  = new AwmButton(OBSERVER->getDeviceWidth() - m_right_image->GetWidth() - OBSERVER->getDeviceWidth()*0.05,OBSERVER->getDeviceHeight() - m_right_image->GetHeight() - OBSERVER->getDeviceWidth()*0.05,m_right_image);
 	m_left_button  = new AwmButton(m_right_button->getX1() - m_left_image->GetWidth() - OBSERVER->getDeviceWidth()*0.05,OBSERVER->getDeviceHeight() - m_left_image->GetHeight() - OBSERVER->getDeviceWidth()*0.05,m_left_image);*/
+
+	m_pause_button = new AwmButton(m_pause_image,m_pause_image,OBSERVER->getDeviceWidth() - 100,20);
 }
 
 void Arcade::destroyButtons()
@@ -68,6 +86,10 @@ void Arcade::destroyButtons()
 	if (m_right_button)
 		delete m_right_button;
 	m_right_button = NULL;*/
+
+	if (m_pause_button)
+		delete m_pause_button;
+	m_pause_button = NULL;
 }
 
 void Arcade::draw()
@@ -82,6 +104,8 @@ void Arcade::draw()
 	m_playerCar -> draw();
 	m_chicken -> draw();
 	
+	m_pause_button -> Draw();
+
 	/*m_speed_button -> Draw();
 	m_right_button -> Draw();
 	m_left_button -> Draw();*/
@@ -89,9 +113,13 @@ void Arcade::draw()
 
 int Arcade::update(sliderStruct& m_slider)
 {
+	if (!isPaused) {
+
 	/*m_speed_button -> Update();
 	m_right_button -> Update();
 	m_left_button -> Update();*/
+	m_pause_button->Update();
+
 	s3eDeviceBacklightOn();
 	m_scrolling_background -> Update();
 
@@ -178,13 +206,26 @@ int Arcade::update(sliderStruct& m_slider)
 		return 1;//level complete .. WINNER SCREEN
 	}
 
+	}
+
 	return -100;
 }
 
 int Arcade::click(float x, float y)
 {
-	m_scrolling_background->click(x,y);
-	return 0;
+	if (!isPaused)
+	{
+		if (m_pause_button->Click(x,y))
+		{
+			isPaused = true;
+		}
+		m_scrolling_background->click(x,y);
+		return 0;
+	}
+	else
+	{
+		isPaused = false;
+	}
 }
 
 void Arcade::generateLevel()

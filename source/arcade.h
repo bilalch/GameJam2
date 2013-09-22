@@ -50,6 +50,9 @@ private:
 	CIw2DImage* m_box_image;
 	CIw2DImage* m_mud_image;
 
+	CIw2DImage* m_pause_image;
+	AwmButton* m_pause_button;
+
 	AwmButton* m_speed_button;
 	AwmButton* m_right_button;
 	AwmButton* m_left_button;
@@ -73,6 +76,8 @@ private:
 	int levelProgressCount;
 
 	Chicken* m_chicken;
+
+	bool isPaused;
 };
 
 #endif
