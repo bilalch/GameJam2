@@ -65,6 +65,12 @@ files
 	cart.h
 	cart.cpp
 	
+	mud.h
+	mud.cpp
+
+	box.h
+	box.cpp
+
 	spine_char.h
 	spine_char.cpp
 	

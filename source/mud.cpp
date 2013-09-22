@@ -1,6 +1,6 @@
-#include "cart.h"
+#include "mud.h"
 
-int Cart::update(PlayerCar *m_char, ScrollingBackground *m_scroll_bg)
+int Mud::update(PlayerCar *m_char, ScrollingBackground *m_scroll_bg)
 {
 	m_x1-=m_scroll_bg->getScrollSpeed();
 	m_x2-=m_scroll_bg->getScrollSpeed();
@@ -13,12 +13,12 @@ int Cart::update(PlayerCar *m_char, ScrollingBackground *m_scroll_bg)
 			(m_x1 > m_char->getX1() && m_x2 < m_char->getX2()))
 		{
 			//collision occured
-			return 1;
+			return 2;
 		}	
 	}
 }
 
-void Cart::draw()
+void Mud::draw()
 {
 	if (m_x1 < OBSERVER->getDeviceWidth()) {
 	

@@ -13,6 +13,8 @@
 #include "dynamicArray.h"
 #include "opponent_car.h"
 #include "cart.h"
+#include "box.h"
+#include "mud.h"
 #include "collidable.h"
 #include "spine_char.h"
 
@@ -57,6 +59,8 @@ private:
 	CIw2DImage* m_car3_image;
 
 	CIw2DImage* m_cart_image;
+	CIw2DImage* m_box_image;
+	CIw2DImage* m_mud_image;
 
 	AwmButton* m_speed_button;
 	AwmButton* m_right_button;

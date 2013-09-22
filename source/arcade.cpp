@@ -34,6 +34,8 @@ void Arcade::loadImages()
 	m_car3_image = Iw2DCreateImageResource("green");
 
 	m_cart_image = Iw2DCreateImageResource("cart");
+	m_box_image	 = Iw2DCreateImageResource("box");
+	m_mud_image	 = Iw2DCreateImageResource("mud");
 }
 
 void Arcade::unloadImages()
@@ -148,20 +150,33 @@ bool Arcade::update(sliderStruct& m_slider)
 			m_playerCar->jump();
 			break;
 		case 2:
+			{
+			//collision with mud
+			int xyz =0;
 			break;
+			}
+		case 3:
+			{
+			//collision with box
+			int xyz = 0;
+			break;
+			}
 		default:
 			break;
 		};
 	}
 
-	for ( int i = m_opponents.GetSize() - 1; i >= 0; i-- ) {
+	//int i = 0;
+	//while (i < m_opponents.GetSize()) {
+	//	if (m_opponents[i]->getX2() < 0)
+	//	{
+	//		m_opponents.Delete(i);
+	//		//spawnCart();
+	//		i--;
+	//	}
 
-		if (m_opponents[i]->getX2() < 0)
-		{
-			m_opponents.Delete(i);
-			spawnCart();
-		}
-	}
+	//	i++;
+	//}
 
 	opponentsCollisionHandling();
 
@@ -252,7 +267,12 @@ void Arcade::opponentsCollisionHandling()
 
 void Arcade::spawnCart()
 {
-	Collidable* temp = new Cart(960,400,m_cart_image->GetWidth(),m_cart_image->GetHeight(),m_cart_image);
-	m_opponents.Add(temp);
+	Collidable* cart = new Cart(960,400,m_cart_image->GetWidth(),m_cart_image->GetHeight(),m_cart_image);
+	m_opponents.Add(cart);
 
+	Collidable* mud = new Mud(cart->getX2() + 10,400 + 77,m_mud_image->GetWidth(),m_mud_image->GetHeight(),m_mud_image);
+	m_opponents.Add(mud);
+
+	/*Collidable* box = new Box(mud->getX2() + 10,400 + 33,m_box_image->GetWidth(),m_box_image->GetHeight(),m_box_image);
+	m_opponents.Add(box);*/
 }
