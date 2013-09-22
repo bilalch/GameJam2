@@ -27,12 +27,13 @@ public:
 	void draw();
 	void loadSpine(const char* _atlas, const char* _skeleton, 
 		const char* _animation_walk, const char* _animation_jump, 
-		const char* _animation_run, int _x, int _y); // Pass null if animation does not exist
+		const char* _animation_run, const char* _animation_wave, const char* _animation_slip, int _x, int _y); // Pass null if animation does not exist
 	
 	void jump();
 	void land();
 	void run();
 	void walk();
+	void wave();
 
 private:
 
@@ -42,12 +43,15 @@ private:
 	Animation *animation_walk;
 	Animation *animation_run;
 	Animation *animation_jump;
+	Animation *animation_wave;
+	Animation *animation_slip;
 	float animationTime;
 	uint64 lastFrameTime;
 
 	bool isWalking;
 	bool isRunning;
 	bool isJumping;
+	bool isWaving;
 
 	void setAngle(int angle_degrees);
 };

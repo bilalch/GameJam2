@@ -6,7 +6,7 @@ Chicken::Chicken(int number)
 	initializeCar();
 	
 	m_chicken = new SpineChar();
-	m_chicken->loadSpine("chicken.atlas","chicken-skeleton.json",NULL,NULL,"chicken-running.json",800,530);
+	m_chicken->loadSpine("chicken.atlas","chicken-skeleton.json",NULL,NULL,"chicken-running.json",NULL,NULL,800,530);
 }
 
 Chicken::~Chicken()
