@@ -86,6 +86,9 @@ files
 	story.h
 	story.cpp
 	
+	chicken.h
+	chicken.cpp
+	
 	[Awm]
 	(source/awm)
 	AwmSoundManager.h
