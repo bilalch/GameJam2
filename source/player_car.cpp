@@ -165,6 +165,7 @@ void PlayerCar::update(float speed)
 {
 	updateSpine();
 	//spriteSheet->Step();
+	car_speed = speed;
 	if (jumping)
 	{
 		if (y + jumpVelocity < groundY)
@@ -177,12 +178,20 @@ void PlayerCar::update(float speed)
 			jumping = false;
 		}
 	}
-	else
+	//else
+	//{
+	//	jumpVelocity = -2*speed;//-30;
+	//	jumping = true;
+	//}
+}
+
+void PlayerCar::jump()
+{
+	if (!jumping)
 	{
-		jumpVelocity = -2*speed;//-30;
+		jumpVelocity = -2*car_speed;//-30;
 		jumping = true;
 	}
-
 }
 
 void PlayerCar::initializeCar()

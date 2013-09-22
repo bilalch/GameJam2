@@ -33,10 +33,10 @@ public:
 	void loadGreyCar();
 	void unloadCar();
 
-	float getX1() { return x; }
-	float getX2() { return m_x2; }
-	float getY1() { return y; }
-	float getY2() { return m_y2; }
+	float getX1() { return x-20; }//40
+	float getX2() { return x+20; }
+	float getY1() { return y-160; }//160
+	float getY2() { return y; }
 
 	float getSpeed() { return car_speed; }
 	void setSpeed(float _value) { car_speed = _value; }
@@ -46,6 +46,8 @@ public:
 
 	void goRight(float _value = 1) { m_x1 = m_x1 + _value; m_x2 = m_x2 + _value; }
 	void goLeft(float _value = 1) { m_x1 = m_x1 - _value; m_x2 = m_x2 - _value; }
+
+	void jump();
 
 private:
 	

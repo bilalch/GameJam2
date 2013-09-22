@@ -11,7 +11,7 @@ public:
 	~Cart()
 	{}
 
-	virtual int update(PlayerCar *m_char);
+	virtual int update(PlayerCar *m_char, ScrollingBackground *m_scroll_bg);
 	virtual void draw();
 
 private:

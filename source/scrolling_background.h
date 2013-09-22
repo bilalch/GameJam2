@@ -26,6 +26,7 @@ public:
 	void Draw();
 
 	float getSpeed();
+	float getScrollSpeed();
 
 	float getMultiplier() { return multiplier; }
 	float getRightBound() { return m_right_bound; }

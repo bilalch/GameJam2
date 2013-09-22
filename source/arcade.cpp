@@ -65,6 +65,7 @@ void Arcade::unloadImages()
 
 void Arcade::initializeButtons()
 {
+	spawnCart();
 	/*m_speed_button = new AwmButton(m_speed_normal_image,m_speed_pressed_image,OBSERVER->getDeviceWidth()*0.05,OBSERVER->getDeviceHeight() - m_speed_normal_image->GetHeight() - OBSERVER->getDeviceWidth()*0.05);
 	m_right_button  = new AwmButton(OBSERVER->getDeviceWidth() - m_right_image->GetWidth() - OBSERVER->getDeviceWidth()*0.05,OBSERVER->getDeviceHeight() - m_right_image->GetHeight() - OBSERVER->getDeviceWidth()*0.05,m_right_image);
 	m_left_button  = new AwmButton(m_right_button->getX1() - m_left_image->GetWidth() - OBSERVER->getDeviceWidth()*0.05,OBSERVER->getDeviceHeight() - m_left_image->GetHeight() - OBSERVER->getDeviceWidth()*0.05,m_left_image);*/
@@ -89,11 +90,11 @@ void Arcade::draw()
 {
 	m_scrolling_background -> Draw();
 
-	/*for (int i = 0; i < m_opponents.GetSize(); i++) {
+	for (int i = 0; i < m_opponents.GetSize(); i++) {
 		
-		OpponentCar* temp = (OpponentCar*)m_opponents[i];
-		temp->Draw();
-	}*/
+		//OpponentCar* temp = (OpponentCar*)m_opponents[i];
+		m_opponents[i]->draw();
+	}
 
 	m_playerCar -> draw();
 	/*m_speed_button -> Draw();
@@ -131,9 +132,28 @@ bool Arcade::update(sliderStruct& m_slider)
 
 	for ( int i = 0; i < m_opponents.GetSize(); i++ ) {
 		
-		OpponentCar* temp = (OpponentCar*)m_opponents[i];
-		if ( !temp->Update(m_playerCar) ) {
+		//OpponentCar* temp = (OpponentCar*)m_opponents[i];
+		/*if ( !temp->Update(m_playerCar) ) {
 			
+			m_opponents.Delete(i);
+		}*/
+		switch (m_opponents[i]->update(m_playerCar, m_scrolling_background))
+		{
+		case 1:
+			//collision with cart
+			m_playerCar->jump();
+			break;
+		case 2:
+			break;
+		default:
+			break;
+		};
+	}
+
+	for ( int i = m_opponents.GetSize() - 1; i >= 0; i-- ) {
+
+		if (m_opponents[i]->getX2() < 0)
+		{
 			m_opponents.Delete(i);
 		}
 	}
@@ -151,21 +171,21 @@ int Arcade::click(float x, float y)
 
 void Arcade::spawnOpponents()
 {
-	if ( m_opponents.GetSize() < maximum_cars ) {
-		
-		// new car can be added
-		int _lane = rand()%3 + 1;
-		int _speed = rand()%10 + 10;
-		
-		if ( laneIsOpen(_lane) ) {
+	//if ( m_opponents.GetSize() < maximum_cars ) {
+	//	
+	//	// new car can be added
+	//	int _lane = rand()%3 + 1;
+	//	int _speed = rand()%10 + 10;
+	//	
+	//	if ( laneIsOpen(_lane) ) {
 
-			CIw2DImage* tempImage = randomizeCarImage();
-			OpponentCar* temp = new OpponentCar(3,m_scrolling_background->getLeftBound(),m_scrolling_background->getRightBound(),tempImage,_speed);
-			temp->setLane(_lane);
-			m_opponents.Add(temp);
-		}
-		
-	}
+	//		CIw2DImage* tempImage = randomizeCarImage();
+	//		OpponentCar* temp = new OpponentCar(3,m_scrolling_background->getLeftBound(),m_scrolling_background->getRightBound(),tempImage,_speed);
+	//		temp->setLane(_lane);
+	//		m_opponents.Add(temp);
+	//	}
+	//	
+	//}
 }
 
 CIw2DImage* Arcade::randomizeCarImage()
@@ -225,7 +245,9 @@ void Arcade::opponentsCollisionHandling()
 	}
 }
 
-//void Arcade::spawnCart()
-//{
-//
-//}
+void Arcade::spawnCart()
+{
+	Collidable* temp = new Cart(960,400,m_cart_image->GetWidth(),m_cart_image->GetHeight(),m_cart_image);
+	m_opponents.Add(temp);
+
+}

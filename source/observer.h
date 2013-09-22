@@ -80,5 +80,6 @@ public:
 
 	float deviceWidth;
 	float deviceHeight;
+
 };
 

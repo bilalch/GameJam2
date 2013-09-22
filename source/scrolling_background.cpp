@@ -139,6 +139,11 @@ void ScrollingBackground::ScrollTile()
 	}
 }
 
+float ScrollingBackground::getScrollSpeed()
+{
+	return m_speed*multiplier;
+}
+
 int ScrollingBackground::click(float x, float y)
 {
 	if (scale == 1)

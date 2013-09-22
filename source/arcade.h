@@ -12,6 +12,8 @@
 #include "AwmButton.h"
 #include "dynamicArray.h"
 #include "opponent_car.h"
+#include "cart.h"
+#include "collidable.h"
 
 class Arcade : public View
 {
@@ -36,6 +38,8 @@ public:
 
 	CIw2DImage* randomizeCarImage();
 
+	void spawnCart();
+
 private:
 	ScrollingBackground* m_scrolling_background;
 
@@ -59,7 +63,7 @@ private:
 
 	CIwResGroup* imagesGroup;
 
-	AeDynArray<OpponentCar*> m_opponents;
+	AeDynArray<Collidable*> m_opponents;
 
 	int maximum_cars;
 };
