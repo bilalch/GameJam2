@@ -46,7 +46,7 @@ ScrollingBackground::ScrollingBackground(CIw2DImage* image, int lanes)
 
 	initializeLaneBounds();
 
-	m_speed = 11;
+	m_speed = 16;
 	m_worldAngle = 0;
 
 	leftMostTile = 0;

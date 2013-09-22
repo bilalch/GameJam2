@@ -145,7 +145,7 @@ int Arcade::click(float x, float y)
 
 void Arcade::generateLevel()
 {
-/*	int _number = 0;
+	int _number = 0;
 
 	if ( difficulty == 4 )
 		_number = rand()%10;
@@ -197,24 +197,17 @@ void Arcade::generateLevel()
 	case 9:
 		generateCase9();
 		break;
-	};*/
-	Collidable* cart = new Cart(960,400,m_cart_image->GetWidth(),m_cart_image->GetHeight(),m_cart_image);
-	m_opponents.Add(cart);
-
-	Collidable* mud = new Mud(cart->getX2() + 10,400 + 77,m_mud_image->GetWidth(),m_mud_image->GetHeight(),m_mud_image);
-	m_opponents.Add(mud);
-
-	Collidable* box = new Box(mud->getX2() + 10,400 + 33,m_box_image->GetWidth(),m_box_image->GetHeight(),m_box_image);
-	m_opponents.Add(box);
-
-/*	Collidable* box = new Box(mud->getX2() + 10,400 + 33,m_box_image->GetWidth(),m_box_image->GetHeight(),m_box_image);
-	m_opponents.Add(box);
-
-	Collidable* mud2 = new Mud(box->getX2() + 200,400 + 77,m_mud_image->GetWidth(),m_mud_image->GetHeight(),m_mud_image);
-	m_opponents.Add(mud2);
-
-	Collidable* box2 = new Box(mud2->getX2() + 50,400 + 33,m_box_image->GetWidth(),m_box_image->GetHeight(),m_box_image);
-	m_opponents.Add(box2);*/
+	};
+	//generateCase0();
+	//generateCase1();
+	//generateCase2();
+	//generateCase3();
+	//generateCase4();
+	//generateCase5();
+	//generateCase6();
+	//generateCase7();
+	//generateCase8();
+	//generateCase9();
 }
 
 void Arcade::generateCase0()
@@ -263,7 +256,7 @@ void Arcade::generateCase3()
 	m_opponents.Add(box);
 
 	Collidable* box2 = new Box(box->getX2() + 10,400 + 33,m_box_image->GetWidth(),m_box_image->GetHeight(),m_box_image);
-	m_opponents.Add(box);
+	m_opponents.Add(box2);
 }
 
 void Arcade::generateCase4()
@@ -380,12 +373,12 @@ void Arcade::generateCase9()
 	Collidable* cart = new Cart(960,400,m_cart_image->GetWidth(),m_cart_image->GetHeight(),m_cart_image);
 	m_opponents.Add(cart);
 
-	Collidable* mud = new Mud(cart->getX2() + 10 + 4*m_mud_image->GetWidth(),400 + 33,m_mud_image->GetWidth(),m_mud_image->GetHeight(),m_mud_image);
+	Collidable* mud = new Mud(cart->getX2() + 10 + 4*m_mud_image->GetWidth(),400 + 77,m_mud_image->GetWidth(),m_mud_image->GetHeight(),m_mud_image);
 	m_opponents.Add(mud);
 
-	Collidable* mud2 = new Box(mud->getX2() + 10 + 4*m_mud_image->GetWidth(),400 + 33,m_mud_image->GetWidth(),m_mud_image->GetHeight(),m_mud_image);
+	Collidable* mud2 = new Box(mud->getX2() + 10 + 4*m_mud_image->GetWidth(),400 + 77,m_mud_image->GetWidth(),m_mud_image->GetHeight(),m_mud_image);
 	m_opponents.Add(mud2);
 
-	Collidable* mud3 = new Box(mud2->getX2() + 10 + 4*m_mud_image->GetWidth(),400 + 33,m_mud_image->GetWidth(),m_mud_image->GetHeight(),m_mud_image);
+	Collidable* mud3 = new Box(mud2->getX2() + 10 + 4*m_mud_image->GetWidth(),400 + 77,m_mud_image->GetWidth(),m_mud_image->GetHeight(),m_mud_image);
 	m_opponents.Add(mud3);
 }
