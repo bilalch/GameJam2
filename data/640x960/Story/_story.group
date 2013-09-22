@@ -1,0 +1,8 @@
+CIwResGroup
+{
+	name "_story"
+	
+	"640x960/Story/dailgue-box.png"				{ mipMapping false }
+	
+	"640x960/Background/_background.group"
+}
