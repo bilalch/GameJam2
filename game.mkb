@@ -65,6 +65,9 @@ files
 	cart.h
 	cart.cpp
 	
+	spine_char.h
+	spine_char.cpp
+	
 	[Awm]
 	(source/awm)
 	AwmSoundManager.h
