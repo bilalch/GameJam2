@@ -80,6 +80,12 @@ files
 	gamewinner.h
 	gamewinner.cpp
 	
+	level_selection.h
+	level_selection.cpp
+	
+	story.h
+	story.cpp
+	
 	[Awm]
 	(source/awm)
 	AwmSoundManager.h
