@@ -27,7 +27,8 @@ public:
 	void draw();
 	void loadSpine(const char* _atlas, const char* _skeleton, 
 		const char* _animation_walk, const char* _animation_jump, 
-		const char* _animation_run, const char* _animation_wave, const char* _animation_slip, int _x, int _y); // Pass null if animation does not exist
+		const char* _animation_run, const char* _animation_wave, const char* _animation_slip,
+		int _x, int _y, float _scale); // Pass null if animation does not exist
 	
 	void jump();
 	void land();
