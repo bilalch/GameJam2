@@ -34,10 +34,12 @@ public:
 	void loadGreyCar();
 	void unloadCar();
 
-	float getX1() { return x-20; }//40
-	float getX2() { return x+20; }
-	float getY1() { return y-160; }//160
+	float getX1() { return x-30; }//40
+	float getX2() { return x+50; }
+	float getY1() { return y-180; }//160
 	float getY2() { return y; }
+
+	bool isAtInitY() { if (y >= groundY) { return true; } else { return false; } }
 
 	float getSpeed() { return car_speed; }
 	void setSpeed(float _value) { car_speed = _value; }

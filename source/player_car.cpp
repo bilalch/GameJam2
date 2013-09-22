@@ -182,6 +182,7 @@ void PlayerCar::update(float speed)
 		}
 		else
 		{
+			y = groundY;
 			jumping = false;
 			m_boy->land();
 		}

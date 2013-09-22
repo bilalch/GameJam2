@@ -101,12 +101,20 @@ int Arcade::update(sliderStruct& m_slider)
 			//collision with mud
 			//GAME OVER
 			cout<<"MUD COLLISION"<<endl;
-			return 2;
+			return 2;//gameover
 			break;
 		case 3:
-			//collision with box
+			//collision with box from top
 			//GAME OVER
-			cout<<"BOX COLLISION"<<endl;
+			cout<<"BOX COLLISION TOP"<<endl;
+			m_playerCar->jump();
+			break;
+
+		case 4:
+			//collision with box from side
+			//GAME OVER
+			cout<<"BOX COLLISION SIDE"<<endl;
+			return 2;//gameover
 			break;
 		default:
 			break;
