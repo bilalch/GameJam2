@@ -16,29 +16,29 @@ ScrollingBackground::ScrollingBackground(CIw2DImage* image, int lanes)
 
 	multiplier = OBSERVER->getDeviceHeight()/image->GetHeight();
 
-	path1.m_width = m_path->GetWidth();
-	path1.m_height = m_path->GetHeight();
+	path1.m_width = m_path->GetWidth()*OBSERVER->getRatio();
+	path1.m_height = m_path->GetHeight()*OBSERVER->getRatio();
 	path1.m_x1 = 0;
 	path1.m_y1 = OBSERVER->getDeviceHeight() - path1.m_height;
 	path1.m_x2 = path1.m_x1 + path1.m_width;
 	path1.m_y2 = path1.m_y1 + path1.m_height;
 
-	path2.m_width = m_path->GetWidth();
-	path2.m_height = m_path->GetHeight();
+	path2.m_width = m_path->GetWidth()*OBSERVER->getRatio();
+	path2.m_height = m_path->GetHeight()*OBSERVER->getRatio();
 	path2.m_x1 = path1.m_x2;
 	path2.m_y1 = OBSERVER->getDeviceHeight() - path2.m_height;
 	path2.m_x2 = path2.m_x1 + path2.m_width;
 	path2.m_y2 = path2.m_y1 + path2.m_height;
 
-	image1.m_width = m_image->GetWidth();
-	image1.m_height = m_image->GetHeight();
+	image1.m_width = m_image->GetWidth()*OBSERVER->getRatio();
+	image1.m_height = m_image->GetHeight()*OBSERVER->getRatio();
 	image1.m_x1 = 0;
 	image1.m_y1 = OBSERVER->getDeviceHeight() - image1.m_height - path1.m_height;
 	image1.m_x2 = image1.m_x1 + image1.m_width;
 	image1.m_y2 = image1.m_y1 + image1.m_height;
 
-	image2.m_width = m_image->GetWidth();
-	image2.m_height = m_image->GetHeight();
+	image2.m_width = m_image->GetWidth()*OBSERVER->getRatio();
+	image2.m_height = m_image->GetHeight()*OBSERVER->getRatio();
 	image2.m_x1 = image1.m_x2;
 	image2.m_y1 = OBSERVER->getDeviceHeight() - image2.m_height - path1.m_height;
 	image2.m_x2 = image2.m_x1 + image2.m_width;
@@ -46,7 +46,7 @@ ScrollingBackground::ScrollingBackground(CIw2DImage* image, int lanes)
 
 	initializeLaneBounds();
 
-	m_speed = 15;
+	m_speed = 15*OBSERVER->getRatio();
 	m_worldAngle = 0;
 
 	leftMostTile = 0;
@@ -82,25 +82,25 @@ void ScrollingBackground::Update()
 {
 	//ScrollTile();
 	if ( OBSERVER->getAccelerometerX() > 30 ) {
-		if ( m_speed < 15 )
+		if ( m_speed < 15*OBSERVER->getRatio() )
 			m_speed++;
 		m_worldAngle = 45;
 	} else if ( OBSERVER->getAccelerometerX() < -30 ) {
-		if ( m_speed > 5 )
+		if ( m_speed > 5*OBSERVER->getRatio() )
 			m_speed--;
 		m_worldAngle = -45;
 	} else {
-		/*if (m_speed < 10)
+		if (m_speed < 10*OBSERVER->getRatio())
 			m_speed++;
-		else if (m_speed > 10)
-			m_speed--;*/
+		else if (m_speed > 10*OBSERVER->getRatio())
+			m_speed--;
 	}
 
-	path1.m_x1 = path1.m_x1 - m_speed*multiplier;
-	path1.m_x2 = path1.m_x2 - m_speed*multiplier;
+	path1.m_x1 = path1.m_x1 - m_speed*OBSERVER->getRatio();
+	path1.m_x2 = path1.m_x2 - m_speed*OBSERVER->getRatio();
 
-	path2.m_x1 = path2.m_x1 - m_speed*multiplier;
-	path2.m_x2 = path2.m_x2 - m_speed*multiplier;
+	path2.m_x1 = path2.m_x1 - m_speed*OBSERVER->getRatio();
+	path2.m_x2 = path2.m_x2 - m_speed*OBSERVER->getRatio();
 
 	//if ( image1.m_x1 < -(OBSERVER -> getDeviceWidth()) ) {
 	if ( path1.m_x2 < 0 ) {
@@ -114,11 +114,11 @@ void ScrollingBackground::Update()
 		path2.m_x2 = path2.m_x1 + path2.m_width;
 	}
 
-	image1.m_x1 = image1.m_x1 - m_speed*multiplier;
-	image1.m_x2 = image1.m_x2 - m_speed*multiplier;
+	image1.m_x1 = image1.m_x1 - m_speed*OBSERVER->getRatio();
+	image1.m_x2 = image1.m_x2 - m_speed*OBSERVER->getRatio();
 
-	image2.m_x1 = image2.m_x1 - m_speed*multiplier;
-	image2.m_x2 = image2.m_x2 - m_speed*multiplier;
+	image2.m_x1 = image2.m_x1 - m_speed*OBSERVER->getRatio();
+	image2.m_x2 = image2.m_x2 - m_speed*OBSERVER->getRatio();
 
 	//if ( image1.m_x1 < -(OBSERVER -> getDeviceWidth()) ) {
 	if ( image1.m_x2 < 0 ) {
@@ -146,7 +146,7 @@ void ScrollingBackground::ScrollTile()
 
 float ScrollingBackground::getScrollSpeed()
 {
-	return m_speed*multiplier;
+	return m_speed*OBSERVER->getRatio();
 }
 
 int ScrollingBackground::click(float x, float y)
@@ -198,5 +198,5 @@ void ScrollingBackground::Draw()
 
 float ScrollingBackground::getSpeed()
 {
-	return m_speed;
+	return m_speed*OBSERVER->getRatio();
 }

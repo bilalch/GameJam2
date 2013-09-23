@@ -330,166 +330,166 @@ void Arcade::generateLevel()
 void Arcade::generateCase0()
 {
 	// easy
-	Collidable* cart = new Cart(960,400,m_cart_image->GetWidth(),m_cart_image->GetHeight(),m_cart_image);
+	Collidable* cart = new Cart(960*OBSERVER->getRatio(),400*OBSERVER->getHeightRatio(),m_cart_image->GetWidth()*OBSERVER->getRatio(),m_cart_image->GetHeight()*OBSERVER->getRatio(),m_cart_image);
 	cart->setOptimumVelocity(11);
 	m_opponents.Add(cart);
 
-	Collidable* mud = new Mud(cart->getX2() + 10,400 + 77,m_mud_image->GetWidth(),m_mud_image->GetHeight(),m_mud_image);
+	Collidable* mud = new Mud(cart->getX2() + 10*OBSERVER->getRatio(),400*OBSERVER->getHeightRatio() + 77*OBSERVER->getHeightRatio(),m_mud_image->GetWidth()*OBSERVER->getRatio(),m_mud_image->GetHeight()*OBSERVER->getRatio(),m_mud_image);
 	m_opponents.Add(mud);
 }
 
 void Arcade::generateCase1()
 {
 	// easy
-	Collidable* cart = new Cart(960,400,m_cart_image->GetWidth(),m_cart_image->GetHeight(),m_cart_image);
+	Collidable* cart = new Cart(960*OBSERVER->getRatio(),400*OBSERVER->getHeightRatio(),m_cart_image->GetWidth()*OBSERVER->getRatio(),m_cart_image->GetHeight()*OBSERVER->getRatio(),m_cart_image);
 	cart->setOptimumVelocity(12);
 	m_opponents.Add(cart);
 
-	Collidable* mud = new Mud(cart->getX2() + 10,400 + 77,m_mud_image->GetWidth(),m_mud_image->GetHeight(),m_mud_image);
+	Collidable* mud = new Mud(cart->getX2() + 10*OBSERVER->getRatio(),400*OBSERVER->getHeightRatio() + 77*OBSERVER->getHeightRatio(),m_mud_image->GetWidth()*OBSERVER->getRatio(),m_mud_image->GetHeight()*OBSERVER->getRatio(),m_mud_image);
 	m_opponents.Add(mud);
 
-	Collidable* mud1 = new Mud(mud->getX2() + 10,400 + 77,m_mud_image->GetWidth(),m_mud_image->GetHeight(),m_mud_image);
+	Collidable* mud1 = new Mud(mud->getX2() + 10*OBSERVER->getRatio(),400*OBSERVER->getHeightRatio() + 77*OBSERVER->getHeightRatio(),m_mud_image->GetWidth()*OBSERVER->getRatio(),m_mud_image->GetHeight()*OBSERVER->getRatio(),m_mud_image);
 	m_opponents.Add(mud1);
 }
 
 void Arcade::generateCase2()
 {
 	// easy
-	Collidable* cart = new Cart(960,400,m_cart_image->GetWidth(),m_cart_image->GetHeight(),m_cart_image);
+	Collidable* cart = new Cart(960*OBSERVER->getRatio(),400*OBSERVER->getHeightRatio(),m_cart_image->GetWidth()*OBSERVER->getRatio(),m_cart_image->GetHeight()*OBSERVER->getRatio(),m_cart_image);
 	cart->setOptimumVelocity(11);
 	m_opponents.Add(cart);
 
-	Collidable* mud = new Mud(cart->getX2() + 10,400 + 77,m_mud_image->GetWidth(),m_mud_image->GetHeight(),m_mud_image);
+	Collidable* mud = new Mud(cart->getX2() + 10*OBSERVER->getRatio(),400*OBSERVER->getHeightRatio() + 77*OBSERVER->getHeightRatio(),m_mud_image->GetWidth()*OBSERVER->getRatio(),m_mud_image->GetHeight()*OBSERVER->getRatio(),m_mud_image);
 	m_opponents.Add(mud);
 
-	Collidable* box = new Box(mud->getX2() + 10,400 + 33,m_box_image->GetWidth(),m_box_image->GetHeight(),m_box_image);
+	Collidable* box = new Box(mud->getX2() + 10*OBSERVER->getRatio(),400*OBSERVER->getHeightRatio() + 33*OBSERVER->getHeightRatio(),m_box_image->GetWidth()*OBSERVER->getRatio(),m_box_image->GetHeight()*OBSERVER->getRatio(),m_box_image);
 	m_opponents.Add(box);
 }
 
 void Arcade::generateCase3()
 {
 	// easy
-	Collidable* cart = new Cart(960,400,m_cart_image->GetWidth(),m_cart_image->GetHeight(),m_cart_image);
+	Collidable* cart = new Cart(960*OBSERVER->getRatio(),400*OBSERVER->getHeightRatio(),m_cart_image->GetWidth()*OBSERVER->getRatio(),m_cart_image->GetHeight()*OBSERVER->getRatio(),m_cart_image);
 	cart->setOptimumVelocity(10);
 	m_opponents.Add(cart);
 
-	Collidable* box = new Box(cart->getX2() + 10,400 + 33,m_box_image->GetWidth(),m_box_image->GetHeight(),m_box_image);
+	Collidable* box = new Box(cart->getX2() + 10*OBSERVER->getRatio(),400*OBSERVER->getHeightRatio() + 33*OBSERVER->getHeightRatio(),m_box_image->GetWidth()*OBSERVER->getRatio(),m_box_image->GetHeight()*OBSERVER->getRatio(),m_box_image);
 	m_opponents.Add(box);
 
-	Collidable* box2 = new Box(box->getX2() + 10,400 + 33,m_box_image->GetWidth(),m_box_image->GetHeight(),m_box_image);
+	Collidable* box2 = new Box(box->getX2() + 10*OBSERVER->getRatio(),400*OBSERVER->getHeightRatio() + 33*OBSERVER->getHeightRatio(),m_box_image->GetWidth()*OBSERVER->getRatio(),m_box_image->GetHeight()*OBSERVER->getRatio(),m_box_image);
 	m_opponents.Add(box2);
 }
 
 void Arcade::generateCase4()
 {
 	// medium
-	Collidable* cart = new Cart(960,400,m_cart_image->GetWidth(),m_cart_image->GetHeight(),m_cart_image);
+	Collidable* cart = new Cart(960*OBSERVER->getRatio(),400*OBSERVER->getHeightRatio(),m_cart_image->GetWidth()*OBSERVER->getRatio(),m_cart_image->GetHeight()*OBSERVER->getRatio(),m_cart_image);
 	cart->setOptimumVelocity(12);
 	m_opponents.Add(cart);
 
-	Collidable* mud = new Mud(cart->getX2() + 10,400 + 77,m_mud_image->GetWidth(),m_mud_image->GetHeight(),m_mud_image);
+	Collidable* mud = new Mud(cart->getX2() + 10*OBSERVER->getRatio(),400*OBSERVER->getHeightRatio() + 77*OBSERVER->getHeightRatio(),m_mud_image->GetWidth()*OBSERVER->getRatio(),m_mud_image->GetHeight()*OBSERVER->getRatio(),m_mud_image);
 	m_opponents.Add(mud);
 
-	Collidable* mud1 = new Mud(mud->getX2() + 10,400 + 77,m_mud_image->GetWidth(),m_mud_image->GetHeight(),m_mud_image);
+	Collidable* mud1 = new Mud(mud->getX2() + 10*OBSERVER->getRatio(),400*OBSERVER->getHeightRatio() + 77*OBSERVER->getHeightRatio(),m_mud_image->GetWidth()*OBSERVER->getRatio(),m_mud_image->GetHeight()*OBSERVER->getRatio(),m_mud_image);
 	m_opponents.Add(mud1);
 
-	Collidable* box = new Box(mud1->getX2() + 70,400 + 33,m_box_image->GetWidth(),m_box_image->GetHeight(),m_box_image);
+	Collidable* box = new Box(mud1->getX2() + 70*OBSERVER->getRatio(),400*OBSERVER->getHeightRatio() + 33*OBSERVER->getHeightRatio(),m_box_image->GetWidth()*OBSERVER->getRatio(),m_box_image->GetHeight()*OBSERVER->getRatio(),m_box_image);
 	m_opponents.Add(box);
 
-	Collidable* mud2 = new Mud(box->getX2() + 10,400 + 77,m_mud_image->GetWidth(),m_mud_image->GetHeight(),m_mud_image);
+	Collidable* mud2 = new Mud(box->getX2() + 10*OBSERVER->getRatio(),400*OBSERVER->getHeightRatio() + 77*OBSERVER->getHeightRatio(),m_mud_image->GetWidth()*OBSERVER->getRatio(),m_mud_image->GetHeight()*OBSERVER->getRatio(),m_mud_image);
 	m_opponents.Add(mud2);
 }
 
 void Arcade::generateCase5()
 {
 	// medium
-	Collidable* cart = new Cart(960,400,m_cart_image->GetWidth(),m_cart_image->GetHeight(),m_cart_image);
+	Collidable* cart = new Cart(960*OBSERVER->getRatio(),400*OBSERVER->getHeightRatio(),m_cart_image->GetWidth(),m_cart_image->GetHeight(),m_cart_image);
 	cart->setOptimumVelocity(11);
 	m_opponents.Add(cart);
 
-	Collidable* box = new Box(cart->getX2() + 10,400 + 33,m_box_image->GetWidth(),m_box_image->GetHeight(),m_box_image);
+	Collidable* box = new Box(cart->getX2() + 10*OBSERVER->getRatio(),400*OBSERVER->getHeightRatio() + 33*OBSERVER->getHeightRatio(),m_box_image->GetWidth()*OBSERVER->getRatio(),m_box_image->GetHeight()*OBSERVER->getRatio(),m_box_image);
 	m_opponents.Add(box);
 
-	Collidable* mud1 = new Mud(box->getX2() + 10,400 + 77,m_mud_image->GetWidth(),m_mud_image->GetHeight(),m_mud_image);
+	Collidable* mud1 = new Mud(box->getX2() + 10*OBSERVER->getRatio(),400*OBSERVER->getHeightRatio() + 77*OBSERVER->getHeightRatio(),m_mud_image->GetWidth()*OBSERVER->getRatio(),m_mud_image->GetHeight()*OBSERVER->getRatio(),m_mud_image);
 	m_opponents.Add(mud1);
 
-	Collidable* box1 = new Box(mud1->getX2() + 10,400 + 33,m_box_image->GetWidth(),m_box_image->GetHeight(),m_box_image);
+	Collidable* box1 = new Box(mud1->getX2() + 10*OBSERVER->getRatio(),400*OBSERVER->getHeightRatio() + 33*OBSERVER->getHeightRatio(),m_box_image->GetWidth()*OBSERVER->getRatio(),m_box_image->GetHeight()*OBSERVER->getRatio(),m_box_image);
 	box1->setOptimumVelocity(11);
 	m_opponents.Add(box1);
 
-	Collidable* mud2 = new Mud(box1->getX2() + 10,400 + 77,m_mud_image->GetWidth(),m_mud_image->GetHeight(),m_mud_image);
+	Collidable* mud2 = new Mud(box1->getX2() + 10*OBSERVER->getRatio(),400*OBSERVER->getHeightRatio() + 77*OBSERVER->getHeightRatio(),m_mud_image->GetWidth()*OBSERVER->getRatio(),m_mud_image->GetHeight()*OBSERVER->getRatio(),m_mud_image);
 	m_opponents.Add(mud2);
 
-	Collidable* mud3 = new Mud(mud2->getX2() + 10,400 + 77,m_mud_image->GetWidth(),m_mud_image->GetHeight(),m_mud_image);
+	Collidable* mud3 = new Mud(mud2->getX2() + 10*OBSERVER->getRatio(),400*OBSERVER->getHeightRatio() + 77*OBSERVER->getHeightRatio(),m_mud_image->GetWidth()*OBSERVER->getRatio(),m_mud_image->GetHeight()*OBSERVER->getRatio(),m_mud_image);
 	m_opponents.Add(mud3);
 }
 
 void Arcade::generateCase6()
 {
 	// hard
-	Collidable* cart = new Cart(960,400,m_cart_image->GetWidth(),m_cart_image->GetHeight(),m_cart_image);
+	Collidable* cart = new Cart(960*OBSERVER->getRatio(),400*OBSERVER->getHeightRatio(),m_cart_image->GetWidth()*OBSERVER->getRatio(),m_cart_image->GetHeight()*OBSERVER->getRatio(),m_cart_image);
 	cart->setOptimumVelocity(15);
 	m_opponents.Add(cart);
 
-	Collidable* mud = new Mud(cart->getX2() + 10,400 + 77,m_mud_image->GetWidth(),m_mud_image->GetHeight(),m_mud_image);
+	Collidable* mud = new Mud(cart->getX2() + 10*OBSERVER->getRatio(),400*OBSERVER->getHeightRatio() + 77*OBSERVER->getHeightRatio(),m_mud_image->GetWidth()*OBSERVER->getRatio(),m_mud_image->GetHeight()*OBSERVER->getRatio(),m_mud_image);
 	m_opponents.Add(mud);
 
-	Collidable* mud1 = new Mud(mud->getX2() + 10,400 + 77,m_mud_image->GetWidth(),m_mud_image->GetHeight(),m_mud_image);
+	Collidable* mud1 = new Mud(mud->getX2() + 10*OBSERVER->getRatio(),400*OBSERVER->getHeightRatio() + 77*OBSERVER->getHeightRatio(),m_mud_image->GetWidth()*OBSERVER->getRatio(),m_mud_image->GetHeight()*OBSERVER->getRatio(),m_mud_image);
 	m_opponents.Add(mud1);
 
-	Collidable* mud2 = new Mud(mud1->getX2() + 10,400 + 77,m_mud_image->GetWidth(),m_mud_image->GetHeight(),m_mud_image);
+	Collidable* mud2 = new Mud(mud1->getX2() + 10*OBSERVER->getRatio(),400*OBSERVER->getHeightRatio() + 77*OBSERVER->getHeightRatio(),m_mud_image->GetWidth()*OBSERVER->getRatio(),m_mud_image->GetHeight()*OBSERVER->getRatio(),m_mud_image);
 	m_opponents.Add(mud2);
 
-	Collidable* mud3 = new Mud(mud2->getX2() + 10,400 + 77,m_mud_image->GetWidth(),m_mud_image->GetHeight(),m_mud_image);
+	Collidable* mud3 = new Mud(mud2->getX2() + 10*OBSERVER->getRatio(),400*OBSERVER->getHeightRatio() + 77*OBSERVER->getHeightRatio(),m_mud_image->GetWidth()*OBSERVER->getRatio(),m_mud_image->GetHeight()*OBSERVER->getRatio(),m_mud_image);
 	m_opponents.Add(mud3);
 
-	Collidable* box = new Box(mud3->getX2() + 10,400 + 33,m_box_image->GetWidth(),m_box_image->GetHeight(),m_box_image);
+	Collidable* box = new Box(mud3->getX2() + 10*OBSERVER->getRatio(),400*OBSERVER->getHeightRatio() + 33*OBSERVER->getHeightRatio(),m_box_image->GetWidth()*OBSERVER->getRatio(),m_box_image->GetHeight()*OBSERVER->getRatio(),m_box_image);
 	box->setOptimumVelocity(12);
 	m_opponents.Add(box);
 
-	Collidable* mud4 = new Mud(box->getX2() + 10,400 + 77,m_mud_image->GetWidth(),m_mud_image->GetHeight(),m_mud_image);
+	Collidable* mud4 = new Mud(box->getX2() + 10*OBSERVER->getRatio(),400*OBSERVER->getHeightRatio() + 77*OBSERVER->getHeightRatio(),m_mud_image->GetWidth()*OBSERVER->getRatio(),m_mud_image->GetHeight()*OBSERVER->getRatio(),m_mud_image);
 	m_opponents.Add(mud4);
 
-	Collidable* mud5 = new Mud(mud4->getX2() + 10,400 + 77,m_mud_image->GetWidth(),m_mud_image->GetHeight(),m_mud_image);
+	Collidable* mud5 = new Mud(mud4->getX2() + 10*OBSERVER->getRatio(),400*OBSERVER->getHeightRatio() + 77*OBSERVER->getHeightRatio(),m_mud_image->GetWidth()*OBSERVER->getRatio(),m_mud_image->GetHeight()*OBSERVER->getRatio(),m_mud_image);
 	m_opponents.Add(mud5);
 
-	Collidable* mud6 = new Mud(mud5->getX2() + 10,400 + 77,m_mud_image->GetWidth(),m_mud_image->GetHeight(),m_mud_image);
+	Collidable* mud6 = new Mud(mud5->getX2() + 10*OBSERVER->getRatio(),400*OBSERVER->getHeightRatio() + 77*OBSERVER->getHeightRatio(),m_mud_image->GetWidth()*OBSERVER->getRatio(),m_mud_image->GetHeight()*OBSERVER->getRatio(),m_mud_image);
 	m_opponents.Add(mud6);
 }
 
 void Arcade::generateCase7()
 {
 	// hard
-	Collidable* cart = new Cart(960,400,m_cart_image->GetWidth(),m_cart_image->GetHeight(),m_cart_image);
+	Collidable* cart = new Cart(960*OBSERVER->getRatio(),400*OBSERVER->getHeightRatio(),m_cart_image->GetWidth(),m_cart_image->GetHeight(),m_cart_image);
 	cart->setOptimumVelocity(15);
 	m_opponents.Add(cart);
 
-	Collidable* box = new Box(cart->getX2() + 10 + 4*m_mud_image->GetWidth(),400 + 33,m_box_image->GetWidth(),m_box_image->GetHeight(),m_box_image);
+	Collidable* box = new Box(cart->getX2() + 10*OBSERVER->getRatio() + 4*m_mud_image->GetWidth()*OBSERVER->getRatio(),400*OBSERVER->getHeightRatio() + 33*OBSERVER->getHeightRatio(),m_box_image->GetWidth()*OBSERVER->getRatio(),m_box_image->GetHeight()*OBSERVER->getRatio(),m_box_image);
 	m_opponents.Add(box);
 
-	Collidable* mud4 = new Mud(box->getX2() + 10,400 + 77,m_mud_image->GetWidth(),m_mud_image->GetHeight(),m_mud_image);
+	Collidable* mud4 = new Mud(box->getX2() + 10*OBSERVER->getRatio(),400*OBSERVER->getHeightRatio() + 77*OBSERVER->getHeightRatio(),m_mud_image->GetWidth()*OBSERVER->getRatio(),m_mud_image->GetHeight()*OBSERVER->getRatio(),m_mud_image);
 	m_opponents.Add(mud4);
 
-	Collidable* mud5 = new Mud(mud4->getX2() + 10,400 + 77,m_mud_image->GetWidth(),m_mud_image->GetHeight(),m_mud_image);
+	Collidable* mud5 = new Mud(mud4->getX2() + 10*OBSERVER->getRatio(),400*OBSERVER->getHeightRatio() + 77*OBSERVER->getHeightRatio(),m_mud_image->GetWidth()*OBSERVER->getRatio(),m_mud_image->GetHeight()*OBSERVER->getRatio(),m_mud_image);
 	m_opponents.Add(mud5);
 
-	Collidable* mud6 = new Mud(mud5->getX2() + 10,400 + 77,m_mud_image->GetWidth(),m_mud_image->GetHeight(),m_mud_image);
+	Collidable* mud6 = new Mud(mud5->getX2() + 10*OBSERVER->getRatio(),400*OBSERVER->getHeightRatio() + 77*OBSERVER->getHeightRatio(),m_mud_image->GetWidth()*OBSERVER->getRatio(),m_mud_image->GetHeight()*OBSERVER->getRatio(),m_mud_image);
 	m_opponents.Add(mud6);
 }
 
 void Arcade::generateCase8()
 {
 	// harder
-	Collidable* cart = new Cart(960,400,m_cart_image->GetWidth(),m_cart_image->GetHeight(),m_cart_image);
+	Collidable* cart = new Cart(960*OBSERVER->getRatio(),400*OBSERVER->getHeightRatio(),m_cart_image->GetWidth()*OBSERVER->getRatio(),m_cart_image->GetHeight()*OBSERVER->getRatio(),m_cart_image);
 	m_opponents.Add(cart);
 
-	Collidable* box = new Box(cart->getX2() + 10 + 4*m_box_image->GetWidth(),400 + 33,m_box_image->GetWidth(),m_box_image->GetHeight(),m_box_image);
+	Collidable* box = new Box(cart->getX2() + 10*OBSERVER->getRatio() + 4*m_box_image->GetWidth()*OBSERVER->getRatio(),400*OBSERVER->getHeightRatio() + 33*OBSERVER->getHeightRatio(),m_box_image->GetWidth()*OBSERVER->getRatio(),m_box_image->GetHeight()*OBSERVER->getRatio(),m_box_image);
 	m_opponents.Add(box);
 
-	Collidable* box2 = new Box(box->getX2() + 10 + 4*m_box_image->GetWidth(),400 + 33,m_box_image->GetWidth(),m_box_image->GetHeight(),m_box_image);
+	Collidable* box2 = new Box(box->getX2() + 10*OBSERVER->getRatio() + 4*m_box_image->GetWidth()*OBSERVER->getRatio(),400*OBSERVER->getHeightRatio() + 33*OBSERVER->getHeightRatio(),m_box_image->GetWidth()*OBSERVER->getRatio(),m_box_image->GetHeight()*OBSERVER->getRatio(),m_box_image);
 	m_opponents.Add(box2);
 
-	Collidable* box3 = new Box(box2->getX2() + 10 + 4*m_box_image->GetWidth(),400 + 33,m_box_image->GetWidth(),m_box_image->GetHeight(),m_box_image);
+	Collidable* box3 = new Box(box2->getX2() + 10*OBSERVER->getRatio() + 4*m_box_image->GetWidth()*OBSERVER->getRatio(),400*OBSERVER->getHeightRatio() + 33*OBSERVER->getHeightRatio(),m_box_image->GetWidth()*OBSERVER->getRatio(),m_box_image->GetHeight()*OBSERVER->getRatio(),m_box_image);
 	m_opponents.Add(box3);
 
 }
@@ -497,15 +497,15 @@ void Arcade::generateCase8()
 void Arcade::generateCase9()
 {
 	// harder
-	Collidable* cart = new Cart(960,400,m_cart_image->GetWidth(),m_cart_image->GetHeight(),m_cart_image);
+	Collidable* cart = new Cart(960*OBSERVER->getRatio(),400*OBSERVER->getHeightRatio(),m_cart_image->GetWidth()*OBSERVER->getRatio(),m_cart_image->GetHeight()*OBSERVER->getRatio(),m_cart_image);
 	m_opponents.Add(cart);
 
-	Collidable* mud = new Mud(cart->getX2() + 10 + 4*m_mud_image->GetWidth(),400 + 77,m_mud_image->GetWidth(),m_mud_image->GetHeight(),m_mud_image);
+	Collidable* mud = new Mud(cart->getX2() + 10*OBSERVER->getRatio() + 4*m_mud_image->GetWidth()*OBSERVER->getRatio(),400*OBSERVER->getHeightRatio() + 77*OBSERVER->getHeightRatio(),m_mud_image->GetWidth()*OBSERVER->getRatio(),m_mud_image->GetHeight()*OBSERVER->getRatio(),m_mud_image);
 	m_opponents.Add(mud);
 
-	Collidable* mud2 = new Box(mud->getX2() + 10 + 4*m_mud_image->GetWidth(),400 + 77,m_mud_image->GetWidth(),m_mud_image->GetHeight(),m_mud_image);
+	Collidable* mud2 = new Box(mud->getX2() + 10*OBSERVER->getRatio() + 4*m_mud_image->GetWidth()*OBSERVER->getRatio(),400*OBSERVER->getHeightRatio() + 77*OBSERVER->getHeightRatio(),m_mud_image->GetWidth()*OBSERVER->getRatio(),m_mud_image->GetHeight()*OBSERVER->getRatio(),m_mud_image);
 	m_opponents.Add(mud2);
 
-	Collidable* mud3 = new Box(mud2->getX2() + 10 + 4*m_mud_image->GetWidth(),400 + 77,m_mud_image->GetWidth(),m_mud_image->GetHeight(),m_mud_image);
+	Collidable* mud3 = new Box(mud2->getX2() + 10*OBSERVER->getRatio() + 4*m_mud_image->GetWidth()*OBSERVER->getRatio(),400*OBSERVER->getHeightRatio() + 77*OBSERVER->getHeightRatio(),m_mud_image->GetWidth()*OBSERVER->getRatio(),m_mud_image->GetHeight()*OBSERVER->getRatio(),m_mud_image);
 	m_opponents.Add(mud3);
 }

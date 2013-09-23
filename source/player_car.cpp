@@ -53,15 +53,15 @@ void PlayerCar::jump(bool fromBoxTopCollision)
 {
 	if (!jumping || fromBoxTopCollision)
 	{
-		if (car_speed < 10) {
+		if (car_speed < 10*OBSERVER->getRatio()) {
 			
-			jumpVelocity = -2.5f*car_speed;
-		} else if ( car_speed > 10 ) {
+			jumpVelocity = -2.5f*car_speed*OBSERVER->getRatio();
+		} else if ( car_speed > 10*OBSERVER->getRatio() ) {
 
-			jumpVelocity = -2.5f*car_speed;
+			jumpVelocity = -2.5f*car_speed*OBSERVER->getRatio();
 		} else {
 
-			jumpVelocity = -2.5f*car_speed;
+			jumpVelocity = -2.5f*car_speed*OBSERVER->getRatio();
 		}
 		jumping = true;
 		m_boy->jump();
@@ -70,13 +70,13 @@ void PlayerCar::jump(bool fromBoxTopCollision)
 
 void PlayerCar::initializeCar()
 {
-	x = 200;
-	y = 530;
+	x = 200*OBSERVER->getRatio();
+	y = 530*OBSERVER->getHeightRatio();
 	initY = y;
 	
-	gravity = 2;
+	gravity = 2*OBSERVER->getRatio();
 	jumping = false;
-	jumpVelocity = -30;
+	jumpVelocity = -30*OBSERVER->getRatio();
 	groundY = initY;
 }
 

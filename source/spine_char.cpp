@@ -1,4 +1,5 @@
 #include "spine_char.h"
+#include "observer.h"
 
 SpineChar::SpineChar()
 {
@@ -35,7 +36,7 @@ void SpineChar::loadSpine(const char* _atlas, const char* _skeleton, const char*
 		atlas = new Atlas(atlasFile);
 
 		SkeletonJson skeletonJson(atlas);
-		skeletonJson.scale = _scale;
+		skeletonJson.scale = _scale*OBSERVER->getRatio();
 
 		ifstream skeletonFile(_skeleton);
 		skeletonData = skeletonJson.readSkeletonData(skeletonFile);
