@@ -108,13 +108,13 @@ int Menu::update(sliderStruct &m_slider)
 	switch ( m_menuState )
 	{
 	case MENU_MAIN:
-		m_runButton -> Update(m_slider.click,m_slider.distanceX1,m_slider.distanceY1);
-		m_creditsButton -> Update(m_slider.click,m_slider.distanceX1,m_slider.distanceY1);
-		m_soundButton -> Update(m_slider.click,m_slider.distanceX1,m_slider.distanceY1);
+		m_runButton -> Update(AWM_INPUT->m_singleTouch_slider.click,AWM_INPUT->m_singleTouch_slider.distanceX1,AWM_INPUT->m_singleTouch_slider.distanceY1);
+		m_creditsButton -> Update(AWM_INPUT->m_singleTouch_slider.click,AWM_INPUT->m_singleTouch_slider.distanceX1,AWM_INPUT->m_singleTouch_slider.distanceY1);
+		m_soundButton -> Update(AWM_INPUT->m_singleTouch_slider.click,AWM_INPUT->m_singleTouch_slider.distanceX1,AWM_INPUT->m_singleTouch_slider.distanceY1);
 		break;
 
 	case MENU_ABOUT_US:
-		m_backButton -> Update(m_slider.click,m_slider.distanceX1,m_slider.distanceY1);
+		m_backButton -> Update(AWM_INPUT->m_singleTouch_slider.click,AWM_INPUT->m_singleTouch_slider.distanceX1,AWM_INPUT->m_singleTouch_slider.distanceY1);
 		break;
 
 	default:
