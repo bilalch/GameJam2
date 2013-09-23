@@ -116,14 +116,38 @@ files
 
 }
 
-#assets
-#{
-#(data)
-#	sounds/sounds.group.bin
-#	iw2dstrings.group.bin
-	#(data-ram)
-	#game.sqlite
-#}
+assets
+{
+	(data)
+		boy.atlas
+		boy.json
+		boy.png
+		boy-grab.json
+		boy-jump.json
+		boy-run.json
+		boy-slip.json
+		boy-takeoff.json
+		boy-walk.json
+		boy-wave.json
+		chicken.atlas
+		chicken.png
+		chicken-running.json
+		chicken-skeleton.json
+		sounds2/Loops/bg.mp3
+		sounds2/Loops/morning.mp3
+		
+	(data-ram/data-gles1)
+		640x960/arcade/_arcade.group.bin
+		640x960/background/_background.group.bin
+		640x960/gameover/_gameover.group.bin
+		640x960/levelselection/_levelselection.group.bin
+		640x960/menu/_menu.group.bin
+		640x960/story/_story.group.bin
+		fonts/iw2dstrings.group.bin
+		sounds2/sounds2.group.bin
+
+
+}
 
 
 #### AUTO GENERATED deployment settings from DeployTool.exe. Do not edit below this line ####
