@@ -34,6 +34,9 @@ void Arcade::loadImages()
 	m_mud_image	 = Iw2DCreateImageResource("mud");
 
 	m_pause_image = Iw2DCreateImageResource("pause-button-unpressed");
+	m_enery_bar = Iw2DCreateImageResource("energy-bar");
+	m_enery_bar_tray = Iw2DCreateImageResource("energy-bar-tray");
+	m_enery_icon = Iw2DCreateImageResource("energy-icon");
 }
 
 void Arcade::unloadImages()
@@ -57,6 +60,18 @@ void Arcade::unloadImages()
 	if (m_pause_image)
 		delete m_pause_image;
 	m_pause_image = NULL;
+
+	if (m_enery_bar)
+		delete m_enery_bar;
+	m_enery_bar = NULL;
+
+	if (m_enery_bar_tray)
+		delete m_enery_bar_tray;
+	m_enery_bar_tray = NULL;
+
+	if (m_enery_icon)
+		delete m_enery_icon;
+	m_enery_icon = NULL;
 
 	IwGetResManager() -> DestroyGroup(imagesGroup);
 }
@@ -105,6 +120,13 @@ void Arcade::draw()
 	m_chicken -> draw();
 	
 	m_pause_button -> Draw();
+
+	Iw2DDrawImage(m_enery_bar_tray, CIwFVec2(m_enery_icon->GetWidth()+10,m_enery_icon->GetHeight()/2));
+	
+	float width = (float)m_enery_bar_tray->GetWidth()*(50.0f/100);
+	Iw2DDrawImageRegion(m_enery_bar, CIwFVec2(m_enery_icon->GetWidth()+10,5+m_enery_icon->GetHeight()/2),CIwFVec2(width,m_enery_bar->GetHeight()),CIwFVec2(0,0),CIwFVec2(width,m_enery_bar->GetHeight()));
+
+	Iw2DDrawImage(m_enery_icon, CIwFVec2(20,20));
 
 	/*m_speed_button -> Draw();
 	m_right_button -> Draw();

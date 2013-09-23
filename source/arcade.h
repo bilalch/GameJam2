@@ -50,6 +50,10 @@ private:
 	CIw2DImage* m_box_image;
 	CIw2DImage* m_mud_image;
 
+	CIw2DImage* m_enery_bar;
+	CIw2DImage* m_enery_bar_tray;
+	CIw2DImage* m_enery_icon;
+
 	CIw2DImage* m_pause_image;
 	AwmButton* m_pause_button;
 
