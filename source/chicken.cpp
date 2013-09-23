@@ -1,5 +1,6 @@
 #include "chicken.h"
 #include "observer.h"
+#include "AwmSoundManager.h"
 
 Chicken::Chicken(int number)
 {
@@ -16,10 +17,6 @@ Chicken::~Chicken()
 
 void Chicken::draw()
 {
-	//spriteSheet->Render(CIwFVec2(x,y),1.0f,0.0f,0.0f);
-	//IwGxFlush();
-	//skeleton->draw();
-	//skeleton1->draw();
 	m_chicken->draw();
 }
 
@@ -65,6 +62,7 @@ void Chicken::jump(bool fromBoxTopCollision)
 		}
 		jumping = true;
 		m_chicken -> jump();
+		AWM_SOUND_MANAGER->PlaySoundEffect("chicken");
 	}
 }
 

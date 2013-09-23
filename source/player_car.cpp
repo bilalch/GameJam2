@@ -1,5 +1,6 @@
 #include "player_car.h"
 #include "observer.h"
+#include "AwmSoundManager.h"
 
 PlayerCar::PlayerCar(int number)
 {
@@ -41,6 +42,7 @@ void PlayerCar::update(float speed)
 			y = groundY;
 			jumping = false;
 			m_boy->land();
+			AWM_SOUND_MANAGER->PlaySoundEffect("running");
 		}
 	}
 	else
@@ -65,6 +67,7 @@ void PlayerCar::jump(bool fromBoxTopCollision)
 		}
 		jumping = true;
 		m_boy->jump();
+		AWM_SOUND_MANAGER->PlaySoundEffect("thud");
 	}
 }
 
