@@ -66,7 +66,6 @@ private:
 	float deviceHeight;
 
 	float ratio;
-	float heightRatio;
 
 public:
 	static Observer* getInstance();
@@ -84,6 +83,5 @@ public:
 	void setAccelerometerZ(int _z) { accelerometer_z = _z; }
 
 	float getRatio();
-	float getHeightRatio();
 };
 

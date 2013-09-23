@@ -7,7 +7,7 @@ Chicken::Chicken(int number)
 	initializeCar();
 	
 	m_chicken = new SpineChar();
-	m_chicken->loadSpine("chicken.atlas","chicken-skeleton.json",NULL,NULL,"chicken-running.json",NULL,NULL,800*OBSERVER->getRatio(),530*OBSERVER->getRatio(),0.5);
+	m_chicken->loadSpine("chicken.atlas","chicken-skeleton.json",NULL,NULL,"chicken-running.json",NULL,NULL,800,530,0.5);
 }
 
 Chicken::~Chicken()
@@ -50,15 +50,15 @@ void Chicken::jump(bool fromBoxTopCollision)
 {
 	if (!jumping || fromBoxTopCollision)
 	{
-		if (car_speed < 10*OBSERVER->getRatio()) {
+		if (car_speed < 10) {
 			
-			jumpVelocity = -2.5f*car_speed*OBSERVER->getRatio();
-		} else if ( car_speed > 10*OBSERVER->getRatio() ) {
+			jumpVelocity = -2.5f*car_speed;
+		} else if ( car_speed > 10 ) {
 
-			jumpVelocity = -2.5f*car_speed*OBSERVER->getRatio();
+			jumpVelocity = -2.5f*car_speed;
 		} else {
 
-			jumpVelocity = -2.5f*car_speed*OBSERVER->getRatio();
+			jumpVelocity = -2.5f*car_speed;
 		}
 		jumping = true;
 		m_chicken -> jump();
@@ -68,13 +68,13 @@ void Chicken::jump(bool fromBoxTopCollision)
 
 void Chicken::initializeCar()
 {
-	x = 800*OBSERVER->getRatio();
-	y = 530*OBSERVER->getHeightRatio();
+	x = 800;
+	y = 530;
 	initY = y;
 	
-	gravity = 2*OBSERVER->getRatio();
+	gravity = 2;
 	jumping = false;
-	jumpVelocity = -30*OBSERVER->getRatio();
+	jumpVelocity = -30;
 	groundY = initY;
 }
 

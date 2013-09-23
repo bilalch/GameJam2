@@ -34,7 +34,6 @@ Observer::Observer(void)
 
 	float ratio1 = deviceWidth / 960;
 	float ratio2 = deviceHeight / 640;
-	heightRatio = ratio2;
 	ratio = 1;
 
 	if ( ratio1 > ratio2 )
@@ -46,11 +45,6 @@ Observer::Observer(void)
 float Observer::getRatio()
 {
 	return ratio;
-}
-
-float Observer::getHeightRatio()
-{
-	return heightRatio;
 }
 
 Observer::~Observer(void)
