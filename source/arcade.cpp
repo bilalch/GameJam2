@@ -123,7 +123,7 @@ void Arcade::draw()
 
 	Iw2DDrawImage(m_enery_bar_tray, CIwFVec2(m_enery_icon->GetWidth()+10,m_enery_icon->GetHeight()/2));
 	
-	float width = (float)m_enery_bar_tray->GetWidth()*(50.0f/100);
+	float width = (float)m_enery_bar_tray->GetWidth()*((float)m_scrolling_background->getSpeed()/(15*OBSERVER->getRatio()));
 	Iw2DDrawImageRegion(m_enery_bar, CIwFVec2(m_enery_icon->GetWidth()+10,5+m_enery_icon->GetHeight()/2),CIwFVec2(width,m_enery_bar->GetHeight()),CIwFVec2(0,0),CIwFVec2(width,m_enery_bar->GetHeight()));
 
 	Iw2DDrawImage(m_enery_icon, CIwFVec2(20,20));
