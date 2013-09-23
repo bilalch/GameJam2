@@ -8,7 +8,7 @@ int Box::update(PlayerCar *m_char, ScrollingBackground *m_scroll_bg)
 
 	//detect collision
 
-	if ((m_char->getX1() > m_x1 && m_char->getX1() < m_x2) || 
+	if (/*(m_char->getX1() > m_x1 && m_char->getX1() < m_x2) ||*/ 
 			(m_char->getX2() > m_x1 && m_char->getX2() < m_x2) ||
 			(m_x1 > m_char->getX1() && m_x2 < m_char->getX2()))
 	{
