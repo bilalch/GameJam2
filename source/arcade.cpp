@@ -123,8 +123,8 @@ void Arcade::draw()
 
 	Iw2DDrawImage(m_enery_bar_tray, CIwFVec2(m_enery_icon->GetWidth()+10,m_enery_icon->GetHeight()/2));
 	
-	float width = (float)m_enery_bar_tray->GetWidth()*((float)m_scrolling_background->getSpeed()/(15*OBSERVER->getRatio()));
-	Iw2DDrawImageRegion(m_enery_bar, CIwFVec2(m_enery_icon->GetWidth()+10,5+m_enery_icon->GetHeight()/2),CIwFVec2(width,m_enery_bar->GetHeight()),CIwFVec2(0,0),CIwFVec2(width,m_enery_bar->GetHeight()));
+	float width = (float)m_enery_bar->GetWidth()*((float)m_scrolling_background->getSpeed()/15);
+	Iw2DDrawImageRegion(m_enery_bar, CIwFVec2(m_enery_icon->GetWidth()+10,5+m_enery_icon->GetHeight()/2)/*,CIwFVec2(width,m_enery_bar->GetHeight())*/,CIwFVec2(0,0),CIwFVec2(width,m_enery_bar->GetHeight()));
 
 	Iw2DDrawImage(m_enery_icon, CIwFVec2(20,20));
 
@@ -156,7 +156,7 @@ int Arcade::update(sliderStruct& m_slider)
 			//collision with cart
 			if (m_playerCar->getSpeed() < 10)
 			{
-				return 2;//gameover
+				return 21;//gameover
 			}
 			else
 			{
@@ -167,7 +167,7 @@ int Arcade::update(sliderStruct& m_slider)
 			//collision with mud
 			//GAME OVER
 			cout<<"MUD COLLISION"<<endl;
-			return 2;//gameover
+			return 22;//gameover
 			break;
 		case 3:
 			//collision with box from top
@@ -180,7 +180,7 @@ int Arcade::update(sliderStruct& m_slider)
 			//collision with box from side
 			//GAME OVER
 			cout<<"BOX COLLISION SIDE"<<endl;
-			return 2;//gameover
+			return 23;//gameover
 			break;
 		default:
 			break;

@@ -5,7 +5,7 @@
 
 class GameOver {
 public:
-	GameOver();
+	GameOver(int);
 	~GameOver();
 
 	int update();
@@ -19,6 +19,8 @@ private:
 
 	CIw2DImage* m_background;
 	CIw2DImage* m_gameOver;
+
+	int case_game_over;
 };
 
 #endif //GAMEOVER
