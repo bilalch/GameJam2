@@ -56,6 +56,7 @@ private:
 	GameState m_gameState;
 	
 	int arcade_difficulty_level;
+	int game_over_case;
 };
 
 #endif

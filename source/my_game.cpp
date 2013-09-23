@@ -13,6 +13,7 @@ MyGame::MyGame()
 	m_gameState = GAME_MENU;
 
 	arcade_difficulty_level = 1;
+	game_over_case = 21;
 	
 	s3eAccelerometerStart();
 }
@@ -82,13 +83,32 @@ void MyGame::Update()
 				m_gameState = GAME_WINNER;
 				m_gameWinner = new GameWinner();
 				break;
-			case 2:
+			case 21:
 				if ( m_arcade )
 					delete m_arcade;
 				m_arcade = NULL;
 
 				m_gameState = GAME_OVER;
-				m_gameOver = new GameOver();
+				m_gameOver = new GameOver(1);
+				game_over_case = 1;
+				break;
+			case 22:
+				if ( m_arcade )
+					delete m_arcade;
+				m_arcade = NULL;
+
+				m_gameState = GAME_OVER;
+				m_gameOver = new GameOver(2);
+				game_over_case = 2;
+				break;
+			case 23:
+				if ( m_arcade )
+					delete m_arcade;
+				m_arcade = NULL;
+
+				m_gameState = GAME_OVER;
+				m_gameOver = new GameOver(3);
+				game_over_case = 3;
 				break;
 			default:
 				break;
@@ -102,7 +122,7 @@ void MyGame::Update()
 			m_gameOver -> update();
 		} else {
 			
-			m_gameOver = new GameOver();
+			m_gameOver = new GameOver(game_over_case);
 			m_gameOver -> update();
 		}
 		break;
