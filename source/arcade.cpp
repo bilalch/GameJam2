@@ -154,7 +154,14 @@ int Arcade::update(sliderStruct& m_slider)
 		{
 		case 1:
 			//collision with cart
-			m_playerCar->jump(true);
+			if (m_playerCar->getSpeed() < 10)
+			{
+				return 2;//gameover
+			}
+			else
+			{
+				m_playerCar->jump(true);
+			}
 			break;
 		case 2:
 			//collision with mud
