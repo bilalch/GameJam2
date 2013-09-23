@@ -130,9 +130,8 @@ files
 deployments
 {
 	["Default"]
+	iphone-link-opts='-weak_framework CoreText -weak_framework UIKit -weak_framework Security -weak_framework AddressBook -weak_framework AddressBookUI -weak_framework MapKit -lsqlite3.0'
 	version-major=1
 	version-minor=0
 	version-revision=0
-	iphone-link-opts='-weak_framework CoreText -weak_framework UIKit -weak_framework Security -weak_framework AddressBook -weak_framework AddressBookUI -weak_framework MapKit -lsqlite3.0'
-
 }
