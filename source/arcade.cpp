@@ -2,7 +2,7 @@
 #include "observer.h"
 #include "AwmSoundManager.h"
 
-#define LEVEL_PROGRESS_COUNTER 50
+#define LEVEL_PROGRESS_COUNTER 20
 
 Arcade::Arcade(int difficulty_level)
 {
